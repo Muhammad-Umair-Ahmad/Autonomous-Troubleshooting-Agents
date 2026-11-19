@@ -1,0 +1,250 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{14}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Tseng et~al.}{2026a}]{sade}
+\begin{botherref}
+\oauthor{\bsnm{Tseng}, \binits{K.-H.}},
+\oauthor{\bsnm{Bogahawatta}, \binits{N.}},
+\oauthor{\bsnm{Ginige}, \binits{Y.}},
+\oauthor{\bsnm{Dekic}, \binits{K.}},
+\oauthor{\bsnm{Sivanathan}, \binits{A.}},
+\oauthor{\bsnm{Seneviratne}, \binits{S.}}:
+{SADE}: Symptom-Aware Diagnostic Escalation for {LLM}-Based Network
+  Troubleshooting.
+arXiv:2605.04530v1
+(2026).
+\url{https://arxiv.org/abs/2605.04530}
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Tseng et~al.}{2026b}]{faultbench}
+\begin{botherref}
+\oauthor{\bsnm{Tseng}, \binits{K.-H.}},
+\oauthor{\bsnm{Bogahawatta}, \binits{N.}},
+\oauthor{\bsnm{Ginige}, \binits{Y.}},
+\oauthor{\bsnm{Patel}, \binits{K.}},
+\oauthor{\bsnm{Dakic}, \binits{K.}},
+\oauthor{\bsnm{Seneviratne}, \binits{S.}}:
+{FaulT-Bench}: Towards Benchmarking Network Troubleshooting {LLM} Agents under
+  Unreliable User Tickets.
+arXiv:2608.27021v1
+(2026).
+\url{https://arxiv.org/abs/2608.27021}
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Wu et~al.}{2026}]{hana}
+\begin{barticle}
+\bauthor{\bsnm{Wu}, \binits{B.}},
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Liu}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{Y.-Q.}},
+\bauthor{\bsnm{Sifakis}, \binits{J.}},
+\bauthor{\bsnm{Ouyang}, \binits{Y.}}:
+\batitle{From automated to autonomous: Hierarchical agent-native network
+  architecture ({HANA})}.
+\bjtitle{IEEE Networking Letters}
+(\byear{2026})
+\doiurl{10.1109/LNET.2026.3693226} .
+\bcomment{Author manuscript: arXiv:2605.20608v1}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2025a}]{nika}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{Z.}},
+\oauthor{\bsnm{Cornacchia}, \binits{A.}},
+\oauthor{\bsnm{Sacco}, \binits{A.}},
+\oauthor{\bsnm{Galante}, \binits{F.}},
+\oauthor{\bsnm{Canini}, \binits{M.}},
+\oauthor{\bsnm{Jiang}, \binits{D.}}:
+A Network Arena for Benchmarking {AI} Agents on Network Troubleshooting.
+arXiv:2512.16381v1
+(2025).
+\url{https://arxiv.org/abs/2512.16381}
+\end{botherref}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2025b}]{playground}
+\begin{bchapter}
+\bauthor{\bsnm{Wang}, \binits{Z.}},
+\bauthor{\bsnm{Cornacchia}, \binits{A.}},
+\bauthor{\bsnm{Galante}, \binits{F.}},
+\bauthor{\bsnm{Centofanti}, \binits{C.}},
+\bauthor{\bsnm{Sacco}, \binits{A.}},
+\bauthor{\bsnm{Jiang}, \binits{D.}}:
+\bctitle{Towards a playground to democratize experimentation and benchmarking
+  of {AI} agents for network troubleshooting}.
+In: \bbtitle{Proceedings of the 1st Workshop on Next-Generation Network
+  Observability},
+pp. \bfpage{1}--\blpage{3}.
+\bpublisher{ACM},
+\blocation{New York, NY, USA}
+(\byear{2025}).
+\doiurl{10.1145/3748496.3748990}
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Tan et~al.}{2025}]{netsemantic}
+\begin{botherref}
+\oauthor{\bsnm{Tan}, \binits{T.}},
+\oauthor{\bsnm{Tang}, \binits{F.}},
+\oauthor{\bsnm{Luo}, \binits{L.}},
+\oauthor{\bsnm{Wang}, \binits{X.}},
+\oauthor{\bsnm{Li}, \binits{Z.}},
+\oauthor{\bsnm{Zhao}, \binits{M.}}:
+Adapting Network Information into Semantics for Generalizable and Plug-and-Play
+  Multi-Scenario Network Diagnosis.
+arXiv:2501.16842v2
+(2025).
+\url{https://arxiv.org/abs/2501.16842}
+\end{botherref}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Salman et~al.}{2025}]{hylift}
+\begin{barticle}
+\bauthor{\bsnm{Salman}, \binits{A.D.}},
+\bauthor{\bsnm{Zeyad}, \binits{A.T.}},
+\bauthor{\bsnm{Jumaa}, \binits{S.S.}},
+\bauthor{\bsnm{Raafat}, \binits{S.M.}},
+\bauthor{\bsnm{Jasim}, \binits{F.H.}},
+\bauthor{\bsnm{Humaidi}, \binits{A.J.}}:
+\batitle{Hybrid {LLM}-assisted fault diagnosis framework for {5G/6G} networks
+  using real-world logs}.
+\bjtitle{Computers}
+\bvolume{14}(\bissue{12}),
+\bfpage{551}
+(\byear{2025})
+\doiurl{10.3390/computers14120551}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{{Linux Kernel contributors}}{2026}]{kernel}
+\begin{botherref}
+\oauthor{\bsnm{{Linux Kernel contributors}}}:
+IP sysctl documentation.
+Retrieved-content hashes preserved in the implementation
+(2026).
+\url{https://www.kernel.org/doc/html/latest/networking/ip-sysctl.html}
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{{iproute2 contributors}}{2026}]{iproute}
+\begin{botherref}
+\oauthor{\bsnm{{iproute2 contributors}}}:
+ip-route(8): Linux manual page.
+Retrieved-content hashes preserved in the implementation
+(2026).
+\url{https://man7.org/linux/man-pages/man8/ip-route.8.html}
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{{Netfilter contributors}}{2026}]{iptables}
+\begin{botherref}
+\oauthor{\bsnm{{Netfilter contributors}}}:
+iptables(8): Linux manual page.
+Retrieved-content hashes preserved in the implementation
+(2026).
+\url{https://man7.org/linux/man-pages/man8/iptables.8.html}
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Scazzariello et~al.}{2020}]{kathara}
+\begin{bchapter}
+\bauthor{\bsnm{Scazzariello}, \binits{M.}},
+\bauthor{\bsnm{Ariemma}, \binits{L.}},
+\bauthor{\bsnm{Caiazzi}, \binits{T.}}:
+\bctitle{Kathar\'{a}: A lightweight network emulation system}.
+In: \bbtitle{NOMS 2020---IEEE/IFIP Network Operations and Management Symposium}
+(\byear{2020}).
+\doiurl{10.1109/NOMS47738.2020.9110351}
+\end{bchapter}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{{Docker contributors}}{2026}]{docker}
+\begin{botherref}
+\oauthor{\bsnm{{Docker contributors}}}:
+Docker Engine documentation.
+Container image identities recorded in the experiment manifests
+(2026).
+\url{https://docs.docker.com/engine/}
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{{SADE contributors}}{2026}]{saderepo}
+\begin{botherref}
+\oauthor{\bsnm{{SADE contributors}}}:
+{SADE-NetworkAgent}: source code and diagnostic skill library.
+Pinned commit aa8488a09ddb3a57e08f8137afd04bc87886e734
+(2026).
+\url{https://github.com/Overlxrd-uwu/SADE-NetworkAgent}
+\end{botherref}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{{Ollama contributors}}{2026}]{ollama}
+\begin{botherref}
+\oauthor{\bsnm{{Ollama contributors}}}:
+Ollama: local model inference software.
+Model identities and inference options recorded per run
+(2026).
+\url{https://github.com/ollama/ollama}
+\end{botherref}
+\endbibitem
+
+\end{thebibliography}

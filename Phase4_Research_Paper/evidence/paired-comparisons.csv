@@ -1,0 +1,19 @@
+model,comparison,incident_groups,mean_group_delta_f1,ci_low,ci_high,wilcoxon_p,interpretation,holm_p
+qwen2.5:1.5b,full minus rule_based,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+qwen2.5:1.5b,full minus single_agent,3,0.9904761904761905,0.9714285714285714,1.0,0.25,exploratory; limited incident diversity,1.0
+qwen2.5:1.5b,full minus sade_local,3,0.9851851851851852,0.9555555555555556,1.0,0.25,exploratory; limited incident diversity,1.0
+qwen2.5:1.5b,full minus no_curation,3,0.5333333333333333,0.5,0.6,0.25,exploratory; limited incident diversity,1.0
+qwen2.5:1.5b,full minus no_rescan,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+qwen2.5:1.5b,full minus no_twin,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus rule_based,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus single_agent,3,0.9697354497354498,0.9092063492063492,1.0,0.25,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus sade_local,3,0.9842592592592593,0.9527777777777778,1.0,0.25,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus no_curation,3,0.1925925925925926,0.0,0.5,0.5,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus no_rescan,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+qwen2.5-coder:3b,full minus no_twin,3,0.08306878306878307,0.0,0.2492063492063492,1.0,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus rule_based,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus single_agent,3,1.0,1.0,1.0,0.25,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus sade_local,3,1.0,1.0,1.0,0.25,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus no_curation,3,0.03333333333333333,0.0,0.10000000000000002,1.0,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus no_rescan,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0
+llama3.2:1b,full minus no_twin,3,0.0,0.0,0.0,1.0,exploratory; limited incident diversity,1.0

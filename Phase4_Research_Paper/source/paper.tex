@@ -1,0 +1,372 @@
+\documentclass[pdflatex,sn-mathphys-num,iicol]{sn-jnl}
+\usepackage{graphicx,amsmath,amssymb,booktabs,multirow,tabularx}
+\usepackage{algorithm,algpseudocode}
+\usepackage{xcolor}
+\usepackage{microtype}
+\hypersetup{pdftitle={Evidence-Linked Multi-Fault Network Troubleshooting with Local Language Models and Twin-Verified Repair},pdfauthor={Muhammad Umair Ahmad},pdfkeywords={network troubleshooting, multi-fault diagnosis, digital twin, local language models}}
+\raggedbottom
+\setcounter{dbltopnumber}{3}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\newcommand{\full}{\textsc{Full}}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\begin{document}
+\title[Evidence-linked network troubleshooting]{Evidence-Linked Multi-Fault Network Troubleshooting with Local Language Models and Twin-Verified Repair}
+\author{\fnm{Muhammad Umair} \sur{Ahmad}}
+\affil{\orgname{24i-2545, Section AI-C}}
+\abstract{Network troubleshooting requires identifying the complete fault set and checking that a repair restores the intended network state. Existing agent workflows provide useful diagnostic procedures, but diagnosis accuracy alone does not establish successful recovery. This study develops a hybrid troubleshooting workflow for static IPv4 networks using five logical roles, verified incident retrieval, measured configuration checks, dependency-aware repair planning, and twin verification with rollback. A four-device emulated dataset contains training, development, and evaluation incidents, including healthy, single-fault, and concurrent-fault cases. Evaluation uses three local language models, 294 matched comparative runs, 72 robustness runs, and a separate 21-run revised-system evaluation. In the comparative study, the full workflow achieves 100\% fault-set F1 and exact diagnosis, matching the rule-based reference and exceeding the best single-agent result by 92.4 percentage points in F1. Removing curated incidents reduces exact diagnosis by 7.1--57.1 percentage points across the models. After dependency-planning and approval refinements, the revised workflow achieves 21/21 exact diagnoses and 18/18 verified repairs. Eight controlled safety executions exhibit the expected blocking or rollback behaviour. The results support an evidence-linked path from network complaint to checked recovery within the evaluated network setting, while separating diagnostic correctness, repair success, and component contribution.}
+\keywords{network troubleshooting, multi-fault diagnosis, local language models, retrieval-augmented generation, digital twin, verified remediation}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+A network complaint describes a symptom. It does not necessarily identify the device or configuration change that caused it. A failed connection can involve an unavailable interface, a missing address, an incorrect route, or a filtering rule. When faults occur together, one fault can hide another. Diagnosis and repair must therefore be checked against network evidence.
+
+Recent work has introduced structured language-model agents for this task. SADE uses symptom confirmation and diagnostic escalation \cite{sade}. FaulT-Bench shows why the wording of a ticket and the possibility of a healthy network belong in the evaluation \cite{faultbench}. HANA connects specialized agents to operational recovery in a 5G core \cite{hana}. These studies motivate measured evidence, explicit stopping criteria, and separate diagnosis and recovery outcomes.
+
+The research gap is the connection between complete multi-fault diagnosis and verified local recovery. A correct fault label is insufficient when a repair omits dependencies, acts on unresolved evidence, or introduces a fault. This study examines measured state checks, verified incident retrieval, and twin-tested repair with small local models.
+
+The system assigns five logical roles to a shared local backbone. A trusted controller supplies typed measurements while hiding injected labels. Repair actions follow public intent and measured findings. An equivalent faulty twin must recover before the main network is changed.
+
+The contributions are:
+\begin{itemize}
+\item An implemented hybrid workflow that links complete fault sets to evidence, dependency-aware actions, twin verification, and checked rollback.
+\item A reproducible evaluation across three local backbones, with matched baselines, component ablations, perturbed inputs, and separately recorded diagnosis and repair outcomes.
+\item An analysis of verified incident retrieval and repair-stage refinements, including a recorded concurrent-fault example and controlled safety executions.
+\end{itemize}
+The contribution is the integrated evidence-to-recovery workflow, building on existing multi-fault infrastructure and role-based agents. The paper proceeds from related work to methodology, setup, results, base-paper comparison, ablation, discussion, and conclusion.
+
+\section{Related work / literature review}\label{sec:related}
+\subsection{Structured diagnosis and evidence collection}
+SADE organizes diagnosis into an initial scan, a deeper scan, fault-family selection, and specialized skills. Its published evaluation reports RCA F1 of 0.77 and detection accuracy of 0.85 on matched NIKA cases \cite{sade}. The present study adapts its pinned skill library as a local diagnostic comparator. The extension evaluated here adds measured intent-state confirmation and a checked repair path. The local comparator uses different models and tools from the published system, so its score represents this adaptation.
+
+NIKA provides an extensible agent-network interface and reproducible incidents \cite{nika,playground}. It includes 54 network issues and multiple network scenarios. Its infrastructure supports controlled, coordinated fault injection. The present study follows this incident design but reports agent scores on its four-device local network.
+
+\subsection{Knowledge-supported and hybrid approaches}
+NetSemantic combines semantic and symbolic representations with knowledge-graph retrieval, reporting 89.49\% fault-diagnosis accuracy \cite{netsemantic}. Hy-LIFT combines rules, semi-supervised classification, and LLM explanations on operator logs, reporting macro-F1 of 0.89 \cite{hylift}. Both support structured or hybrid diagnosis. The present method additionally evaluates explicit concurrent fault sets and executed configuration restoration.
+
+Here, frozen documentation and verified training incidents support a documentation-only ablation without updating memory from evaluation incidents.
+
+\subsection{Operational autonomy and reliable evaluation}
+HANA coordinates executive agents through a hierarchical architecture and shared memory. Its 5G-core case studies include a reduction in repair time from 36 to 5 minutes for an unreachable AMF node \cite{hana}. This is an operational comparison in a different domain, rather than a fault-set benchmark. The present work concentrates on complete local configuration diagnosis and fault-state-equivalent twin testing.
+
+FaulT-Bench evaluates 200 core scenarios across eight topologies with accurate and misleading tickets. Its outcome score falls from 0.932 on correct-fault tickets to 0.820 on false-premise tickets \cite{faultbench}. These are reported judge-based outcome scores, not set-level F1. The present study uses this motivation to include a healthy case and perturbed tickets, while checking faults directly against injected identities. Table~\ref{tab:literature} summarizes the base studies and adjacent approaches by the evidence they provide.
+
+\begin{table*}[t]
+\caption{Base papers and related studies. Asterisks mark results reported by the original authors. Different datasets, metrics, and settings prevent a direct ranking.}\label{tab:literature}
+\centering\scriptsize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.65cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.25cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Study & Problem & Method & Dataset / setting & Metric and result* & Comparison boundary / remaining need \\
+\midrule
+Tseng et al., 2026 \cite{sade} & Root-cause diagnosis & Symptom escalation and skill library & 523 matched NIKA test cases; Claude Sonnet 4.6 & RCA F1 0.77; detection 0.85 & Manually maintained skills; local adaptation differs in tools and backbone. \\
+Tseng et al., 2026 \cite{faultbench} & Unreliable tickets & SADE, ReAct, Claude Code; LLM judging & 200 core cases; eight topologies & Outcome 0.932 correct-fault; 0.820 false-premise & Judge-based outcome and healthy-network stopping; not executed repair success. \\
+Wu et al., 2026 \cite{hana} & 5G autonomy & Hierarchical orchestrator, memory, executive agents & 5G-core case studies & AMF repair: 36 to 5 min; 86.11\% reduction & Different domain and MTTR setting; no matched local fault-set score. \\
+Tan et al., 2025 \cite{netsemantic} & Multimodal diagnosis & Semantic and symbolic conversion and knowledge graph & NS-3 network scenarios & Diagnosis accuracy 89.49\% & Diagnosis reports; executed twin-tested recovery is a separate task. \\
+Salman et al., 2025 \cite{hylift} & Log diagnosis & Rules, semi-supervised classifier, LLM & 8,000 operator-log sequences & Macro-F1 0.89 & Private log setting and class labels differ from concurrent configuration faults. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Proposed methodology}\label{sec:method}
+\subsection{Problem formulation and objective}
+Let $G=(V,E)$ denote the network topology, where $V$ is the device set and $E$ contains the links and configuration dependencies. Let $I$ be the public intended state, $t$ the ticket, and $O$ the measured observations. The hidden injected fault set is $F$. Each fault is a tuple $(d,f,u)$ containing device $d$, fault family $f$, and target $u$. The system produces an estimated set $\widehat F$ and an ordered repair plan $A$. Each finding must reference an observation identifier in $O$.
+
+The objective is complete recovery within tool, token, and time budgets. Model parameters remain fixed; there is no task-specific training loss. The following constrained objective describes the repair-selection requirement:
+\begin{equation}
+\min_A |A| \quad \text{subject to}\quad
+\begin{cases}
+A\subseteq\mathcal{A}(I,O,\widehat F),\\
+\operatorname{complete}(A)=1,\\
+\operatorname{policy}(A)=1,\\
+\operatorname{ok}(S_{\mathrm{twin}},A,I)=1.
+\end{cases}\label{eq:objective}
+\end{equation}
+Here $|A|$ is the number of actions, $\mathcal{A}$ is the set of permitted restorative templates, and $\operatorname{ok}$ tests recovery from twin state $S_{\mathrm{twin}}$. Equation~\ref{eq:objective} is a design objective, enforced through template completeness and dependency order.
+
+\subsection{Architecture and information boundaries}
+Figure~\ref{fig:architecture} presents the implemented workflow. The orchestrator maintains the hypothesis state and execution budget. The diagnostic role proposes faults with evidence references. The knowledge role retrieves relevant passages. The remediation role returns typed actions with preconditions, expected effects, post-checks, and rollback instructions. Oversight records the model's assessment and applies the appropriate approval gates.
+
+The roles share one selected backbone; the controller handles deployment, measurement, and execution. The agent runs in an unprivileged, read-only container without access to the Docker socket, private truth, or fault-injection code. The broker permits interface, address, route, firewall, and fixed-target ping queries. It refuses arbitrary shell commands and targets outside the lab.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.84\textwidth]{figures/architecture.pdf}
+\caption{Evidence-linked troubleshooting architecture. Solid arrows show the main workflow; the dashed arrow shows additional measurements. The knowledge snapshot remains frozen during evaluation.}\label{fig:architecture}
+\end{figure*}
+
+\subsection{Evidence confirmation and concurrent faults}
+The initial sweep reads interface state, IPv4 addresses, routes, and filtering rules for every device, followed by end-to-end probes. Measurements retain raw output, timestamp, device, origin, and an evidence identifier. Public intent-state checks confirm the root-cause set in the hybrid variants. Consequently, an unsupported model proposal is rejected and a directly measured supported fault can be retained even if the model misses it. This rule-based contribution is part of the method and is also evaluated as a reference baseline.
+
+Faults and consequences are distinguished using the topology dependencies. A down interface or missing address can remove an associated gateway route. That route remains consequence evidence unless it independently contradicts routing intent after dependency handling. The original workflow uses up to three diagnostic passes to investigate residual symptoms. The revised workflow uses one model diagnostic pass, targeted confirmation, and post-repair residual checks. Unavailable measurements remain unresolved; the revised workflow retries them once within the tool budget and prevents automatic repair approval if uncertainty persists.
+
+\subsection{Verified incident retrieval}
+Documentation covers Linux forwarding, interface and route operations, filtering, and FRR static routing \cite{kernel,iproute,iptables}. HTML text is normalized into 240-word windows with a 180-word stride. BM25 uses $k_1=1.5$ and $b=0.75$. Dense vectors come from the local \code{all-minilm:latest} model. For passage $p$, lexical and dense ranks are combined as
+\begin{equation}
+\operatorname{RRF}(p)=\frac{1}{60+r_{\mathrm{lex}}(p)}+
+\frac{1}{60+r_{\mathrm{dense}}(p)},\label{eq:rrf}
+\end{equation}
+where ranks start at one. Each retriever contributes its top 20 passages; the best six fused candidates are locally reranked and four passages are returned.
+
+A training incident enters memory only after completed execution, exact diagnosis, valid evidence references, twin equivalence, successful recovery, regression checks, and final restoration. Curation is therefore semi-automatic acceptance of verified incidents. It does not demonstrate unrestricted continual learning. Immutable snapshots record document hashes, vectors, embedding identity, and incident provenance.
+
+\subsection{Dependency-aware repair and verification}
+Permitted operations restore a link, address, route, or filtering state to public intent. Actions use typed fields rather than generated shell text. A missing default or static route can be included as a dependent repair only when measured absence, intended subnet relationships, and matching link/address restoration justify it. Execution orders link restoration before addresses, routes, and filters.
+
+The revised planner must return the complete distinct action set. Duplicate, omitted, unrelated, or unsupported actions are rejected. Before twin testing, the controller checks policy and fresh fault preconditions. The twin is restored to the same faulty state and must match its captured state and connectivity behaviour. Recovery requires the intended configuration and six scored connectivity paths, with bounded convergence warmups retained separately. The captured state includes administrative interface state, IPv4 addresses, gateway routes, and the complete normalized IPv4 filter table; Docker NAT/DNS bookkeeping is outside this incident snapshot. Failed main-network execution or post-checks trigger restoration of the pre-repair state and a fidelity check.
+
+The Phase 2 proposal was refined during implementation. The first study used model review as a veto. In the revised full workflow, review is advisory and authoritative approval requires measured evidence, a complete action set, and no unresolved findings. Twin, policy, precondition, and post-repair gates remain mandatory. There is no separate recorded instructor-feedback artifact; these changes follow the development and original-study evidence. Algorithm~\ref{alg:workflow} summarizes the revised full workflow.
+
+\begin{algorithm}[t]
+\caption{Revised evidence-linked diagnosis and repair}\label{alg:workflow}
+\begin{algorithmic}[1]
+\Require Ticket $t$, topology $G$, public intent $I$, frozen memory $K$
+\State Capture the faulty main-network state $S_0$
+\State $O\gets$ typed measurements; retry unavailable data once
+\State Retrieve passages from $K$ using $t$, $G$, and symptom context
+\State Obtain model hypotheses and confirm $\widehat F$ against $(I,O)$
+\State Record diagnosis before entering the repair stage
+\If{healthy, unresolved evidence, or exhausted budget}
+\State \Return diagnosis and recorded stopping reason
+\EndIf
+\State Generate complete distinct restorative actions $A$
+\State Check evidence, action completeness, policy, and fresh preconditions
+\If{any approval check fails} \State \Return blocked repair \EndIf
+\State Restore twin to $S_0$ and verify equivalence
+\State Execute $A$ on twin in dependency order
+\If{twin recovery fails} \State \Return blocked repair \EndIf
+\State Execute $A$ on main network and check state and connectivity
+\If{execution or post-checks fail}
+\State Restore $S_0$ and verify rollback fidelity
+\EndIf
+\State \Return diagnosis, repair outcome, and trace
+\end{algorithmic}
+\end{algorithm}
+
+\section{Experimental setup}\label{sec:setup}
+\subsection{Dataset and preprocessing}
+The evaluated network is the four-device chain $\mathrm{pc1}\! -\!\mathrm{r1}\! -\!\mathrm{r2}\! -\!\mathrm{pc2}$ with static IPv4 routes and filtering rules. It runs as real network processes in Docker/Kathar\'{a} emulation \cite{kathara,docker}. The subnets are 10.0.1.0/24, 10.0.12.0/30, and 10.0.2.0/24. The held-out standard cases cover a healthy network; individual link, route, address, and filter faults; and two- and three-fault combinations. Table~\ref{tab:data} gives the split and execution design. Ground truth is the verified injected fault set and is hidden from the agent.
+
+\begin{table}[t]
+\caption{Local dataset splits and evaluated execution blocks. Runs are model-case executions, not independent incidents.}\label{tab:data}
+\centering\small
+\begin{tabular}{@{}p{2.45cm}p{4.45cm}@{}}
+\toprule
+Split / block & Size and purpose \\
+\midrule
+Training & 3 incidents for verified memory \\
+Development & 3 incidents for workflow investigation \\
+Evaluation & 7 standard incidents; ticket variants remain in their incident split \\
+Comparative & $7$ methods $\times7$ cases $\times3$ models $\times2$ repeats $=294$ runs \\
+Robustness & $3$ incidents $\times2$ conditions $\times2$ methods $\times3$ models $\times2$ repeats $=72$ runs \\
+Revised follow-up & $7$ cases $\times3$ models $\times1$ repeat $=21$ runs \\
+\bottomrule
+\end{tabular}
+\end{table}
+Tickets and observations are normalized into structured records. Unavailable output is not converted into an absent configuration. Ticket variants stay with their source incident, and accepted memory contains training incidents only. Related cases are retained in three incident groups for statistical analysis. Local scores exclude the full NIKA and FaulT-Bench corpora.
+
+\subsection{Baselines and ablations}
+The original study contains seven methods under matched model, case, seed, and budget conditions. \code{rule_based} compares measured state with intent; its repair stage still shares the constrained model planner. \code{single_agent} uses tools and retrieval without full hybrid confirmation. \code{sade_local} adapts the pinned SADE skill library and escalation procedure \cite{saderepo} to the local tool boundary and is diagnosis-only. The other methods are \code{full} and its \code{no_curation}, \code{no_rescan}, and \code{no_twin} ablations.
+
+No-curation removes accepted incidents. No-rescan retains initially supported findings but removes further scanning. No-twin retains the other execution controls. Phase 2 also proposed plain-LLM, RAG-only, and additional role and policy ablations. Their implementation options are not treated as evaluated baselines because they are absent from the completed comparison matrix.
+
+\subsection{Implementation and reproducibility}
+The retained backbones are \code{llama3.2:1b}, \code{qwen2.5-coder:3b}, and \code{qwen2.5:1.5b}, served locally through Ollama \cite{ollama}. The recorded host is macOS ARM64 with 8 GiB RAM. Models are loaded sequentially; Llama uses Q8\_0 quantization and both Qwen models use Q4\_K\_M. The frozen Python environment records Python 3.12.16, Pydantic 2.14.3, NumPy 2.5.4, SciPy 1.18.1, and requests 2.34.2. These are recorded experiment identities, preserved with the dependency lock.
+
+The original protocol uses seeds 1000 and 1001, temperature 0.2, a 1,024-token output cap, an 8,192-token context in the inference wrapper, a 24,000-token investigation budget, a 240-second investigation budget, and 48 tool calls. Setup, remediation, and verification can add to total runtime and token accounting. The revised protocol uses seed 1000 and temperature zero with the same declared investigation limits. Seed requests are logged; identical output across different runtime environments is not assumed. Local inference has zero API charges; energy and hardware costs were not measured.
+
+The companion submission preserves code, lab definitions, source archives, raw records, locks, and knowledge snapshots. Exact replay must use the corresponding original or revised archive. The code/source hashes begin \code{e1140771a2a1} and \code{cad5d3c7f004}, respectively. The accompanying reproduction guide provides entry points. Per-run records supply complete model and image digests, avoiding reliance on mutable model tags.
+
+\subsection{Metrics and statistical analysis}
+For a faulty case, precision $P$, recall $R$, and F1 are
+\begin{equation}
+P=\frac{|\widehat F\cap F|}{|\widehat F|},\quad
+R=\frac{|\widehat F\cap F|}{|F|},\quad
+F_1=\frac{2PR}{P+R}.\label{eq:metrics}
+\end{equation}
+A zero denominator gives a score of zero for a faulty case. Exact match is $\mathbb{1}[\widehat F=F]$, with an explicit healthy diagnosis required when $F=\varnothing$. Mean F1 in the comparative tables is averaged over faulty cases; exact match includes healthy cases. Repair success is verified recovery divided by all faulty executions, including blocked and failed attempts. SADE-local has no repair score.
+
+Paired differences are averaged within incident groups. The saved analysis uses 2,000 group-bootstrap draws, seed 42, 95\% percentile intervals, and paired Wilcoxon tests with Holm adjustment. Repeated executions are not independent incidents. Model-output and budget failures remain empirical outcomes. Infrastructure retries preserve the same configuration and seed, with the earliest restored outcome selected. Diagnosis is checkpointed before remediation, so a later failure does not erase a completed diagnosis.
+
+\section{Results and analysis}\label{sec:results}
+\subsection{Matched comparative evaluation}
+Table~\ref{tab:core} reports all model-method conditions in the 294-run comparative study. The full workflow achieves 100\% mean fault-set F1 and exact diagnosis across 42 standard executions. The rule-based reference also reaches 100\%. This tie shows the contribution of explicit configuration checks in the evaluated domain. The full workflow's diagnosis cannot be attributed to language-model reasoning alone.
+
+\begin{table*}[t]
+\caption{Original matched study: 14 standard executions per model-method condition. F1 averages faulty cases; exact match includes the healthy case. Repair uses all 12 faulty executions per condition. Tokens are mean recorded total tokens, rounded to the nearest integer.}\label{tab:core}
+\centering\small
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Backbone & Method & F1 (\%) & Exact (\%) & Repair (\%) & Mean time (s) & Mean tokens \\
+\midrule
+\multirow{7}{*}{Llama 3.2 1B} & Full & 100.0 & 100.0 & 0.0 & 49.6 & 19,366 \\
+ & Rule-based & 100.0 & 100.0 & 8.3 & 167.5 & 780 \\
+ & Single agent & 0.0 & 0.0 & 0.0 & 45.6 & 16,948 \\
+ & SADE-local & 0.0 & 0.0 & N/A & 54.3 & 18,002 \\
+ & No curation & 91.7 & 92.9 & 0.0 & 57.7 & 19,740 \\
+ & No rescanning & 100.0 & 100.0 & 0.0 & 42.9 & 13,420 \\
+ & No twin & 100.0 & 100.0 & 0.0 & 48.6 & 19,947 \\
+\midrule
+\multirow{7}{*}{Qwen 2.5 Coder 3B} & Full & 100.0 & 100.0 & 8.3 & 141.8 & 22,480 \\
+ & Rule-based & 100.0 & 100.0 & 16.7 & 172.7 & 806 \\
+ & Single agent & 7.6 & 0.0 & 0.0 & 97.6 & 19,401 \\
+ & SADE-local & 3.9 & 0.0 & N/A & 73.9 & 16,352 \\
+ & No curation & 85.2 & 85.7 & 0.0 & 98.2 & 20,942 \\
+ & No rescanning & 100.0 & 100.0 & 0.0 & 80.2 & 14,485 \\
+ & No twin & 79.2 & 78.6 & 8.3 & 110.4 & 21,717 \\
+\midrule
+\multirow{7}{*}{Qwen 2.5 1.5B} & Full & 100.0 & 100.0 & 16.7 & 124.2 & 24,702 \\
+ & Rule-based & 100.0 & 100.0 & 50.0 & 123.6 & 775 \\
+ & Single agent & 2.4 & 0.0 & 0.0 & 62.5 & 19,573 \\
+ & SADE-local & 3.7 & 0.0 & N/A & 68.9 & 18,623 \\
+ & No curation & 41.7 & 42.9 & 0.0 & 65.1 & 12,379 \\
+ & No rescanning & 100.0 & 100.0 & 16.7 & 104.3 & 15,193 \\
+ & No twin & 100.0 & 100.0 & 75.0 & 107.1 & 35,304 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+With Qwen Coder, single-agent F1 reaches 7.6\% and SADE-local 3.9\%, including model and budget failures.
+
+Diagnosis and repair separate clearly in this study. Despite complete diagnosis, the original full pipeline verifies only 3/36 faulty executions. Some other configurations repair more cases: Qwen 1.5B without the twin reaches 75.0\%, while its rule-based condition reaches 50.0\%. These outcomes exposed repair-plan omissions, dependency handling, and model-veto behaviour. The refinements in Section~\ref{sec:method} address that stage of the workflow. Figure~\ref{fig:performance} places diagnosis, recovery, time, and robustness beside each other so that accuracy is not interpreted as successful recovery.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.94\textwidth]{figures/performance.pdf}
+\caption{Original-study measurements from the saved Phase 3 records. Panels (a)--(c) use standard cases; panel (d) uses the 72-run perturbed-input block. Each colour is a local backbone. SADE-L is the local adaptation; its repair score is not applicable and is omitted. NoCur, NoScan, and NoTwin denote the three component removals.}\label{fig:performance}
+\end{figure*}
+
+\subsection{Revised end-to-end evaluation}
+Table~\ref{tab:revised} reports the separately executed revised workflow. Every backbone exactly diagnoses all seven cases and verifies repair on all six faulty cases. In total, the workflow achieves 21/21 exact diagnoses and 18/18 verified repairs. The healthy case needs no repair. These results cover the combined revised planning and approval workflow.
+
+\begin{table}[t]
+\caption{Revised full-system follow-up. Each model has one execution of each standard case. Runtime includes setup and verification.}\label{tab:revised}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Backbone & Exact & Repair & Mean s \\
+\midrule
+Llama 3.2 1B & 7/7 & 6/6 & 111.7 \\
+Qwen Coder 3B & 7/7 & 6/6 & 167.3 \\
+Qwen 2.5 1.5B & 7/7 & 6/6 & 113.2 \\
+\midrule
+Total & 21/21 & 18/18 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+The revised study follows inspection of earlier results and changes both temperature and workflow. The change from 3/36 to 18/18 repairs is therefore a descriptive development outcome. Matched baseline and ablation claims use the original study.
+
+\subsection{Statistical evidence and execution cost}
+Table~\ref{tab:stats} reports selected saved group-level intervals for Qwen 1.5B. The full-minus-single-agent mean difference is 0.990, with a bootstrap interval of [0.971, 1.000]. Against SADE-local it is 0.985, with [0.956, 1.000]. Group weighting explains the small differences from Table~\ref{tab:core}. All saved Holm-adjusted $p$-values are 1.000; no confirmatory significance claim is made from the three incident groups.
+
+\begin{table}[t]
+\caption{Exploratory group-level F1 differences for Qwen 1.5B, full minus comparator. Intervals and tests use three incident groups.}\label{tab:stats}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Comparator & Mean $\Delta$ & 95\% interval & Raw $p$ \\
+\midrule
+Single agent & 0.990 & [0.971, 1.000] & 0.25 \\
+SADE-local & 0.985 & [0.956, 1.000] & 0.25 \\
+No curation & 0.533 & [0.500, 0.600] & 0.25 \\
+Rule-based & 0.000 & [0.000, 0.000] & 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+Original full-workflow time averages 49.6, 141.8, and 124.2 seconds for Llama, Qwen Coder, and Qwen 1.5B. Blocked repairs can finish early, so time must be read alongside recovery. Rule-based token totals include the shared model repair planner.
+
+\subsection{Robustness and qualitative evidence}
+The robustness block combines misleading tickets and unavailable route telemetry. Full-workflow F1 is 24.4\% for Llama, 70.3\% for Qwen Coder, and 66.1\% for Qwen 1.5B. Their single-agent comparators score 0.0\%, 14.6\%, and 0.0\%. Exact diagnosis is 0.0\%, 41.7\%, and 41.7\% for the full workflow and zero for all single-agent conditions. This supports a measured advantage under the tested perturbations, while showing that correct partial findings do not always form a complete diagnosis. Persistently unavailable measurements remain uncertainty; revised full-mode approval blocks repair in that state.
+
+Figure~\ref{fig:case} follows a revised Qwen 1.5B triple-fault execution. The diagnosis identifies the missing pc2 address, down r2 interface, and absent r2 route. The repair also restores pc2's default route as a dependency. That additional action is supported by state and intent but is not counted as an extra injected root cause. The equivalent twin and post-repair checks both pass. This example shows why diagnosis cardinality and action count need not be equal.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.86\textwidth]{figures/case-trace.pdf}
+\caption{Recorded qualitative example: the revised Qwen 1.5B triple-fault run. Three root causes require four ordered actions because address restoration also requires restoring the dependent default route. Source record: \code{849e2a1ec38c0a8d404d0a52.json}.}\label{fig:case}
+\end{figure*}
+
+\section{Comparison with base papers and state of the art}\label{sec:comparison}
+\subsection{Fair quantitative comparison}
+Table~\ref{tab:literature} retains original metric names and settings. SADE's RCA F1 of 0.77 is not directly comparable with local F1: the backbone, topology, tools, and scoring differ. HANA and FaulT-Bench also lack matched local measurements. Absolute and relative gains over their published scores are therefore not estimable.
+
+The same-setting comparison is with SADE-local and the other local methods in Table~\ref{tab:core}. Table~\ref{tab:gains} quantifies the full workflow's F1 improvement using the unrounded means. Absolute gain is $100(F_{1,\mathrm{full}}-F_{1,b})$ percentage points; relative gain is $100(F_{1,\mathrm{full}}-F_{1,b})/F_{1,b}$ percent for baseline $b$. A zero baseline makes relative gain undefined. Full and rule-based diagnosis tie, giving zero gain across all three models.
+
+\begin{table*}[t]
+\caption{Matched local F1 improvement over the single-agent comparator and SADE-local. These are local measurements, not improvements over original published scores. Large relative values reflect small nonzero comparator scores.}\label{tab:gains}
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Backbone & Gain over single (pp) & Relative (\%) & Gain over SADE-local (pp) & Relative (\%) \\
+\midrule
+Llama 3.2 1B & 100.00 & Undefined & 100.00 & Undefined \\
+Qwen Coder 3B & 92.43 & 1,221.7 & 96.06 & 2,441.2 \\
+Qwen 2.5 1.5B & 97.62 & 4,100.0 & 96.30 & 2,600.0 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Methodological differences and source of gain}
+The intent-state checks explain complete diagnosis in both full and the rule reference. Retrieval supplies context; the revised action contract prevents repair omissions. Twin execution and post-checks then establish recovery.
+
+Relative to HANA's operational hierarchy, this work evaluates a bounded repair contract with twin equivalence. Relative to FaulT-Bench's ticket assessment, it distinguishes correct diagnosis, blocked plans, and verified recovery. Cross-domain ranking requires new matched experiments.
+
+\section{Ablation study}\label{sec:ablation}
+\subsection{Knowledge, rescanning, and twin removal}
+Figure~\ref{fig:ablation} shows the decrease in exact diagnosis after removing each evaluated component. Without curated incidents, exact match decreases by 7.1 points for Llama, 14.3 for Qwen Coder, and 57.1 for Qwen 1.5B. Corresponding faulty-case F1 falls to 91.7\%, 85.2\%, and 41.7\%. The ablation supports the value of the curated configuration in the complete bounded workflow. Since model termination and later checkpoints can also affect outcomes, it does not prove that retrieval alone directly determines the final rule-confirmed labels.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.84\textwidth]{figures/ablation.pdf}
+\caption{Original-study component ablations. Bars give full minus ablation exact match, in percentage points. Zero indicates equal complete-diagnosis rates on the standard cases, not a general claim that the component is unnecessary.}\label{fig:ablation}
+\end{figure*}
+Removing rescanning preserves standard diagnosis and reduces mean time by 6.8, 61.6, and 20.0 seconds for Llama, Qwen Coder, and Qwen 1.5B. The first sweep already exposes the evaluated standard faults, so extra passes add time without improving their diagnosis. This result supports the more targeted revised workflow. It does not establish the same result when decisive evidence appears only after a repair.
+
+Removing the twin reduces Qwen Coder exact match by 21.4 points, while the other two models remain unchanged. Qwen 1.5B repair rises from 16.7\% to 75.0\% in this condition. The stochastic full-pipeline ablation changes generated plans and gate interactions; it cannot isolate the twin's safety effect. The controlled executions below hold proposal type fixed to test that mechanism directly.
+
+\subsection{Controlled safety and isolation checks}
+Table~\ref{tab:safety} summarizes eight controlled executions: four proposal conditions with and without twin verification. A valid plan recovers the network. An incomplete plan is stopped by twin recovery checks; without the twin it reaches execution and is rolled back. Unsafe proposals are blocked by policy in both settings. Induced post-repair regression triggers rollback in both. All eight expected-behaviour checks pass. These specified-plan tests are separate from agent-generated repair scores.
+
+\begin{table*}[t]
+\caption{Controlled safety executions: one execution per row and setting, eight in total. Fundamental containment and policy remain enabled without the twin.}\label{tab:safety}
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{3.2cm}XX@{}}
+\toprule
+Proposal condition & With twin verification & Without twin verification \\
+\midrule
+Valid repair & Verified successful repair & Verified successful repair \\
+Incomplete repair & Blocked before main execution & Main execution followed by rollback \\
+Unsafe action & Blocked by policy & Blocked by policy \\
+Induced post-repair regression & Rollback after failed post-check & Rollback after failed post-check \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+Two additional live checks verify agent isolation and real twin recovery/rollback. The isolation record shows UID 65534, no Docker-socket access, and no private-truth access. These checks support the execution boundary and recovery controls.
+
+\section{Discussion}\label{sec:discussion}
+\subsection{Why the workflow works}
+The original study separates complete diagnosis from recovery. Requiring every justified action, preserving routing dependencies, and approving from measured evidence closes that operational gap in the revised standard cases, with 18/18 verified repairs.
+
+Deterministic checks confirm supported faults; models provide proposals, knowledge selection, plans, and review. Observations justify findings, findings justify actions, and post-checks establish recovery. Frozen memory and recorded identities make this sequence auditable.
+
+The practical application is a bounded troubleshooting assistant for networks with declared intent and typed access. Additional protocols require corresponding observation and action contracts.
+
+\subsection{Research objectives achieved}
+For concurrent diagnosis, the system identifies the tested two- and three-fault sets and verifies their repair in the revised evaluation. For knowledge use, the curation ablation shows a measurable contribution, and training-only acceptance provides a reproducible update mechanism. For verified remediation, twin equivalence, post-checks, controlled blocking, and rollback operate as designed. For efficiency and observability, all three backbones have recorded time, tokens, tool calls, and traces. These findings address the central Phase 1--2 gap within the implemented static-network domain.
+
+Some proposed objectives remain extensions: broader topology coverage, full published-benchmark agent evaluation, independent explanation ratings, and dedicated ablations of oversight and the circuit breaker. The completed experiments support the combined workflow and the three measured component removals. They do not establish an isolated benefit for every implemented module.
+
+\subsection{Limitations and threats to validity}
+Validation covers one static IPv4 topology and a defined configuration-fault scope. Seven evaluation incidents and three related incident groups constrain generalization; the revised follow-up is exploratory because it follows development feedback and changes temperature. Small-backbone output failures and unresolved telemetry remain observed failure cases, while local SADE adaptation differs from the published setting. These boundaries motivate testing dynamic routing and additional topologies; the present evidence establishes complete standard-case diagnosis, checked recovery, and the reported component behaviour in the evaluated domain.
+
+\section{Conclusion and future work}\label{sec:conclusion}
+This study implements an evidence-linked network troubleshooting workflow that connects complete fault diagnosis to dependency-aware, twin-verified repair. The original comparative study reaches 100\% fault-set F1 and exact diagnosis for the full workflow, matching the rule reference, while curation ablation identifies a measurable knowledge contribution. The separately evaluated revised system achieves 21/21 exact diagnoses and 18/18 verified repairs across three local models. Controlled executions demonstrate the expected policy blocking and rollback behaviour. Future work should extend the same measurement and repair contracts to additional topologies and dynamic routing, then evaluate them with fresh incidents and matched revised baselines.
+
+\section{Declarations and acknowledgements}\label{sec:declarations}
+\textbf{Data and code availability.} The companion course submission contains the implementation, local cases, private evaluator labels, frozen knowledge snapshots, original and revised source archives, and raw evaluation records. This paper's source package includes audited summary data and vector-figure sources. A public archival URL has not yet been assigned. The reproduction guide gives setup and replay commands.
+
+\textbf{Competing interests.} The author declares no competing interests.
+
+\textbf{Funding.} No external funding is reported for this course project.
+
+\textbf{AI-tool usage.} OpenAI Codex assisted with reviewing the supplied project artifacts, drafting and editing the manuscript, preparing LaTeX and figures, and checking reported values against saved experimental records. All reported outcomes come from the saved Phase 3 experiments; the author should review and approve the manuscript before submission.
+
+\textbf{Acknowledgements.} The study uses the open-source NIKA, SADE, FaulT-Bench, Kathar\'{a}, Docker, Ollama, and Linux networking tools cited in this paper.
+
+\bibliography{references}
+
+\end{document}
