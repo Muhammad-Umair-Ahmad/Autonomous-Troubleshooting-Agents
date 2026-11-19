@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Autonomous Troubleshooting Agents</title>
+<desc id="desc">A network research project connecting measured diagnosis to verified repair.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1628"/><stop offset="1" stop-color="#173c51"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#71afc8" stroke-opacity=".07"/></pattern></defs>
+<rect width="1200" height="330" rx="20" fill="url(#bg)"/><rect width="1200" height="330" rx="20" fill="url(#grid)"/>
+<g font-family="Inter,Arial,sans-serif"><text x="58" y="66" font-size="13" font-weight="700" letter-spacing="3" fill="#62dfc3">NETWORK TROUBLESHOOTING RESEARCH</text>
+<text x="55" y="127" font-size="43" font-weight="700" fill="#f0f7fc">Autonomous</text><text x="55" y="180" font-size="43" font-weight="700" fill="#f0f7fc">Troubleshooting Agents</text>
+<text x="58" y="223" font-size="18" fill="#b7cbdc">Measured diagnosis. Twin-tested repair. Verified recovery.</text>
+<rect x="58" y="254" width="130" height="29" rx="14" fill="#284357"/><text x="123" y="274" text-anchor="middle" font-size="12" fill="#e1f2fa">3 local models</text>
+<rect x="200" y="254" width="161" height="29" rx="14" fill="#284357"/><text x="280" y="274" text-anchor="middle" font-size="12" fill="#e1f2fa">Evidence + source code</text>
+<g stroke="#6ccfca" stroke-width="2" fill="none"><path d="M760 165H858L918 100H1040M858 165L918 233H1040"/><path d="M1040 100V233" stroke-dasharray="5 6" opacity=".4"/></g>
+<g fill="#183d50" stroke="#6ccfca" stroke-width="2"><rect x="726" y="133" width="64" height="64" rx="12"/><rect x="1008" y="68" width="64" height="64" rx="12"/><rect x="1008" y="201" width="64" height="64" rx="12"/></g>
+<g fill="#84efd4"><circle cx="758" cy="165" r="8"/><circle cx="1040" cy="100" r="8"/><circle cx="1040" cy="233" r="8"/></g>
+<g font-size="13" fill="#b7cbdc" text-anchor="middle"><text x="758" y="220">Evidence</text><text x="1040" y="54">Twin</text><text x="1040" y="291">Main network</text></g>
+</g></svg>

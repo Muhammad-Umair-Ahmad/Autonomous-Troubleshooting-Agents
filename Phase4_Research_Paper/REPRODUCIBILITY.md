@@ -1,6 +1,6 @@
 # Experimental reproduction and evidence
 
-The companion Phase 3 submission supplies the actual code, datasets, snapshots, protocols, and raw runs. This paper package supplements that artifact; it does not duplicate its entire implementation.
+The [project repository](https://github.com/Muhammad-Umair-Ahmad/Autonomous-Troubleshooting-Agents) contains the Phase 3 code, datasets, snapshots, protocols, and raw runs alongside the paper. Contact: [i242545@isb.nu.edu.pk](mailto:i242545@isb.nu.edu.pk).
 
 ## Evidence locations in the Phase 3 parent folder
 
@@ -19,11 +19,11 @@ The companion Phase 3 submission supplies the actual code, datasets, snapshots, 
 | Source identities | `Implementation/configs/sources.lock.json` |
 | Original protocol and model identities | `Implementation/configs/experiments.submission.json` |
 | Revised protocol | `Evaluation/Revised study/protocol.json` |
-| Exact historical code/input snapshots | `source.tar.gz` in each study directory |
+| Exact historical code/input snapshots | `Evaluation/Original study/frozen-source-and-inputs.tar.gz` and `Evaluation/Revised study/source.tar.gz` |
 
 ## Fresh development run
 
-From `Implementation/`, with Docker, Kathara, the pinned images, and the named Ollama models available:
+From `Implementation/`, with Docker, Kathara, the pinned images, prepared prerequisite records (including `results/prerequisites/images.json`), and the named Ollama models available:
 
 ```sh
 python3 -m venv .venv
@@ -36,7 +36,7 @@ Choose another retained model with `--model qwen2.5-coder:3b` or `--model llama3
 
 Fresh CLI execution is a development check. Historical replay requires extracting the matching study archive in a separate working directory and using its saved matrix, source identities, model/image digests, and knowledge snapshot hashes. Original seeds are 1000 and 1001 at temperature 0.2; the revised follow-up uses seed 1000 at temperature zero. Model identity and quantization are frozen in the manifest, not merely specified by mutable tags.
 
-Scoped cleanup is `scripts/neta cleanup`; it targets registered research labs. The optional upstream Linux lifecycle route is documented in the Phase 3 report and is separate from local agent-score reproduction.
+Scoped cleanup is `scripts/neta cleanup`; it targets registered research labs. The optional upstream Linux lifecycle route is documented in the Phase 3 report and is separate from local agent-score reproduction. Downloaded Lima binaries are not versioned in this repository; use a suitable local installation if that optional route is required.
 
 ## Paper audit and figure regeneration
 

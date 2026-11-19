@@ -14,4 +14,6 @@ Build the manuscript with `sh source/build.sh`. A complete TeX Live installation
 
 The manuscript preserves the distinction between the original matched study and the revised exploratory follow-up. Published base-paper scores are marked as such; local SADE measurements are explicitly identified as an adaptation. No experimental results were invented or rerun for this paper.
 
-Affiliation, contact email, and a public archival/repository URL were deliberately deferred at the author's request. Add them before external submission. Review the declarations and manuscript before course submission; the AI-writing assistance is declared. The paper is a complete content draft for author review, not an assertion of journal acceptance or a guaranteed course grade.
+Contact: [i242545@isb.nu.edu.pk](mailto:i242545@isb.nu.edu.pk). The code and complete experimental artifact are available in the [project repository](https://github.com/Muhammad-Umair-Ahmad/Autonomous-Troubleshooting-Agents). Institutional affiliation remains to be supplied. Review the manuscript and declarations before submission; AI-writing assistance is declared.
+
+The humanizer pass reviewed the abstract and all 10 sections. The prose-preservation report in `evidence/prose-preservation.json` records checks that the LaTeX command sequence, equations, tables, figures, pseudocode, numbers, citations, and labels were preserved. The author email and repository URL were added separately as requested.

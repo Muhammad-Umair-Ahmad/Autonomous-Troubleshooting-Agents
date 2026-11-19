@@ -1,0 +1,8 @@
+# Keep editable manuscript and documentation sources consistent.
+*.tex text eol=lf
+*.bib text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.pdf binary
+*.png binary
+*.tar.gz binary

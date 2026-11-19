@@ -8,3 +8,5 @@ pdflatex -interaction=nonstopmode -halt-on-error paper.tex > paper-build.log
 bibtex paper > bibliography-build.log
 pdflatex -interaction=nonstopmode -halt-on-error paper.tex > paper-build.log
 pdflatex -interaction=nonstopmode -halt-on-error paper.tex > paper-build.log
+
+cp paper.pdf ../Phase4_Research_Paper_24i-2545.pdf
