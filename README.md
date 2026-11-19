@@ -2,18 +2,18 @@
 
 <img src="docs/assets/project-banner.svg" alt="Autonomous Troubleshooting Agents: measured diagnosis, twin-tested repair, verified recovery" width="100%">
 
-# Autonomous Troubleshooting Agents
+# Autonomous Network Troubleshooting Agents
 
 **A research implementation for multi-fault network diagnosis and verified repair using local language models.**
 
-[Read the paper](Phase4_Research_Paper/Phase4_Research_Paper_24i-2545.pdf) · [Explore the source](Implementation/src/neta) · [Reproduce the evidence](Phase4_Research_Paper/REPRODUCIBILITY.md)
+[Read the paper](Phase4_Research_Paper_24i-2545.pdf) · [Explore the source](Implementation/src/neta) · [Setup and evidence](docs/REPRODUCIBILITY.md)
 
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![Local inference](https://img.shields.io/badge/Inference-Local-148D80)
 ![Kathara](https://img.shields.io/badge/Network-Kathar%C3%A1-265D91)
 ![Springer Nature](https://img.shields.io/badge/Paper-Springer%20Nature-18465B)
 
-**Muhammad Umair Ahmad** · 24i-2545 · Section AI-C  
+**Muhammad Umair Ahmad** · 24i-2545 · Section AI-C<br>
 [i242545@isb.nu.edu.pk](mailto:i242545@isb.nu.edu.pk)
 
 </div>
@@ -65,29 +65,16 @@ The figure uses the saved Phase 3 means. SADE-local is diagnosis-only, so its re
 
 The agent container is unprivileged and read only. It has no access to the Docker socket or evaluator-only fault labels. Evaluation labels are included in the artifact for scoring; they are kept outside the agent's information boundary.
 
-## Start with the evidence
-
-Clone the repository and audit the saved results without starting a network or downloading models:
+## Use the final code
 
 ```sh
 git clone https://github.com/Muhammad-Umair-Ahmad/Autonomous-Troubleshooting-Agents.git
 cd Autonomous-Troubleshooting-Agents
-python3 Phase4_Research_Paper/build_evidence.py
 ```
 
-The audit uses Python's standard library. It checks F1, exact match, runtime, and token means against the original raw records, verifies the revised totals, and regenerates the editable figure sources. Its report is saved in [`paper-audit.json`](Phase4_Research_Paper/evidence/paper-audit.json).
+The agent implementation is in [`Implementation/src/neta/`](Implementation/src/neta). The `neta` launcher runs diagnosis, knowledge retrieval, experiments, recovery checks, and scoped cleanup. Final datasets, frozen configuration, knowledge snapshots, and tests are included.
 
-### Build the paper
-
-With a full TeX Live installation, including BibTeX, TikZ, and PGFPlots:
-
-```sh
-sh Phase4_Research_Paper/source/build.sh
-```
-
-The editable source is [`paper.tex`](Phase4_Research_Paper/source/paper.tex). The Springer class, bibliography style, references, and vector-figure sources are included. For Overleaf, upload the contents of `Phase4_Research_Paper/source/` and select `paper.tex` as the main document.
-
-### Run a development case
+### Run the agent
 
 Live execution requires Python 3.12+, Docker, Kathará, Ollama, the named models, and the prepared pinned image/prerequisite records described in the Phase 3 operating guide. Python environments, downloaded runtimes, and model binaries are not versioned here.
 
@@ -99,22 +86,41 @@ python3 -m venv .venv
 scripts/neta diagnose --case dev-route--standard --improved --knowledge curated-v1
 ```
 
-Select another retained backbone with `--model qwen2.5-coder:3b` or `--model llama3.2:1b`. A fresh development run is distinct from exact historical replay, which uses the matching frozen archive and protocol. See the [reproduction guide](Phase4_Research_Paper/REPRODUCIBILITY.md) for evidence locations, archive names, and replay details.
+Select another retained backbone with `--model qwen2.5-coder:3b` or `--model llama3.2:1b`. The command runs the final revised workflow on a development case. See the [reproduction guide](docs/REPRODUCIBILITY.md) for environment requirements, saved protocols, and result locations.
+
+## Paper and experimental evidence
+
+The final [research paper](Phase4_Research_Paper_24i-2545.pdf) includes the methodology, matched comparisons, ablations, safety tests, and discussion. Its [editable manuscript](Phase4_Research_Paper/source/paper.tex), bibliography, Springer template files, and figure sources are retained. Upload `Phase4_Research_Paper/source/` to Overleaf and choose `paper.tex` to edit or compile it.
+
+The saved results can be inspected directly:
+
+| Evidence | Location |
+|:--|:--|
+| Original comparison means | [summary.csv](Evaluation/Original%20study/summary.csv) |
+| Paired statistical comparisons | [paired-comparisons.csv](Evaluation/Original%20study/paired-comparisons.csv) |
+| Revised system results | [followup.csv](Evaluation/Revised%20study/followup.csv) |
+| Original raw executions | [366 JSON records](Evaluation/Original%20raw%20runs/) |
+| Revised raw executions | [21 JSON records](Evaluation/Revised%20raw%20runs/) |
+| Controlled safety outcomes | [controlled-safety.json](Evaluation/Original%20study/controlled-safety.json) |
 
 ## Repository guide
 
 | Location | Contents |
 |:--|:--|
-| [`Phase4_Research_Paper/`](Phase4_Research_Paper) | Research paper, editable LaTeX, bibliography, figures, and audits |
-| [`Implementation/src/neta/`](Implementation/src/neta) | Diagnosis, retrieval, orchestration, typed tools, and repair controls |
-| [`Implementation/configs/`](Implementation/configs) | Frozen protocols, environment versions, source and model identities |
-| [`Implementation/data/`](Implementation/data) | Public case descriptions and evaluator-only synthetic fault labels |
-| [`Implementation/knowledge/`](Implementation/knowledge) | Documentation and frozen verified-incident retrieval snapshots |
-| [`Evaluation/`](Evaluation) | Raw outcomes, summaries, statistics, safety evidence, and frozen source archives |
+| [`Implementation/src/neta/`](Implementation/src/neta) | Final agent, CLI, diagnosis, retrieval, orchestration, and repair controls |
+| [`Implementation/scripts/neta`](Implementation/scripts/neta) | Runtime launcher |
+| [`Implementation/tests/`](Implementation/tests) | Contract, ablation, recovery, and opt-in live tests |
+| [`Implementation/configs/`](Implementation/configs) | Saved protocols, environment versions, source and model identities |
+| [`Implementation/data/`](Implementation/data) | Public cases and evaluator-only synthetic fault labels |
+| [`Implementation/knowledge/`](Implementation/knowledge) | Documentation and frozen retrieval snapshots |
+| [`Evaluation/`](Evaluation) | Raw outcomes, summaries, statistics, and safety evidence |
+| [`Phase4_Research_Paper_24i-2545.pdf`](Phase4_Research_Paper_24i-2545.pdf) | Final research paper |
+| [`Phase4_Research_Paper/source/`](Phase4_Research_Paper/source) | Editable paper, references, template files, and figures |
+| [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | Setup requirements and experimental evidence locations |
 | [`Figures/`](Figures) | Original Phase 3 charts |
 | [`Phase3_Implementation_and_Evaluation_24i-2545.pdf`](Phase3_Implementation_and_Evaluation_24i-2545.pdf) | Implementation report and operating guide |
 
-The Phase 1 literature review and Phase 2 methodology report are preserved in the repository root. The original `file-checksums.json` describes the historical Phase 3 submission; the current paper has its own checksum manifest. Optional downloaded Lima tooling, temporary renders, duplicate source ZIPs, and LaTeX build intermediates are excluded from version control.
+The Phase 1 literature review and Phase 2 methodology report are preserved in the repository root.
 
 ## Research provenance
 

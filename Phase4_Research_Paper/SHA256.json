@@ -1,15 +1,11 @@
 {
-  "Phase4_Research_Paper_24i-2545.pdf": "71a24dc7db5f10a55bf736d1ce5adb228b5bb207191d085debaa95183c141224",
-  "README.md": "edf979f9dcf185db2600ba37a5bcc584a8b6779c8a0c2aafebdc10837991e0b8",
-  "REPRODUCIBILITY.md": "97c9e444dc15a0fcd1b740f4d8ad44c0da964e04c52f1cf4a9d8d62a3859d329",
-  "build_evidence.py": "9c3d1c6bf81ed7344938ba5653f3b2715b5b9518578e416186d457cecd3abde6",
+  "README.md": "4df9834959fabd1ee0172dd22eb20de17e37a786cd97c11a1286afa6a10f3128",
   "evidence/followup.csv": "7b7151af14d90e1a50af66710d4050347ad81d7731a11d6416d35c6fce445d1c",
   "evidence/paired-comparisons.csv": "c4c5225bdee790f42fcd849844c125110dc37c935f1835b60afc2715f67fc237",
   "evidence/paper-audit.json": "7d59497071dd10e70a0aa43848059e959f5bed22a12172b9ef2cc069e33618d8",
   "evidence/prose-preservation.json": "e301b15fca0d50ed37caf1bf79e038826c71c4459beebd8f7d771033e1ce95e6",
   "evidence/robustness-by-condition.csv": "3e28629f4fd20a7ac1155a65829d36c71d75bcacb5205f76f1e20cb08aaa96db",
   "evidence/summary.csv": "c1fe956d1fc38032955a1819c793f4db20e38859483d38b10de90f4d6b2ba740",
-  "source/build.sh": "d9a65bade93aaf314f7952a92a65eb0cb530f147ff6145ba981077968ca6e805",
   "source/figures/ablation.pdf": "5d73ce91b642b4e419029d8ca737d51f7eb5758bdceaac127aaf1265a581eb85",
   "source/figures/ablation.tex": "29306ce915b5382bab5c92a08b1fa73e6f769114182718579448f67da5f64a3b",
   "source/figures/architecture.pdf": "9dcecacdc9db17b2845ab4bf13da69c65e889900813e93ae4704de91d3cf6ddf",
@@ -22,5 +18,6 @@
   "source/paper.tex": "2abf455278cb55f37507bb87db28dd1754d48699cb78ed4e81eeabb7a1a04766",
   "source/references.bib": "33d120e24b9700d077ae5915b43f78aba0b4568a139412399dba30633cb3a366",
   "source/sn-jnl.cls": "afdd709e43a76c1452c8696429d428b1c35a9339de050c7ca8a9b6f32c180556",
-  "source/sn-mathphys-num.bst": "fbe2ad5ada72b1080791fc2ecf64455d68d815c3c1e3f9b77bdb50658548d734"
+  "source/sn-mathphys-num.bst": "fbe2ad5ada72b1080791fc2ecf64455d68d815c3c1e3f9b77bdb50658548d734",
+  "../Phase4_Research_Paper_24i-2545.pdf": "71a24dc7db5f10a55bf736d1ce5adb228b5bb207191d085debaa95183c141224"
 }
