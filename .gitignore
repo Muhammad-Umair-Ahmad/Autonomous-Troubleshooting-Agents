@@ -1,0 +1,40 @@
+# Local editor and operating-system files
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+.agents/
+.codex/
+
+# Local credentials and environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.cache/
+
+# Research runtime state and optional downloaded tooling
+/Implementation/runtime/
+/Implementation/results/
+/Implementation/tools/
+
+# Authoring scratch space and original template distribution
+/tmp/
+/Phase 4 Paper Template.zip
+
+# Rebuildable manuscript output (the named final PDF is versioned)
+/Phase4_Research_Paper/source/paper.pdf
+/Phase4_Research_Paper/source/**/*.aux
+/Phase4_Research_Paper/source/**/*.log
+/Phase4_Research_Paper/source/**/*.out
+/Phase4_Research_Paper/source/**/*.blg
+/Phase4_Research_Paper/source/**/*.toc
+/Phase4_Research_Paper/source/**/*.fls
+/Phase4_Research_Paper/source/**/*.fdb_latexmk
+/Phase4_Research_Paper/source/**/*.synctex.gz
+/Phase4_Research_Paper/Phase4_LaTeX_Source_*.zip

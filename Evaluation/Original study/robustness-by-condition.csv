@@ -1,0 +1,13 @@
+model,method,condition,n,f1,exact_match,mean_seconds
+llama3.2:1b,full,misleading_ticket,6,0.0,0,33.134928368012574
+llama3.2:1b,full,missing_telemetry,6,0.4888888888888889,0,49.3425496595058
+llama3.2:1b,single_agent,misleading_ticket,6,0.0,0,32.74118419414541
+llama3.2:1b,single_agent,missing_telemetry,6,0.0,0,47.686318763667565
+qwen2.5-coder:3b,full,misleading_ticket,6,0.8703703703703703,0.8333333333333334,111.65711220813682
+qwen2.5-coder:3b,full,missing_telemetry,6,0.5365079365079365,0,122.1471077708217
+qwen2.5-coder:3b,single_agent,misleading_ticket,6,0.1263227513227513,0,112.8364623473414
+qwen2.5-coder:3b,single_agent,missing_telemetry,6,0.16666666666666666,0,109.02651118780098
+qwen2.5:1.5b,full,misleading_ticket,6,0.8333333333333334,0.8333333333333334,151.820097493163
+qwen2.5:1.5b,full,missing_telemetry,6,0.4888888888888889,0,60.7649595348048
+qwen2.5:1.5b,single_agent,misleading_ticket,6,0.0,0,71.93589141683576
+qwen2.5:1.5b,single_agent,missing_telemetry,6,0.0,0,60.460426472515486

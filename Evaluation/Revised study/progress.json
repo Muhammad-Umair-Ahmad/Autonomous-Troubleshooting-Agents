@@ -1,0 +1,18 @@
+{
+  "last": {
+    "case": "test-filter--standard",
+    "exact_match": 1,
+    "f1": 1.0,
+    "fault_count": 1,
+    "model": "llama3.2:1b",
+    "repair_status": "successful_repair",
+    "repair_success": true,
+    "run_id": "92058c32fea9c3f7434eada8",
+    "seconds": 125.1675996669801,
+    "status": "completed"
+  },
+  "planned": 21,
+  "resolved": 21,
+  "stage": "complete",
+  "updated": "2026-11-15T10:50:23.729772+00:00"
+}

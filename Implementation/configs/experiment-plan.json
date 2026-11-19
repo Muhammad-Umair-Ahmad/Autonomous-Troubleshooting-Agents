@@ -1,0 +1,9 @@
+{
+  "status": "planned_not_executed",
+  "local_main": {"standard_test_incidents":7,"distinct_methods":14,"local_backbones":3,"repeats":5,"cells":1470},
+  "robust_ticket_variants": {"nonstandard_test_tickets":28,"methods":2,"backbones":3,"repeats":5,"cells":840},
+  "robust_telemetry": {"standard_test_incidents":7,"perturbations":4,"methods":2,"backbones":3,"repeats":5,"cells":840},
+  "local_total_cells":3150,
+  "main_manifest_freeze_requires":["all local incidents validated","verified training curation complete","both knowledge snapshots frozen","pilot throughput measured","code/config/model/dependency/image identities recorded"],
+  "upstream_matrix":"pending successful upstream execution and cross-source overlap audit; local cases do not substitute for published scenarios"
+}

@@ -1,0 +1,6 @@
+{
+  "mounted_worker": true,
+  "socket_access": false,
+  "truth_access": false,
+  "uid": 65534
+}

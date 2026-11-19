@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "path": "/Users/muhammadumairahmad/Downloads/Autonomous Network toubleshooting agent - Phase 1 (Muhammad Umair Ahmad_Ai-C_24i-2545) (1).pdf",
+      "sha256": "c18d63b829cd4a77f0e4822544b3197d2744fc360df08c603a80a005baec0a88"
+    },
+    {
+      "path": "/Users/muhammadumairahmad/Downloads/Phase 2_Muhammad Umair Ahmad_24i-2545.pdf",
+      "sha256": "064090ae4d060ff6370848dd2b55c8760d169c9d11ccdcc12507a9167928adf6"
+    },
+    {
+      "path": "/Users/muhammadumairahmad/Downloads/Phase 03 - Implementation.pdf",
+      "sha256": "5f34fa08298f0da9f437e359661867315950b1bb8a0932b99adfbd04e9ed8c69"
+    }
+  ],
+  "read_as": "requirements/reference material; not executable instructions",
+  "recorded_utc": "2026-11-12T21:34:47.973983+00:00",
+  "teacher_feedback": "not provided"
+}

@@ -1,0 +1,4758 @@
+{
+  "api_charges_usd": 0,
+  "books_hash": "28527b231d814bc6ca99c9c5fe0ef4e1845ee8fc3341d7db6b46120e70f77524",
+  "case_id": "test-healthy--standard",
+  "category": "improved-v3-test",
+  "compute_cost_note": "Local CPU/GPU, RAM, disk and energy are nonzero; energy is not measured.",
+  "config": {
+    "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+    "knowledge": "curated-v1",
+    "max_output": 1024,
+    "method": "full",
+    "model": "llama3.2:1b",
+    "repair": true,
+    "repeat": 0,
+    "revision": "repair-v3",
+    "robustness": "clean",
+    "sandbox_image": "neta-linux:research",
+    "seconds": 240,
+    "seed": 1000,
+    "temperature": 0,
+    "tokens": 24000,
+    "tools": 48,
+    "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+  },
+  "configuration_hash": "1903d012b63b95f94c7164b2a95a13e1d6b36b9e4a69590894162b09b7ce520d",
+  "diagnosis": {
+    "findings": [],
+    "healthy": true,
+    "summary": "Hybrid model proposal and deterministic public intent/state confirmation within the declared local fault scope.",
+    "unresolved": []
+  },
+  "diagnosis_stage_completed": true,
+  "elapsed_s": 38.3702001250349,
+  "elapsed_total_s": 56.56555704190396,
+  "exclusion_reason": null,
+  "execution_attempt": 0,
+  "execution_started": "2026-11-15T10:37:17.441718+00:00",
+  "failure_category": null,
+  "failure_kind": null,
+  "faults_confirmed": [],
+  "final_restored": true,
+  "finished": "2026-11-15T10:38:14.007398+00:00",
+  "graph": {
+    "edges": [
+      {
+        "from": "pc1",
+        "kind": "contains",
+        "to": "pc1:eth0"
+      },
+      {
+        "from": "pc2",
+        "kind": "contains",
+        "to": "pc2:eth0"
+      },
+      {
+        "from": "r1",
+        "kind": "contains",
+        "to": "r1:eth0"
+      },
+      {
+        "from": "r1",
+        "kind": "contains",
+        "to": "r1:eth1"
+      },
+      {
+        "from": "r2",
+        "kind": "contains",
+        "to": "r2:eth0"
+      },
+      {
+        "from": "r2",
+        "kind": "contains",
+        "to": "r2:eth1"
+      },
+      {
+        "from": "pc1:eth0",
+        "kind": "link",
+        "to": "r1:eth0"
+      },
+      {
+        "from": "r1:eth1",
+        "kind": "link",
+        "to": "r2:eth0"
+      },
+      {
+        "from": "r2:eth1",
+        "kind": "link",
+        "to": "pc2:eth0"
+      },
+      {
+        "from": "pc1",
+        "kind": "depends_on_route",
+        "to": "pc1:route:default"
+      },
+      {
+        "from": "pc1:route:default",
+        "kind": "requires_gateway",
+        "to": "r1:eth0"
+      },
+      {
+        "from": "pc2",
+        "kind": "depends_on_route",
+        "to": "pc2:route:default"
+      },
+      {
+        "from": "pc2:route:default",
+        "kind": "requires_gateway",
+        "to": "r2:eth1"
+      },
+      {
+        "from": "r1",
+        "kind": "depends_on_route",
+        "to": "r1:route:10.0.2.0/24"
+      },
+      {
+        "from": "r1:route:10.0.2.0/24",
+        "kind": "requires_gateway",
+        "to": "r2:eth0"
+      },
+      {
+        "from": "r2",
+        "kind": "depends_on_route",
+        "to": "r2:route:10.0.1.0/24"
+      },
+      {
+        "from": "r2:route:10.0.1.0/24",
+        "kind": "requires_gateway",
+        "to": "r1:eth1"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-cd3339ae4870"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-3dfe8d6c6e3e"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-03661ab65c0e"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-20f3f1238b27"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-19fa3616aa45"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-99f05db9c095"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-337c3d94a6fd"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-af726a57d432"
+      },
+      {
+        "from": "r1",
+        "kind": "observed_at",
+        "to": "main-cc04441726a0"
+      },
+      {
+        "from": "r1",
+        "kind": "observed_at",
+        "to": "main-60d4e01413a2"
+      },
+      {
+        "from": "r1",
+        "kind": "observed_at",
+        "to": "main-c08d23d848c3"
+      },
+      {
+        "from": "r1",
+        "kind": "observed_at",
+        "to": "main-f3f9ebe12fc8"
+      },
+      {
+        "from": "r2",
+        "kind": "observed_at",
+        "to": "main-b3e6bbc0fcc1"
+      },
+      {
+        "from": "r2",
+        "kind": "observed_at",
+        "to": "main-218c5724ef7e"
+      },
+      {
+        "from": "r2",
+        "kind": "observed_at",
+        "to": "main-001067b7b008"
+      },
+      {
+        "from": "r2",
+        "kind": "observed_at",
+        "to": "main-972178f08e6b"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-96923361ae26"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-3743f1a6e160"
+      },
+      {
+        "from": "pc1",
+        "kind": "observed_at",
+        "to": "main-384db06e002d"
+      },
+      {
+        "from": "pc2",
+        "kind": "observed_at",
+        "to": "main-47ac5c3f6acd"
+      }
+    ],
+    "explanation_note": "Claims retain evidence history; evaluator confirmation is logged separately.",
+    "history_preserved": true,
+    "nodes": [
+      {
+        "id": "pc1",
+        "type": "device"
+      },
+      {
+        "id": "pc1:eth0",
+        "intended_address": "10.0.1.10/24",
+        "type": "interface"
+      },
+      {
+        "id": "pc2",
+        "type": "device"
+      },
+      {
+        "id": "pc2:eth0",
+        "intended_address": "10.0.2.10/24",
+        "type": "interface"
+      },
+      {
+        "id": "r1",
+        "type": "device"
+      },
+      {
+        "id": "r1:eth0",
+        "intended_address": "10.0.1.1/24",
+        "type": "interface"
+      },
+      {
+        "id": "r1:eth1",
+        "intended_address": "10.0.12.1/30",
+        "type": "interface"
+      },
+      {
+        "id": "r2",
+        "type": "device"
+      },
+      {
+        "id": "r2:eth0",
+        "intended_address": "10.0.12.2/30",
+        "type": "interface"
+      },
+      {
+        "id": "r2:eth1",
+        "intended_address": "10.0.2.1/24",
+        "type": "interface"
+      },
+      {
+        "id": "pc1:route:default",
+        "next_hop": "10.0.1.1",
+        "prefix": "default",
+        "type": "route_dependency"
+      },
+      {
+        "id": "pc2:route:default",
+        "next_hop": "10.0.2.1",
+        "prefix": "default",
+        "type": "route_dependency"
+      },
+      {
+        "id": "r1:route:10.0.2.0/24",
+        "next_hop": "10.0.12.2",
+        "prefix": "10.0.2.0/24",
+        "type": "route_dependency"
+      },
+      {
+        "id": "r2:route:10.0.1.0/24",
+        "next_hop": "10.0.12.1",
+        "prefix": "10.0.1.0/24",
+        "type": "route_dependency"
+      },
+      {
+        "id": "main-cd3339ae4870",
+        "kind": "interfaces",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:24.939863+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-3dfe8d6c6e3e",
+        "kind": "addresses",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.024426+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-03661ab65c0e",
+        "kind": "routes",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.093626+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-20f3f1238b27",
+        "kind": "firewall",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.162303+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-19fa3616aa45",
+        "kind": "interfaces",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.234764+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-99f05db9c095",
+        "kind": "addresses",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.304977+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-337c3d94a6fd",
+        "kind": "routes",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.358858+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-af726a57d432",
+        "kind": "firewall",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.408651+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-cc04441726a0",
+        "kind": "interfaces",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.471028+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-60d4e01413a2",
+        "kind": "addresses",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.554041+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-c08d23d848c3",
+        "kind": "routes",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.605271+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-f3f9ebe12fc8",
+        "kind": "firewall",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.669693+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-b3e6bbc0fcc1",
+        "kind": "interfaces",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.731006+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-218c5724ef7e",
+        "kind": "addresses",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.801736+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-001067b7b008",
+        "kind": "routes",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.864184+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-972178f08e6b",
+        "kind": "firewall",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:25.918880+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-96923361ae26",
+        "kind": "ping",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:27.003610+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-3743f1a6e160",
+        "kind": "ping",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:28.131048+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-384db06e002d",
+        "kind": "ping",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:40.179103+00:00",
+        "type": "observation"
+      },
+      {
+        "id": "main-47ac5c3f6acd",
+        "kind": "ping",
+        "origin": "measured",
+        "timestamp": "2026-11-15T10:37:41.317828+00:00",
+        "type": "observation"
+      }
+    ]
+  },
+  "hypothesis_verdicts": [],
+  "incident_group": "local-group-test-healthy",
+  "incident_id": "test-healthy",
+  "injection": [],
+  "isolation": {
+    "capabilities": [],
+    "docker_socket": false,
+    "filesystem": "read-only; only worker.py and pinned public skill library mounted",
+    "network": "none",
+    "private_benchmark_access": false,
+    "shell_tool": false,
+    "user": "65534"
+  },
+  "knowledge_snapshot_id": "afabe4a516cdbdd28dff592e12f1c008b8e55cf404a6be43f870bbad2d09dbc0",
+  "logical_run_id": "6d977bf1510602684298fa85",
+  "metrics": {
+    "exact_match": 1,
+    "f1": 1.0,
+    "false_alarm": 0,
+    "fault_count": 0,
+    "fn": 0,
+    "fp": 0,
+    "healthy_correct": 1,
+    "precision": 1.0,
+    "recall": 1.0,
+    "recall_at_3": null,
+    "recall_at_5": null,
+    "reciprocal_rank": null,
+    "top1": null,
+    "tp": 0,
+    "unanswered_healthy": 0
+  },
+  "model_calls": [
+    {
+      "duration_ns": 5197082833,
+      "elapsed_s": 5.203046333044767,
+      "input_tokens": 1677,
+      "model": "llama3.2:1b",
+      "output_tokens": 43,
+      "prompt_sha256": "66dd9d630ec1cf5f90047404d2d691c972719f790de3066c6d2f3e096e1b6202",
+      "response": "{\n    \"ids\": [\n        \"incident:train-filter\",\n        \"incident:train-route\",\n        \"incident:train-link\",\n        \"kernel-ip-sysctl:10440\"\n    ]\n}",
+      "seed_guarantee": "Ollama accepts seed option; determinism empirically audited, not assumed",
+      "seed_requested": 1000
+    },
+    {
+      "duration_ns": 5466382792,
+      "elapsed_s": 5.477475583087653,
+      "input_tokens": 4696,
+      "model": "llama3.2:1b",
+      "output_tokens": 75,
+      "prompt_sha256": "b08e6d99ca684bc38012b4c0e519b47b6428d86c65192a5ffb67b72f6062a1c0",
+      "response": "{\n  \"checks\": [\n    {\n      \"device\": \"pc1\",\n      \"kind\": \"ping\",\n      \"target\": \"10.0.2.10\"\n    },\n    {\n      \"device\": \"pc2\",\n      \"kind\": \"ping\",\n      \"target\": \"10.0.1.10\"\n    }\n  ]\n}",
+      "seed_guarantee": "Ollama accepts seed option; determinism empirically audited, not assumed",
+      "seed_requested": 1000
+    },
+    {
+      "duration_ns": 21156720792,
+      "elapsed_s": 21.217287041945383,
+      "input_tokens": 5177,
+      "model": "llama3.2:1b",
+      "output_tokens": 887,
+      "prompt_sha256": "dc6f1b12370b8fdfcc56982cbea66533ac3a8059fc409dec53f5cfd6d6bc657f",
+      "response": "{\n  \"healthy\": true,\n  \"findings\": [\n    {\n      \"fault\": {\n        \"family\": \"firewall_drop\",\n        \"device\": \"r2\",\n        \"target\": \"FORWARD\"\n      },\n      \"evidence_ids\": [\n        \"main-f426e928b5b4\",\n        \"main-f426e928b5b4\"\n      ],\n      \"explanation\": \"Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre\"},\n      {\n        \"fault\": {\n          \"family\": \"route_missing\",\n          \"device\": \"r1\",\n          \"target\": \"10.0.2.0/24\"\n        },\n        \"evidence_ids\": [\n          \"main-bb5d99be44b9\"\n        ],\n        \"explanation\": \"Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [\"},\n        {\n          \"fault\": {\n            \"family\": \"link_down\",\n            \"device\": \"r1\",\n            \"target\": \"eth0\"\n          },\n          \"evidence_ids\": [\n            \"main-c97ab50eb154\"\n          ],\n          \"explanation\": \"Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre\"},\n          {\n            \"fault\": {\n              \"family\": \"firewall_drop\",\n              \"device\": \"r2\",\n              \"target\": \"FORWARD\"\n            },\n            \"evidence_ids\": [\n              \"main-f426e928b5b4\",\n              \"main-f426e928b5b4\"\n            ],\n            \"explanation\": \"Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre\"},\n            {\n              \"fault\": {\n                \"family\": \"route_missing\",\n                \"device\": \"r1\",\n                \"target\": \"10.0.2.0/24\"\n              },\n              \"evidence_ids\": [\n                \"main-bb5d99be44b9\"\n              ],\n              \"explanation\": \"Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [\"},\n              {\n                \"fault\": {\n                  \"family\": \"link_down\",\n                  \"device\": \"r1\",\n                  \"target\": \"eth0\"\n                },\n                \"evidence_ids\": [\n                  \"main-c97ab50eb154\"\n                ],\n                \"explanation\": \"Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre\"}],\n              \"unresolved\": [\n                \"Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}\", \"preconditions\" ],\n              \"summary\": \"Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2\"}",
+      "seed_guarantee": "Ollama accepts seed option; determinism empirically audited, not assumed",
+      "seed_requested": 1000
+    }
+  ],
+  "model_identity": {
+    "capabilities": [
+      "completion",
+      "tools"
+    ],
+    "details": {
+      "context_length": 131072,
+      "embedding_length": 2048,
+      "families": [
+        "llama"
+      ],
+      "family": "llama",
+      "format": "gguf",
+      "parameter_size": "1.2B",
+      "parent_model": "",
+      "quantization_level": "Q8_0",
+      "runner": "ggml"
+    },
+    "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+    "model": "llama3.2:1b",
+    "modified_at": "2026-11-13T01:29:18.987029462+05:00",
+    "name": "llama3.2:1b",
+    "size": 1321098329
+  },
+  "observations": [
+    {
+      "device": "pc1",
+      "evidence_id": "main-cd3339ae4870",
+      "kind": "interfaces",
+      "origin": "measured",
+      "parsed": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "linkmode": "DEFAULT",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "1ee3:8fb0:6c73::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "92d0:b42a:3142::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "linkmode": "DEFAULT",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "d215:4381:baa2::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "3a:e5:fa:64:13:b1",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 23,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\"},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"1ee3:8fb0:6c73::\"},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"92d0:b42a:3142::\"},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"d215:4381:baa2::\"},{\"ifindex\":23,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"3a:e5:fa:64:13:b1\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:24.939863+00:00"
+    },
+    {
+      "device": "pc1",
+      "evidence_id": "main-3dfe8d6c6e3e",
+      "kind": "addresses",
+      "origin": "measured",
+      "parsed": [
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "lo",
+              "local": "127.0.0.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 8,
+              "scope": "host",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "1ee3:8fb0:6c73::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "92d0:b42a:3142::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "d215:4381:baa2::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth0",
+              "local": "10.0.1.10",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 24,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "3a:e5:fa:64:13:b1",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 23,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"1ee3:8fb0:6c73::\",\"addr_info\":[]},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"92d0:b42a:3142::\",\"addr_info\":[]},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"d215:4381:baa2::\",\"addr_info\":[]},{\"ifindex\":23,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"3a:e5:fa:64:13:b1\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.1.10\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.024426+00:00"
+    },
+    {
+      "device": "pc1",
+      "evidence_id": "main-03661ab65c0e",
+      "kind": "routes",
+      "origin": "measured",
+      "parsed": [
+        {
+          "dev": "eth0",
+          "dst": "default",
+          "flags": [],
+          "gateway": "10.0.1.1"
+        },
+        {
+          "dev": "eth0",
+          "dst": "10.0.1.0/24",
+          "flags": [],
+          "prefsrc": "10.0.1.10",
+          "protocol": "kernel",
+          "scope": "link"
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"dst\":\"default\",\"gateway\":\"10.0.1.1\",\"dev\":\"eth0\",\"flags\":[]},{\"dst\":\"10.0.1.0/24\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.1.10\",\"flags\":[]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.093626+00:00"
+    },
+    {
+      "device": "pc1",
+      "evidence_id": "main-20f3f1238b27",
+      "kind": "firewall",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.162303+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-19fa3616aa45",
+      "kind": "interfaces",
+      "origin": "measured",
+      "parsed": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "linkmode": "DEFAULT",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "d2e6:1730:6bb4::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "a9f:85c8:3bef::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "linkmode": "DEFAULT",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "e2c5:2801:2376::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "fe:c8:59:9b:ff:2b",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 22,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\"},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"d2e6:1730:6bb4::\"},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"a9f:85c8:3bef::\"},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"e2c5:2801:2376::\"},{\"ifindex\":22,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"fe:c8:59:9b:ff:2b\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.234764+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-99f05db9c095",
+      "kind": "addresses",
+      "origin": "measured",
+      "parsed": [
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "lo",
+              "local": "127.0.0.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 8,
+              "scope": "host",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "d2e6:1730:6bb4::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "a9f:85c8:3bef::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "e2c5:2801:2376::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth0",
+              "local": "10.0.2.10",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 24,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "fe:c8:59:9b:ff:2b",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 22,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"d2e6:1730:6bb4::\",\"addr_info\":[]},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"a9f:85c8:3bef::\",\"addr_info\":[]},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"e2c5:2801:2376::\",\"addr_info\":[]},{\"ifindex\":22,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"fe:c8:59:9b:ff:2b\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.2.10\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.304977+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-337c3d94a6fd",
+      "kind": "routes",
+      "origin": "measured",
+      "parsed": [
+        {
+          "dev": "eth0",
+          "dst": "default",
+          "flags": [],
+          "gateway": "10.0.2.1"
+        },
+        {
+          "dev": "eth0",
+          "dst": "10.0.2.0/24",
+          "flags": [],
+          "prefsrc": "10.0.2.10",
+          "protocol": "kernel",
+          "scope": "link"
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"dst\":\"default\",\"gateway\":\"10.0.2.1\",\"dev\":\"eth0\",\"flags\":[]},{\"dst\":\"10.0.2.0/24\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.2.10\",\"flags\":[]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.358858+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-af726a57d432",
+      "kind": "firewall",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.408651+00:00"
+    },
+    {
+      "device": "r1",
+      "evidence_id": "main-cc04441726a0",
+      "kind": "interfaces",
+      "origin": "measured",
+      "parsed": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "linkmode": "DEFAULT",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "86b9:ad2c:eb33::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "26ed:6e69:721d::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "linkmode": "DEFAULT",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "a6d1:4199:9297::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "f6:67:0f:d2:4e:d7",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 20,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        },
+        {
+          "address": "fe:de:b2:dd:25:a5",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 25,
+          "ifname": "eth1",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\"},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"86b9:ad2c:eb33::\"},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"26ed:6e69:721d::\"},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"a6d1:4199:9297::\"},{\"ifindex\":20,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"f6:67:0f:d2:4e:d7\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":25,\"ifname\":\"eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"fe:de:b2:dd:25:a5\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.471028+00:00"
+    },
+    {
+      "device": "r1",
+      "evidence_id": "main-60d4e01413a2",
+      "kind": "addresses",
+      "origin": "measured",
+      "parsed": [
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "lo",
+              "local": "127.0.0.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 8,
+              "scope": "host",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "86b9:ad2c:eb33::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "26ed:6e69:721d::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "a6d1:4199:9297::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth0",
+              "local": "10.0.1.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 24,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "f6:67:0f:d2:4e:d7",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 20,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth1",
+              "local": "10.0.12.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 30,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "fe:de:b2:dd:25:a5",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 25,
+          "ifname": "eth1",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"86b9:ad2c:eb33::\",\"addr_info\":[]},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"26ed:6e69:721d::\",\"addr_info\":[]},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"a6d1:4199:9297::\",\"addr_info\":[]},{\"ifindex\":20,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"f6:67:0f:d2:4e:d7\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.1.1\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":25,\"ifname\":\"eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"fe:de:b2:dd:25:a5\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.12.1\",\"prefixlen\":30,\"scope\":\"global\",\"label\":\"eth1\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.554041+00:00"
+    },
+    {
+      "device": "r1",
+      "evidence_id": "main-c08d23d848c3",
+      "kind": "routes",
+      "origin": "measured",
+      "parsed": [
+        {
+          "dev": "eth0",
+          "dst": "10.0.1.0/24",
+          "flags": [],
+          "prefsrc": "10.0.1.1",
+          "protocol": "kernel",
+          "scope": "link"
+        },
+        {
+          "dev": "eth1",
+          "dst": "10.0.2.0/24",
+          "flags": [],
+          "gateway": "10.0.12.2"
+        },
+        {
+          "dev": "eth1",
+          "dst": "10.0.12.0/30",
+          "flags": [],
+          "prefsrc": "10.0.12.1",
+          "protocol": "kernel",
+          "scope": "link"
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"dst\":\"10.0.1.0/24\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.1.1\",\"flags\":[]},{\"dst\":\"10.0.2.0/24\",\"gateway\":\"10.0.12.2\",\"dev\":\"eth1\",\"flags\":[]},{\"dst\":\"10.0.12.0/30\",\"dev\":\"eth1\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.12.1\",\"flags\":[]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.605271+00:00"
+    },
+    {
+      "device": "r1",
+      "evidence_id": "main-f3f9ebe12fc8",
+      "kind": "firewall",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.669693+00:00"
+    },
+    {
+      "device": "r2",
+      "evidence_id": "main-b3e6bbc0fcc1",
+      "kind": "interfaces",
+      "origin": "measured",
+      "parsed": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "linkmode": "DEFAULT",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "2af1:4942:2e25::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "linkmode": "DEFAULT",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "linkmode": "DEFAULT",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "4e4e:6710:415b::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "linkmode": "DEFAULT",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "b660:ff7e:73ee::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "address": "16:91:1e:3b:a1:02",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 21,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        },
+        {
+          "address": "4a:ee:05:ad:94:5b",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 24,
+          "ifname": "eth1",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\"},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"2af1:4942:2e25::\"},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\"},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"4e4e:6710:415b::\"},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"b660:ff7e:73ee::\"},{\"ifindex\":21,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"16:91:1e:3b:a1:02\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"},{\"ifindex\":24,\"ifname\":\"eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"4a:ee:05:ad:94:5b\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\"}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.731006+00:00"
+    },
+    {
+      "device": "r2",
+      "evidence_id": "main-218c5724ef7e",
+      "kind": "addresses",
+      "origin": "measured",
+      "parsed": [
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "lo",
+              "local": "127.0.0.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 8,
+              "scope": "host",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "tunl0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "gre0",
+          "link": null,
+          "link_type": "gre",
+          "mtu": 1476,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "gretap0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1462,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "00:00:00:00:00:00",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "group": "default",
+          "ifindex": 5,
+          "ifname": "erspan0",
+          "link": null,
+          "link_type": "ether",
+          "mtu": 1450,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 6,
+          "ifname": "ip_vti0",
+          "link": null,
+          "link_type": "ipip",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 7,
+          "ifname": "ip6_vti0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1428,
+          "operstate": "DOWN",
+          "permaddr": "2af1:4942:2e25::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "0.0.0.0",
+          "broadcast": "0.0.0.0",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 8,
+          "ifname": "sit0",
+          "link": null,
+          "link_type": "sit",
+          "mtu": 1480,
+          "operstate": "DOWN",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 9,
+          "ifname": "ip6tnl0",
+          "link": null,
+          "link_type": "tunnel6",
+          "mtu": 1452,
+          "operstate": "DOWN",
+          "permaddr": "4e4e:6710:415b::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [],
+          "address": "::",
+          "broadcast": "::",
+          "flags": [
+            "NOARP"
+          ],
+          "group": "default",
+          "ifindex": 10,
+          "ifname": "ip6gre0",
+          "link": null,
+          "link_type": "gre6",
+          "mtu": 1448,
+          "operstate": "DOWN",
+          "permaddr": "b660:ff7e:73ee::",
+          "qdisc": "noop",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth0",
+              "local": "10.0.12.2",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 30,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "16:91:1e:3b:a1:02",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 21,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        },
+        {
+          "addr_info": [
+            {
+              "family": "inet",
+              "label": "eth1",
+              "local": "10.0.2.1",
+              "preferred_life_time": 4294967295,
+              "prefixlen": 24,
+              "scope": "global",
+              "valid_life_time": 4294967295
+            }
+          ],
+          "address": "4a:ee:05:ad:94:5b",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 24,
+          "ifname": "eth1",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "pfifo_fast",
+          "txqlen": 1000
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link\":null,\"ifname\":\"tunl0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":3,\"link\":null,\"ifname\":\"gre0\",\"flags\":[\"NOARP\"],\"mtu\":1476,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":4,\"link\":null,\"ifname\":\"gretap0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1462,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":5,\"link\":null,\"ifname\":\"erspan0\",\"flags\":[\"BROADCAST\",\"MULTICAST\"],\"mtu\":1450,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[]},{\"ifindex\":6,\"link\":null,\"ifname\":\"ip_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ipip\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":7,\"link\":null,\"ifname\":\"ip6_vti0\",\"flags\":[\"NOARP\"],\"mtu\":1428,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"2af1:4942:2e25::\",\"addr_info\":[]},{\"ifindex\":8,\"link\":null,\"ifname\":\"sit0\",\"flags\":[\"NOARP\"],\"mtu\":1480,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"sit\",\"address\":\"0.0.0.0\",\"broadcast\":\"0.0.0.0\",\"addr_info\":[]},{\"ifindex\":9,\"link\":null,\"ifname\":\"ip6tnl0\",\"flags\":[\"NOARP\"],\"mtu\":1452,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"tunnel6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"4e4e:6710:415b::\",\"addr_info\":[]},{\"ifindex\":10,\"link\":null,\"ifname\":\"ip6gre0\",\"flags\":[\"NOARP\"],\"mtu\":1448,\"qdisc\":\"noop\",\"operstate\":\"DOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"gre6\",\"address\":\"::\",\"broadcast\":\"::\",\"permaddr\":\"b660:ff7e:73ee::\",\"addr_info\":[]},{\"ifindex\":21,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"16:91:1e:3b:a1:02\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.12.2\",\"prefixlen\":30,\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":24,\"ifname\":\"eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"pfifo_fast\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"4a:ee:05:ad:94:5b\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.0.2.1\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"eth1\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.801736+00:00"
+    },
+    {
+      "device": "r2",
+      "evidence_id": "main-001067b7b008",
+      "kind": "routes",
+      "origin": "measured",
+      "parsed": [
+        {
+          "dev": "eth0",
+          "dst": "10.0.1.0/24",
+          "flags": [],
+          "gateway": "10.0.12.1"
+        },
+        {
+          "dev": "eth1",
+          "dst": "10.0.2.0/24",
+          "flags": [],
+          "prefsrc": "10.0.2.1",
+          "protocol": "kernel",
+          "scope": "link"
+        },
+        {
+          "dev": "eth0",
+          "dst": "10.0.12.0/30",
+          "flags": [],
+          "prefsrc": "10.0.12.2",
+          "protocol": "kernel",
+          "scope": "link"
+        }
+      ],
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[{\"dst\":\"10.0.1.0/24\",\"gateway\":\"10.0.12.1\",\"dev\":\"eth0\",\"flags\":[]},{\"dst\":\"10.0.2.0/24\",\"dev\":\"eth1\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.2.1\",\"flags\":[]},{\"dst\":\"10.0.12.0/30\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.0.12.2\",\"flags\":[]}]\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.864184+00:00"
+    },
+    {
+      "device": "r2",
+      "evidence_id": "main-972178f08e6b",
+      "kind": "firewall",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:25.918880+00:00"
+    },
+    {
+      "device": "pc1",
+      "evidence_id": "main-96923361ae26",
+      "kind": "ping",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=3.23 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.41 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1005ms\nrtt min/avg/max/mdev = 2.406/2.817/3.229/0.411 ms\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:27.003610+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-3743f1a6e160",
+      "kind": "ping",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.551 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.12 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1031ms\nrtt min/avg/max/mdev = 0.551/1.337/2.124/0.786 ms\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:28.131048+00:00"
+    },
+    {
+      "device": "pc1",
+      "evidence_id": "main-384db06e002d",
+      "kind": "ping",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.873 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=4.54 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1021ms\nrtt min/avg/max/mdev = 0.873/2.707/4.541/1.834 ms\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:40.179103+00:00"
+    },
+    {
+      "device": "pc2",
+      "evidence_id": "main-47ac5c3f6acd",
+      "kind": "ping",
+      "origin": "measured",
+      "parsed": null,
+      "raw": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.813 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.76 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1022ms\nrtt min/avg/max/mdev = 0.813/1.785/2.758/0.972 ms\n"
+      },
+      "timestamp_utc": "2026-11-15T10:37:41.317828+00:00"
+    }
+  ],
+  "partial_diagnosis": {
+    "findings": [],
+    "healthy": true,
+    "summary": "Hybrid model proposal and deterministic public intent/state confirmation within the declared local fault scope.",
+    "unresolved": []
+  },
+  "queue_wait_s": 0.0017987500177696347,
+  "repair": {
+    "attempted": false,
+    "checks": {
+      "passed": true,
+      "records": [
+        {
+          "device": "pc1",
+          "evidence_id": "main-cfda1a442862",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.465 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.59 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1010ms\nrtt min/avg/max/mdev = 0.465/1.527/2.590/1.062 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:04.358009+00:00"
+        },
+        {
+          "device": "pc2",
+          "evidence_id": "main-03f77195c9f5",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.682 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.26 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1045ms\nrtt min/avg/max/mdev = 0.682/1.470/2.259/0.788 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:05.502392+00:00"
+        },
+        {
+          "device": "pc1",
+          "evidence_id": "main-96dbd3821df9",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.197 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.40 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1037ms\nrtt min/avg/max/mdev = 0.197/0.799/1.401/0.602 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:06.658600+00:00"
+        },
+        {
+          "device": "pc2",
+          "evidence_id": "main-506e61513ba8",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.481 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=1.37 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1033ms\nrtt min/avg/max/mdev = 0.481/0.924/1.368/0.443 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:07.813443+00:00"
+        },
+        {
+          "device": "r1",
+          "evidence_id": "main-be491eca4a60",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.430 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=1.05 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1044ms\nrtt min/avg/max/mdev = 0.430/0.740/1.051/0.310 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:08.982479+00:00"
+        },
+        {
+          "device": "r2",
+          "evidence_id": "main-0303e4713fe6",
+          "kind": "ping",
+          "origin": "measured",
+          "parsed": null,
+          "raw": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.362 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.32 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1029ms\nrtt min/avg/max/mdev = 0.362/0.843/1.324/0.481 ms\n"
+          },
+          "timestamp_utc": "2026-11-15T10:38:10.115407+00:00"
+        }
+      ],
+      "warmup": [
+        {
+          "device": "pc1",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.836 ms\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.836/0.836/0.836/0.000 ms\n"
+          },
+          "target": "10.0.2.10"
+        },
+        {
+          "device": "pc2",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.590 ms\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.590/0.590/0.590/0.000 ms\n"
+          },
+          "target": "10.0.1.10"
+        },
+        {
+          "device": "pc1",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.404 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.404/0.404/0.404/0.000 ms\n"
+          },
+          "target": "10.0.1.1"
+        },
+        {
+          "device": "pc2",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.931 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.931/0.931/0.931/0.000 ms\n"
+          },
+          "target": "10.0.2.1"
+        },
+        {
+          "device": "r1",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.768 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.768/0.768/0.768/0.000 ms\n"
+          },
+          "target": "10.0.12.2"
+        },
+        {
+          "device": "r2",
+          "result": {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.309 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.309/0.309/0.309/0.000 ms\n"
+          },
+          "target": "10.0.12.1"
+        }
+      ]
+    },
+    "status": "not_needed",
+    "success": true,
+    "unsafe_executions": 0
+  },
+  "repair_failure_category": null,
+  "resources_before": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"BlockIO\":\"5.3MB / 24.6kB\",\"CPUPerc\":\"0.00%\",\"Container\":\"dfc3c7da80f1530a4eb730566a61a58e3f1364f038a13c7a71b89fe9965d5ad8\",\"ID\":\"dfc3c7da80f1\",\"MemPerc\":\"0.13%\",\"MemUsage\":\"5.109MiB / 3.826GiB\",\"Name\":\"kathara_muhammadumairahmad-xt3c0q4ygm4hgck3soiomg_pc1_NVWO72Fk1CJySNbbTnPFqw\",\"NetIO\":\"238kB / 295kB\",\"PIDs\":\"1\"}\n{\"BlockIO\":\"3.37MB / 24.6kB\",\"CPUPerc\":\"0.00%\",\"Container\":\"b372cb473b1830e8707fc1474160e6f1d20ac3ee1e9678ceb6ac22c5367a9a32\",\"ID\":\"b372cb473b18\",\"MemPerc\":\"0.11%\",\"MemUsage\":\"4.312MiB / 3.826GiB\",\"Name\":\"kathara_muhammadumairahmad-xt3c0q4ygm4hgck3soiomg_pc2_NVWO72Fk1CJySNbbTnPFqw\",\"NetIO\":\"258kB / 249kB\",\"PIDs\":\"1\"}\n{\"BlockIO\":\"1.66MB / 36.9kB\",\"CPUPerc\":\"0.00%\",\"Container\":\"ee2f72020eb0931e8387984dddef5080a89888edb030b7de112530b87b8dc4a5\",\"ID\":\"ee2f72020eb0\",\"MemPerc\":\"0.06%\",\"MemUsage\":\"2.203MiB / 3.826GiB\",\"Name\":\"kathara_muhammadumairahmad-xt3c0q4ygm4hgck3soiomg_r1_NVWO72Fk1CJySNbbTnPFqw\",\"NetIO\":\"600kB / 539kB\",\"PIDs\":\"1\"}\n{\"BlockIO\":\"1.52MB / 36.9kB\",\"CPUPerc\":\"0.00%\",\"Container\":\"63e682b41b1de56928c4cd1aa0fdce5abee869f26021f780477067936db2f393\",\"ID\":\"63e682b41b1d\",\"MemPerc\":\"0.05%\",\"MemUsage\":\"2.043MiB / 3.826GiB\",\"Name\":\"kathara_muhammadumairahmad-xt3c0q4ygm4hgck3soiomg_r2_NVWO72Fk1CJySNbbTnPFqw\",\"NetIO\":\"558kB / 522kB\",\"PIDs\":\"1\"}\n"
+  },
+  "result": {
+    "decisions": [
+      {
+        "decision": "Retrieved documentation and accepted training incidents only; sources are suggestions rather than measurements.",
+        "evidence_ids": [],
+        "role": "Knowledge",
+        "sources": [
+          "incident:train-filter",
+          "incident:train-route",
+          "incident:train-link"
+        ]
+      },
+      {
+        "decision": "Selected evidence checks for hypothesis confirmation and residual symptoms.",
+        "evidence_ids": [
+          "main-cd3339ae4870",
+          "main-3dfe8d6c6e3e",
+          "main-03661ab65c0e",
+          "main-20f3f1238b27",
+          "main-19fa3616aa45",
+          "main-99f05db9c095",
+          "main-337c3d94a6fd",
+          "main-af726a57d432",
+          "main-cc04441726a0",
+          "main-60d4e01413a2",
+          "main-c08d23d848c3",
+          "main-f3f9ebe12fc8",
+          "main-b3e6bbc0fcc1",
+          "main-218c5724ef7e",
+          "main-001067b7b008",
+          "main-972178f08e6b",
+          "main-96923361ae26",
+          "main-3743f1a6e160"
+        ],
+        "role": "Orchestrator",
+        "sources": []
+      },
+      {
+        "decision": "Completed evidence-linked hypothesis pass 1.",
+        "evidence_ids": [
+          "main-cd3339ae4870",
+          "main-3dfe8d6c6e3e",
+          "main-03661ab65c0e",
+          "main-20f3f1238b27",
+          "main-19fa3616aa45",
+          "main-99f05db9c095",
+          "main-337c3d94a6fd",
+          "main-af726a57d432",
+          "main-cc04441726a0",
+          "main-60d4e01413a2",
+          "main-c08d23d848c3",
+          "main-f3f9ebe12fc8",
+          "main-b3e6bbc0fcc1",
+          "main-218c5724ef7e",
+          "main-001067b7b008",
+          "main-972178f08e6b",
+          "main-96923361ae26",
+          "main-3743f1a6e160",
+          "main-384db06e002d",
+          "main-47ac5c3f6acd"
+        ],
+        "role": "Diagnostic",
+        "sources": []
+      },
+      {
+        "decision": "Public-state consistency checks confirmed 0 configuration faults and rejected 6 unsupported model proposals. Symptom history is retained.",
+        "evidence_ids": [],
+        "role": "Orchestrator",
+        "sources": []
+      }
+    ],
+    "diagnosis": {
+      "findings": [],
+      "healthy": true,
+      "summary": "Hybrid model proposal and deterministic public intent/state confirmation within the declared local fault scope.",
+      "unresolved": []
+    },
+    "plan": null,
+    "review": null,
+    "unsupported_findings": []
+  },
+  "retrievals": [
+    {
+      "passages": [
+        {
+          "acceptance": [
+            "training_only",
+            "exact_fault_set",
+            "evidence_links",
+            "twin_fidelity",
+            "recovery",
+            "regression_checks"
+          ],
+          "content_hash": "ed3b5f21dcdb24baa5857f14b12d1e05eb4c55350a9f828a74dfd6cc14197531",
+          "fusion_score": 0.03252247488101534,
+          "id": "incident:train-filter",
+          "incident_group": "local-group-train-filter",
+          "kind": "verified_training_incident",
+          "retrieved_utc": "2026-11-12T22:01:27.868085+00:00",
+          "source_hash": "23b9042a55d434912bce34504a12b5662dd98addd5bca42e1517528160799037",
+          "source_id": "f35d00531eddb7961b28eba5",
+          "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/f35d00531eddb7961b28eba5.json",
+          "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-f426e928b5b4'], 'explanation': 'Measured unconditional forwarding drop.', 'fault': {'device': 'r2', 'family': 'firewall_drop', 'target': 'FORWARD'}}]\nRepair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'expected_effects': ['no_unrelated_state_regression'], 'preconditions': ['fault_present:firewall_drop:r2:FORWARD'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+          "version": "verified-v1"
+        },
+        {
+          "acceptance": [
+            "training_only",
+            "exact_fault_set",
+            "evidence_links",
+            "twin_fidelity",
+            "recovery",
+            "regression_checks"
+          ],
+          "content_hash": "33a4dbfe979a921c7cce1012d33b2966be291a427ff21562515ffc96054368c2",
+          "fusion_score": 0.03252247488101534,
+          "id": "incident:train-route",
+          "incident_group": "local-group-train-route",
+          "kind": "verified_training_incident",
+          "retrieved_utc": "2026-11-12T21:58:32.108820+00:00",
+          "source_hash": "0db69ec6ba151e8c803fcb3081cf63d44e2468de5e8025ee368121bb56baad72",
+          "source_id": "fe0093ff8cd3410f3b23da41",
+          "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/fe0093ff8cd3410f3b23da41.json",
+          "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-bb5d99be44b9'], 'explanation': 'Measured route differs from declared routing intent.', 'fault': {'device': 'r1', 'family': 'route_missing', 'target': '10.0.2.0/24'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': ['main-bb5d99be44b9'], 'expected_effects': ['restore_intended_state:r1:10.0.2.0/24'], 'preconditions': ['fault_present:route_missing:r1:10.0.2.0/24'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+          "version": "verified-v1"
+        },
+        {
+          "acceptance": [
+            "training_only",
+            "exact_fault_set",
+            "evidence_links",
+            "twin_fidelity",
+            "recovery",
+            "regression_checks"
+          ],
+          "content_hash": "f052d9b38b32df64b4b2bd1982d331ee89ee12f0325cbf0a611bee9f4e65d282",
+          "fusion_score": 0.031746031746031744,
+          "id": "incident:train-link",
+          "incident_group": "local-group-train-link",
+          "kind": "verified_training_incident",
+          "retrieved_utc": "2026-11-12T21:54:58.580374+00:00",
+          "source_hash": "6f65525a1d691d81df6cf184b8fb48342c8c2aa7c05d9692f2dffd2e7c7812a6",
+          "source_id": "c2a0f1453267edb25a728d8c",
+          "source_url": "results/runs/training/c2a0f1453267edb25a728d8c.json",
+          "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-c97ab50eb154'], 'explanation': 'Measured administrative link state is down.', 'fault': {'device': 'r1', 'family': 'link_down', 'target': 'eth0'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'expected_effects': ['restore_intended_state:r1:eth0'], 'preconditions': ['fault_present:link_down:r1:eth0'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+          "version": "verified-v1"
+        }
+      ],
+      "query": "Please check connectivity between pc1 and pc2 and identify any actual fault. IPv4 interfaces route forwarding diagnosis",
+      "snapshot_id": "afabe4a516cdbdd28dff592e12f1c008b8e55cf404a6be43f870bbad2d09dbc0"
+    }
+  ],
+  "retry_of": null,
+  "run_id": "6d977bf1510602684298fa85",
+  "sandbox_image_id": "sha256:6d5be052d4439f62468b307bbfb390d591a88bf25f77dd7392fb3d557c98a6a1",
+  "source": "local",
+  "split": "test",
+  "started": "2026-11-15T10:37:17.439907+00:00",
+  "status": "completed",
+  "termination": "completed",
+  "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+  "ticket_style": "standard",
+  "tokens": 12555,
+  "tokens_total": 12555,
+  "tool_calls": 20,
+  "tool_calls_total": 20,
+  "trace": [
+    {
+      "elapsed_s": 0.08457449998240918,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "interfaces"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:24.941289+00:00"
+    },
+    {
+      "elapsed_s": 0.08256324997637421,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "addresses"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.024567+00:00"
+    },
+    {
+      "elapsed_s": 0.06844862492289394,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "routes"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.093747+00:00"
+    },
+    {
+      "elapsed_s": 0.06806183292064816,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "firewall"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.162494+00:00"
+    },
+    {
+      "elapsed_s": 0.07175254204776138,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "interfaces"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.235006+00:00"
+    },
+    {
+      "elapsed_s": 0.06929737504106015,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "addresses"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.305133+00:00"
+    },
+    {
+      "elapsed_s": 0.053238750086165965,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "routes"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.358975+00:00"
+    },
+    {
+      "elapsed_s": 0.0493355420185253,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "firewall"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.408720+00:00"
+    },
+    {
+      "elapsed_s": 0.06203737505711615,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r1",
+          "kind": "interfaces"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.471158+00:00"
+    },
+    {
+      "elapsed_s": 0.08122541708871722,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r1",
+          "kind": "addresses"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.554247+00:00"
+    },
+    {
+      "elapsed_s": 0.050196000025607646,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r1",
+          "kind": "routes"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.605381+00:00"
+    },
+    {
+      "elapsed_s": 0.0639203330501914,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r1",
+          "kind": "firewall"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.669791+00:00"
+    },
+    {
+      "elapsed_s": 0.06053312495350838,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r2",
+          "kind": "interfaces"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.731085+00:00"
+    },
+    {
+      "elapsed_s": 0.07025312504265457,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r2",
+          "kind": "addresses"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.801909+00:00"
+    },
+    {
+      "elapsed_s": 0.0618740419158712,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r2",
+          "kind": "routes"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.864310+00:00"
+    },
+    {
+      "elapsed_s": 0.05411704210564494,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "r2",
+          "kind": "firewall"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:25.918964+00:00"
+    },
+    {
+      "elapsed_s": 1.0842222919454798,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "ping",
+          "target": "10.0.2.10"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:27.003766+00:00"
+    },
+    {
+      "elapsed_s": 1.126164250075817,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "ping",
+          "target": "10.0.1.10"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:28.131274+00:00"
+    },
+    {
+      "elapsed_s": 5.307339791906998,
+      "event": "rpc",
+      "op": "retrieve",
+      "request": {
+        "op": "retrieve",
+        "query": "Please check connectivity between pc1 and pc2 and identify any actual fault. IPv4 interfaces route forwarding diagnosis"
+      },
+      "timestamp": "2026-11-15T10:37:33.440345+00:00"
+    },
+    {
+      "event": "role",
+      "output": {
+        "checks": [
+          {
+            "device": "pc1",
+            "kind": "ping",
+            "target": "10.0.2.10"
+          },
+          {
+            "device": "pc2",
+            "kind": "ping",
+            "target": "10.0.1.10"
+          }
+        ]
+      },
+      "role": "Orchestrator",
+      "timestamp": "2026-11-15T10:37:38.933603+00:00"
+    },
+    {
+      "elapsed_s": 5.479417457943782,
+      "event": "rpc",
+      "op": "model",
+      "request": {
+        "op": "model",
+        "role": "Orchestrator",
+        "schema": {
+          "$defs": {
+            "ToolRequest": {
+              "additionalProperties": false,
+              "properties": {
+                "device": {
+                  "enum": [
+                    "pc1",
+                    "r1",
+                    "r2",
+                    "pc2"
+                  ],
+                  "title": "Device",
+                  "type": "string"
+                },
+                "kind": {
+                  "enum": [
+                    "interfaces",
+                    "addresses",
+                    "routes",
+                    "firewall",
+                    "ping"
+                  ],
+                  "title": "Kind",
+                  "type": "string"
+                },
+                "target": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "10.0.1.10",
+                        "10.0.2.10",
+                        "10.0.1.1",
+                        "10.0.2.1",
+                        "10.0.12.1",
+                        "10.0.12.2"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "title": "Target"
+                }
+              },
+              "required": [
+                "device",
+                "kind"
+              ],
+              "title": "ToolRequest",
+              "type": "object"
+            }
+          },
+          "additionalProperties": false,
+          "properties": {
+            "checks": {
+              "items": {
+                "$ref": "#/$defs/ToolRequest"
+              },
+              "maxItems": 2,
+              "title": "Checks",
+              "type": "array"
+            }
+          },
+          "required": [
+            "checks"
+          ],
+          "title": "Scan",
+          "type": "object"
+        },
+        "task": {
+          "state": {
+            "measured_observations": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-cd3339ae4870",
+                "kind": "interfaces",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:24.939863+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-3dfe8d6c6e3e",
+                "kind": "addresses",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.1.10",
+                        "prefixlen": 24
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.024426+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-03661ab65c0e",
+                "kind": "routes",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "dev": "eth0",
+                    "dst": "default",
+                    "flags": [],
+                    "gateway": "10.0.1.1"
+                  },
+                  {
+                    "dev": "eth0",
+                    "dst": "10.0.1.0/24",
+                    "flags": []
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.093626+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-20f3f1238b27",
+                "kind": "firewall",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.162303+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-19fa3616aa45",
+                "kind": "interfaces",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.234764+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-99f05db9c095",
+                "kind": "addresses",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.2.10",
+                        "prefixlen": 24
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.304977+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-337c3d94a6fd",
+                "kind": "routes",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "dev": "eth0",
+                    "dst": "default",
+                    "flags": [],
+                    "gateway": "10.0.2.1"
+                  },
+                  {
+                    "dev": "eth0",
+                    "dst": "10.0.2.0/24",
+                    "flags": []
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.358858+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-af726a57d432",
+                "kind": "firewall",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.408651+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-cc04441726a0",
+                "kind": "interfaces",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  },
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth1"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.471028+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-60d4e01413a2",
+                "kind": "addresses",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.1.1",
+                        "prefixlen": 24
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  },
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.12.1",
+                        "prefixlen": 30
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth1"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.554041+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-c08d23d848c3",
+                "kind": "routes",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "dev": "eth0",
+                    "dst": "10.0.1.0/24",
+                    "flags": []
+                  },
+                  {
+                    "dev": "eth1",
+                    "dst": "10.0.2.0/24",
+                    "flags": [],
+                    "gateway": "10.0.12.2"
+                  },
+                  {
+                    "dev": "eth1",
+                    "dst": "10.0.12.0/30",
+                    "flags": []
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.605271+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-f3f9ebe12fc8",
+                "kind": "firewall",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.669693+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-b3e6bbc0fcc1",
+                "kind": "interfaces",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  },
+                  {
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth1"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.731006+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-218c5724ef7e",
+                "kind": "addresses",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.12.2",
+                        "prefixlen": 30
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth0"
+                  },
+                  {
+                    "addr_info": [
+                      {
+                        "family": "inet",
+                        "local": "10.0.2.1",
+                        "prefixlen": 24
+                      }
+                    ],
+                    "flags": [
+                      "BROADCAST",
+                      "MULTICAST",
+                      "UP",
+                      "LOWER_UP"
+                    ],
+                    "ifname": "eth1"
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.801736+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-001067b7b008",
+                "kind": "routes",
+                "origin": "measured",
+                "parsed": [
+                  {
+                    "dev": "eth0",
+                    "dst": "10.0.1.0/24",
+                    "flags": [],
+                    "gateway": "10.0.12.1"
+                  },
+                  {
+                    "dev": "eth1",
+                    "dst": "10.0.2.0/24",
+                    "flags": []
+                  },
+                  {
+                    "dev": "eth0",
+                    "dst": "10.0.12.0/30",
+                    "flags": []
+                  }
+                ],
+                "raw": {
+                  "returncode": 0
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.864184+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-972178f08e6b",
+                "kind": "firewall",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:25.918880+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-96923361ae26",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=3.23 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.41 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1005ms\nrtt min/avg/max/mdev = 2.406/2.817/3.229/0.411 ms\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:27.003610+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-3743f1a6e160",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.551 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.12 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1031ms\nrtt min/avg/max/mdev = 0.551/1.337/2.124/0.786 ms\n"
+                },
+                "timestamp_utc": "2026-11-15T10:37:28.131048+00:00"
+              }
+            ],
+            "public_topology_and_intent": {
+              "id": "four_device_chain_v1",
+              "interfaces": {
+                "pc1": {
+                  "eth0": "10.0.1.10/24"
+                },
+                "pc2": {
+                  "eth0": "10.0.2.10/24"
+                },
+                "r1": {
+                  "eth0": "10.0.1.1/24",
+                  "eth1": "10.0.12.1/30"
+                },
+                "r2": {
+                  "eth0": "10.0.12.2/30",
+                  "eth1": "10.0.2.1/24"
+                }
+              },
+              "links": [
+                [
+                  "pc1:eth0",
+                  "r1:eth0"
+                ],
+                [
+                  "r1:eth1",
+                  "r2:eth0"
+                ],
+                [
+                  "r2:eth1",
+                  "pc2:eth0"
+                ]
+              ],
+              "routes": {
+                "pc1": {
+                  "default": "10.0.1.1"
+                },
+                "pc2": {
+                  "default": "10.0.2.1"
+                },
+                "r1": {
+                  "10.0.2.0/24": "10.0.12.2"
+                },
+                "r2": {
+                  "10.0.1.0/24": "10.0.12.1"
+                }
+              },
+              "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+            },
+            "retrieved_suggestions": {
+              "passages": [
+                {
+                  "acceptance": [
+                    "training_only",
+                    "exact_fault_set",
+                    "evidence_links",
+                    "twin_fidelity",
+                    "recovery",
+                    "regression_checks"
+                  ],
+                  "content_hash": "ed3b5f21dcdb24baa5857f14b12d1e05eb4c55350a9f828a74dfd6cc14197531",
+                  "fusion_score": 0.03252247488101534,
+                  "id": "incident:train-filter",
+                  "incident_group": "local-group-train-filter",
+                  "kind": "verified_training_incident",
+                  "retrieved_utc": "2026-11-12T22:01:27.868085+00:00",
+                  "source_hash": "23b9042a55d434912bce34504a12b5662dd98addd5bca42e1517528160799037",
+                  "source_id": "f35d00531eddb7961b28eba5",
+                  "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/f35d00531eddb7961b28eba5.json",
+                  "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-f426e928b5b4'], 'explanation': 'Measured unconditional forwarding drop.', 'fault': {'device': 'r2', 'family': 'firewall_drop', 'target': 'FORWARD'}}]\nRepair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'expected_effects': ['no_unrelated_state_regression'], 'preconditions': ['fault_present:firewall_drop:r2:FORWARD'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                  "version": "verified-v1"
+                },
+                {
+                  "acceptance": [
+                    "training_only",
+                    "exact_fault_set",
+                    "evidence_links",
+                    "twin_fidelity",
+                    "recovery",
+                    "regression_checks"
+                  ],
+                  "content_hash": "33a4dbfe979a921c7cce1012d33b2966be291a427ff21562515ffc96054368c2",
+                  "fusion_score": 0.03252247488101534,
+                  "id": "incident:train-route",
+                  "incident_group": "local-group-train-route",
+                  "kind": "verified_training_incident",
+                  "retrieved_utc": "2026-11-12T21:58:32.108820+00:00",
+                  "source_hash": "0db69ec6ba151e8c803fcb3081cf63d44e2468de5e8025ee368121bb56baad72",
+                  "source_id": "fe0093ff8cd3410f3b23da41",
+                  "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/fe0093ff8cd3410f3b23da41.json",
+                  "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-bb5d99be44b9'], 'explanation': 'Measured route differs from declared routing intent.', 'fault': {'device': 'r1', 'family': 'route_missing', 'target': '10.0.2.0/24'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': ['main-bb5d99be44b9'], 'expected_effects': ['restore_intended_state:r1:10.0.2.0/24'], 'preconditions': ['fault_present:route_missing:r1:10.0.2.0/24'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                  "version": "verified-v1"
+                },
+                {
+                  "acceptance": [
+                    "training_only",
+                    "exact_fault_set",
+                    "evidence_links",
+                    "twin_fidelity",
+                    "recovery",
+                    "regression_checks"
+                  ],
+                  "content_hash": "f052d9b38b32df64b4b2bd1982d331ee89ee12f0325cbf0a611bee9f4e65d282",
+                  "fusion_score": 0.031746031746031744,
+                  "id": "incident:train-link",
+                  "incident_group": "local-group-train-link",
+                  "kind": "verified_training_incident",
+                  "retrieved_utc": "2026-11-12T21:54:58.580374+00:00",
+                  "source_hash": "6f65525a1d691d81df6cf184b8fb48342c8c2aa7c05d9692f2dffd2e7c7812a6",
+                  "source_id": "c2a0f1453267edb25a728d8c",
+                  "source_url": "results/runs/training/c2a0f1453267edb25a728d8c.json",
+                  "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-c97ab50eb154'], 'explanation': 'Measured administrative link state is down.', 'fault': {'device': 'r1', 'family': 'link_down', 'target': 'eth0'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'expected_effects': ['restore_intended_state:r1:eth0'], 'preconditions': ['fault_present:link_down:r1:eth0'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                  "version": "verified-v1"
+                }
+              ],
+              "query": "Please check connectivity between pc1 and pc2 and identify any actual fault. IPv4 interfaces route forwarding diagnosis",
+              "snapshot_id": "afabe4a516cdbdd28dff592e12f1c008b8e55cf404a6be43f870bbad2d09dbc0"
+            },
+            "ticket_allegation": "Please check connectivity between pc1 and pc2 and identify any actual fault."
+          },
+          "task": "Choose at most two useful read-only confirmation checks based on measured evidence. A ticket is only an allegation."
+        }
+      },
+      "timestamp": "2026-11-15T10:37:38.933720+00:00"
+    },
+    {
+      "elapsed_s": 1.236081916023977,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc1",
+          "kind": "ping",
+          "target": "10.0.2.10"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:40.181210+00:00"
+    },
+    {
+      "elapsed_s": 1.133920457912609,
+      "event": "rpc",
+      "op": "inspect",
+      "request": {
+        "op": "inspect",
+        "request": {
+          "device": "pc2",
+          "kind": "ping",
+          "target": "10.0.1.10"
+        }
+      },
+      "timestamp": "2026-11-15T10:37:41.318071+00:00"
+    },
+    {
+      "event": "role",
+      "output": {
+        "findings": [
+          {
+            "evidence_ids": [
+              "main-f426e928b5b4",
+              "main-f426e928b5b4"
+            ],
+            "explanation": "Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre",
+            "fault": {
+              "device": "r2",
+              "family": "firewall_drop",
+              "target": "FORWARD"
+            }
+          },
+          {
+            "evidence_ids": [
+              "main-bb5d99be44b9"
+            ],
+            "explanation": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [",
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            }
+          },
+          {
+            "evidence_ids": [
+              "main-c97ab50eb154"
+            ],
+            "explanation": "Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre",
+            "fault": {
+              "device": "r1",
+              "family": "link_down",
+              "target": "eth0"
+            }
+          },
+          {
+            "evidence_ids": [
+              "main-f426e928b5b4",
+              "main-f426e928b5b4"
+            ],
+            "explanation": "Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre",
+            "fault": {
+              "device": "r2",
+              "family": "firewall_drop",
+              "target": "FORWARD"
+            }
+          },
+          {
+            "evidence_ids": [
+              "main-bb5d99be44b9"
+            ],
+            "explanation": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [",
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            }
+          },
+          {
+            "evidence_ids": [
+              "main-c97ab50eb154"
+            ],
+            "explanation": "Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre",
+            "fault": {
+              "device": "r1",
+              "family": "link_down",
+              "target": "eth0"
+            }
+          }
+        ],
+        "healthy": true,
+        "summary": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2",
+        "unresolved": [
+          "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}",
+          "preconditions"
+        ]
+      },
+      "role": "Diagnostic",
+      "timestamp": "2026-11-15T10:38:02.555121+00:00"
+    },
+    {
+      "elapsed_s": 21.231017209007405,
+      "event": "rpc",
+      "op": "model",
+      "request": {
+        "op": "model",
+        "role": "Diagnostic",
+        "schema": {
+          "$defs": {
+            "Fault": {
+              "additionalProperties": false,
+              "properties": {
+                "device": {
+                  "enum": [
+                    "pc1",
+                    "r1",
+                    "r2",
+                    "pc2"
+                  ],
+                  "title": "Device",
+                  "type": "string"
+                },
+                "family": {
+                  "enum": [
+                    "link_down",
+                    "route_missing",
+                    "route_wrong",
+                    "address_missing",
+                    "firewall_drop"
+                  ],
+                  "title": "Family",
+                  "type": "string"
+                },
+                "target": {
+                  "maxLength": 60,
+                  "minLength": 1,
+                  "title": "Target",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "family",
+                "device",
+                "target"
+              ],
+              "title": "Fault",
+              "type": "object"
+            },
+            "Finding": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence_ids": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 2,
+                  "minItems": 1,
+                  "title": "Evidence Ids",
+                  "type": "array"
+                },
+                "explanation": {
+                  "maxLength": 180,
+                  "title": "Explanation",
+                  "type": "string"
+                },
+                "fault": {
+                  "$ref": "#/$defs/Fault"
+                }
+              },
+              "required": [
+                "fault",
+                "evidence_ids",
+                "explanation"
+              ],
+              "title": "Finding",
+              "type": "object"
+            }
+          },
+          "additionalProperties": false,
+          "properties": {
+            "findings": {
+              "items": {
+                "$ref": "#/$defs/Finding"
+              },
+              "maxItems": 6,
+              "title": "Findings",
+              "type": "array"
+            },
+            "healthy": {
+              "title": "Healthy",
+              "type": "boolean"
+            },
+            "summary": {
+              "default": "",
+              "maxLength": 240,
+              "title": "Summary",
+              "type": "string"
+            },
+            "unresolved": {
+              "items": {
+                "maxLength": 160,
+                "minLength": 1,
+                "type": "string"
+              },
+              "maxItems": 6,
+              "title": "Unresolved",
+              "type": "array"
+            }
+          },
+          "required": [
+            "healthy",
+            "findings"
+          ],
+          "title": "Diagnosis",
+          "type": "object"
+        },
+        "task": {
+          "measured_observations": [
+            {
+              "device": "pc1",
+              "evidence_id": "main-cd3339ae4870",
+              "kind": "interfaces",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:24.939863+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-3dfe8d6c6e3e",
+              "kind": "addresses",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.1.10",
+                      "prefixlen": 24
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.024426+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-03661ab65c0e",
+              "kind": "routes",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "dev": "eth0",
+                  "dst": "default",
+                  "flags": [],
+                  "gateway": "10.0.1.1"
+                },
+                {
+                  "dev": "eth0",
+                  "dst": "10.0.1.0/24",
+                  "flags": []
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.093626+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-20f3f1238b27",
+              "kind": "firewall",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.162303+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-19fa3616aa45",
+              "kind": "interfaces",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.234764+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-99f05db9c095",
+              "kind": "addresses",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.2.10",
+                      "prefixlen": 24
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.304977+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-337c3d94a6fd",
+              "kind": "routes",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "dev": "eth0",
+                  "dst": "default",
+                  "flags": [],
+                  "gateway": "10.0.2.1"
+                },
+                {
+                  "dev": "eth0",
+                  "dst": "10.0.2.0/24",
+                  "flags": []
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.358858+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-af726a57d432",
+              "kind": "firewall",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.408651+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-cc04441726a0",
+              "kind": "interfaces",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                },
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth1"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.471028+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-60d4e01413a2",
+              "kind": "addresses",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.1.1",
+                      "prefixlen": 24
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                },
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.12.1",
+                      "prefixlen": 30
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth1"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.554041+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-c08d23d848c3",
+              "kind": "routes",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "dev": "eth0",
+                  "dst": "10.0.1.0/24",
+                  "flags": []
+                },
+                {
+                  "dev": "eth1",
+                  "dst": "10.0.2.0/24",
+                  "flags": [],
+                  "gateway": "10.0.12.2"
+                },
+                {
+                  "dev": "eth1",
+                  "dst": "10.0.12.0/30",
+                  "flags": []
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.605271+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-f3f9ebe12fc8",
+              "kind": "firewall",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.669693+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-b3e6bbc0fcc1",
+              "kind": "interfaces",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                },
+                {
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth1"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.731006+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-218c5724ef7e",
+              "kind": "addresses",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.12.2",
+                      "prefixlen": 30
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth0"
+                },
+                {
+                  "addr_info": [
+                    {
+                      "family": "inet",
+                      "local": "10.0.2.1",
+                      "prefixlen": 24
+                    }
+                  ],
+                  "flags": [
+                    "BROADCAST",
+                    "MULTICAST",
+                    "UP",
+                    "LOWER_UP"
+                  ],
+                  "ifname": "eth1"
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.801736+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-001067b7b008",
+              "kind": "routes",
+              "origin": "measured",
+              "parsed": [
+                {
+                  "dev": "eth0",
+                  "dst": "10.0.1.0/24",
+                  "flags": [],
+                  "gateway": "10.0.12.1"
+                },
+                {
+                  "dev": "eth1",
+                  "dst": "10.0.2.0/24",
+                  "flags": []
+                },
+                {
+                  "dev": "eth0",
+                  "dst": "10.0.12.0/30",
+                  "flags": []
+                }
+              ],
+              "raw": {
+                "returncode": 0
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.864184+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-972178f08e6b",
+              "kind": "firewall",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "# Generated by iptables-save v1.8.9 (nf_tables) on Sun Nov 15 10:37:25 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT\n# Completed on Sun Nov 15 10:37:25 2026\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:25.918880+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-96923361ae26",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=3.23 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.41 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1005ms\nrtt min/avg/max/mdev = 2.406/2.817/3.229/0.411 ms\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:27.003610+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-3743f1a6e160",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.551 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.12 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1031ms\nrtt min/avg/max/mdev = 0.551/1.337/2.124/0.786 ms\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:28.131048+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-384db06e002d",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.873 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=4.54 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1021ms\nrtt min/avg/max/mdev = 0.873/2.707/4.541/1.834 ms\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:40.179103+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-47ac5c3f6acd",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.813 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=2.76 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1022ms\nrtt min/avg/max/mdev = 0.813/1.785/2.758/0.972 ms\n"
+              },
+              "timestamp_utc": "2026-11-15T10:37:41.317828+00:00"
+            }
+          ],
+          "previous_hypotheses": null,
+          "public_topology_and_intent": {
+            "id": "four_device_chain_v1",
+            "interfaces": {
+              "pc1": {
+                "eth0": "10.0.1.10/24"
+              },
+              "pc2": {
+                "eth0": "10.0.2.10/24"
+              },
+              "r1": {
+                "eth0": "10.0.1.1/24",
+                "eth1": "10.0.12.1/30"
+              },
+              "r2": {
+                "eth0": "10.0.12.2/30",
+                "eth1": "10.0.2.1/24"
+              }
+            },
+            "links": [
+              [
+                "pc1:eth0",
+                "r1:eth0"
+              ],
+              [
+                "r1:eth1",
+                "r2:eth0"
+              ],
+              [
+                "r2:eth1",
+                "pc2:eth0"
+              ]
+            ],
+            "routes": {
+              "pc1": {
+                "default": "10.0.1.1"
+              },
+              "pc2": {
+                "default": "10.0.2.1"
+              },
+              "r1": {
+                "10.0.2.0/24": "10.0.12.2"
+              },
+              "r2": {
+                "10.0.1.0/24": "10.0.12.1"
+              }
+            },
+            "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+          },
+          "retrieved_suggestions": {
+            "passages": [
+              {
+                "acceptance": [
+                  "training_only",
+                  "exact_fault_set",
+                  "evidence_links",
+                  "twin_fidelity",
+                  "recovery",
+                  "regression_checks"
+                ],
+                "content_hash": "ed3b5f21dcdb24baa5857f14b12d1e05eb4c55350a9f828a74dfd6cc14197531",
+                "fusion_score": 0.03252247488101534,
+                "id": "incident:train-filter",
+                "incident_group": "local-group-train-filter",
+                "kind": "verified_training_incident",
+                "retrieved_utc": "2026-11-12T22:01:27.868085+00:00",
+                "source_hash": "23b9042a55d434912bce34504a12b5662dd98addd5bca42e1517528160799037",
+                "source_id": "f35d00531eddb7961b28eba5",
+                "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/f35d00531eddb7961b28eba5.json",
+                "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-f426e928b5b4'], 'explanation': 'Measured unconditional forwarding drop.', 'fault': {'device': 'r2', 'family': 'firewall_drop', 'target': 'FORWARD'}}]\nRepair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'expected_effects': ['no_unrelated_state_regression'], 'preconditions': ['fault_present:firewall_drop:r2:FORWARD'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                "version": "verified-v1"
+              },
+              {
+                "acceptance": [
+                  "training_only",
+                  "exact_fault_set",
+                  "evidence_links",
+                  "twin_fidelity",
+                  "recovery",
+                  "regression_checks"
+                ],
+                "content_hash": "33a4dbfe979a921c7cce1012d33b2966be291a427ff21562515ffc96054368c2",
+                "fusion_score": 0.03252247488101534,
+                "id": "incident:train-route",
+                "incident_group": "local-group-train-route",
+                "kind": "verified_training_incident",
+                "retrieved_utc": "2026-11-12T21:58:32.108820+00:00",
+                "source_hash": "0db69ec6ba151e8c803fcb3081cf63d44e2468de5e8025ee368121bb56baad72",
+                "source_id": "fe0093ff8cd3410f3b23da41",
+                "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/fe0093ff8cd3410f3b23da41.json",
+                "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-bb5d99be44b9'], 'explanation': 'Measured route differs from declared routing intent.', 'fault': {'device': 'r1', 'family': 'route_missing', 'target': '10.0.2.0/24'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': ['main-bb5d99be44b9'], 'expected_effects': ['restore_intended_state:r1:10.0.2.0/24'], 'preconditions': ['fault_present:route_missing:r1:10.0.2.0/24'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                "version": "verified-v1"
+              },
+              {
+                "acceptance": [
+                  "training_only",
+                  "exact_fault_set",
+                  "evidence_links",
+                  "twin_fidelity",
+                  "recovery",
+                  "regression_checks"
+                ],
+                "content_hash": "f052d9b38b32df64b4b2bd1982d331ee89ee12f0325cbf0a611bee9f4e65d282",
+                "fusion_score": 0.031746031746031744,
+                "id": "incident:train-link",
+                "incident_group": "local-group-train-link",
+                "kind": "verified_training_incident",
+                "retrieved_utc": "2026-11-12T21:54:58.580374+00:00",
+                "source_hash": "6f65525a1d691d81df6cf184b8fb48342c8c2aa7c05d9692f2dffd2e7c7812a6",
+                "source_id": "c2a0f1453267edb25a728d8c",
+                "source_url": "results/runs/training/c2a0f1453267edb25a728d8c.json",
+                "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-c97ab50eb154'], 'explanation': 'Measured administrative link state is down.', 'fault': {'device': 'r1', 'family': 'link_down', 'target': 'eth0'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'expected_effects': ['restore_intended_state:r1:eth0'], 'preconditions': ['fault_present:link_down:r1:eth0'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+                "version": "verified-v1"
+              }
+            ],
+            "query": "Please check connectivity between pc1 and pc2 and identify any actual fault. IPv4 interfaces route forwarding diagnosis",
+            "snapshot_id": "afabe4a516cdbdd28dff592e12f1c008b8e55cf404a6be43f870bbad2d09dbc0"
+          },
+          "task": "Identify the complete root-cause set, not consequential symptoms. Match each to family/device/target and measured evidence IDs. Return healthy only if evidence supports it. State unresolved uncertainty; do not fabricate observations.",
+          "ticket_allegation": "Please check connectivity between pc1 and pc2 and identify any actual fault."
+        }
+      },
+      "timestamp": "2026-11-15T10:38:02.555325+00:00"
+    },
+    {
+      "elapsed_s": 0.004192209104076028,
+      "event": "rpc",
+      "op": "progress",
+      "request": {
+        "diagnosis": {
+          "findings": [
+            {
+              "evidence_ids": [
+                "main-f426e928b5b4",
+                "main-f426e928b5b4"
+              ],
+              "explanation": "Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre",
+              "fault": {
+                "device": "r2",
+                "family": "firewall_drop",
+                "target": "FORWARD"
+              }
+            },
+            {
+              "evidence_ids": [
+                "main-bb5d99be44b9"
+              ],
+              "explanation": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [",
+              "fault": {
+                "device": "r1",
+                "family": "route_missing",
+                "target": "10.0.2.0/24"
+              }
+            },
+            {
+              "evidence_ids": [
+                "main-c97ab50eb154"
+              ],
+              "explanation": "Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre",
+              "fault": {
+                "device": "r1",
+                "family": "link_down",
+                "target": "eth0"
+              }
+            },
+            {
+              "evidence_ids": [
+                "main-f426e928b5b4",
+                "main-f426e928b5b4"
+              ],
+              "explanation": "Measured unconditional forwarding drop. Repair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'pre",
+              "fault": {
+                "device": "r2",
+                "family": "firewall_drop",
+                "target": "FORWARD"
+              }
+            },
+            {
+              "evidence_ids": [
+                "main-bb5d99be44b9"
+              ],
+              "explanation": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': [",
+              "fault": {
+                "device": "r1",
+                "family": "route_missing",
+                "target": "10.0.2.0/24"
+              }
+            },
+            {
+              "evidence_ids": [
+                "main-c97ab50eb154"
+              ],
+              "explanation": "Measured administrative link state is down. Repair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'pre",
+              "fault": {
+                "device": "r1",
+                "family": "link_down",
+                "target": "eth0"
+              }
+            }
+          ],
+          "healthy": true,
+          "summary": "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2",
+          "unresolved": [
+            "Measured route differs from declared routing intent. Repair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}",
+            "preconditions"
+          ]
+        },
+        "op": "progress"
+      },
+      "timestamp": "2026-11-15T10:38:02.569329+00:00"
+    },
+    {
+      "event": "diagnosis_checkpoint",
+      "timestamp": "2026-11-15T10:38:02.573188+00:00"
+    },
+    {
+      "elapsed_s": 2.895807847380638e-05,
+      "event": "rpc",
+      "op": "diagnosis_ready",
+      "request": {
+        "diagnosis": {
+          "findings": [],
+          "healthy": true,
+          "summary": "Hybrid model proposal and deterministic public intent/state confirmation within the declared local fault scope.",
+          "unresolved": []
+        },
+        "op": "diagnosis_ready"
+      },
+      "timestamp": "2026-11-15T10:38:02.573197+00:00"
+    }
+  ],
+  "truth_faults": [],
+  "validation_status": "validated",
+  "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+}

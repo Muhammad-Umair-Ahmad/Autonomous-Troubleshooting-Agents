@@ -1,0 +1,62 @@
+[
+  {
+    "acceptance": [
+      "training_only",
+      "exact_fault_set",
+      "evidence_links",
+      "twin_fidelity",
+      "recovery",
+      "regression_checks"
+    ],
+    "content_hash": "f052d9b38b32df64b4b2bd1982d331ee89ee12f0325cbf0a611bee9f4e65d282",
+    "id": "incident:train-link",
+    "incident_group": "local-group-train-link",
+    "kind": "verified_training_incident",
+    "retrieved_utc": "2026-11-12T21:54:58.580374+00:00",
+    "source_hash": "6f65525a1d691d81df6cf184b8fb48342c8c2aa7c05d9692f2dffd2e7c7812a6",
+    "source_id": "c2a0f1453267edb25a728d8c",
+    "source_url": "results/runs/training/c2a0f1453267edb25a728d8c.json",
+    "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-c97ab50eb154'], 'explanation': 'Measured administrative link state is down.', 'fault': {'device': 'r1', 'family': 'link_down', 'target': 'eth0'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'link_up', 'target': 'eth0', 'value': ''}], 'evidence_ids': ['main-c97ab50eb154'], 'expected_effects': ['restore_intended_state:r1:eth0'], 'preconditions': ['fault_present:link_down:r1:eth0'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+    "version": "verified-v1"
+  },
+  {
+    "acceptance": [
+      "training_only",
+      "exact_fault_set",
+      "evidence_links",
+      "twin_fidelity",
+      "recovery",
+      "regression_checks"
+    ],
+    "content_hash": "33a4dbfe979a921c7cce1012d33b2966be291a427ff21562515ffc96054368c2",
+    "id": "incident:train-route",
+    "incident_group": "local-group-train-route",
+    "kind": "verified_training_incident",
+    "retrieved_utc": "2026-11-12T21:58:32.108820+00:00",
+    "source_hash": "0db69ec6ba151e8c803fcb3081cf63d44e2468de5e8025ee368121bb56baad72",
+    "source_id": "fe0093ff8cd3410f3b23da41",
+    "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/fe0093ff8cd3410f3b23da41.json",
+    "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-bb5d99be44b9'], 'explanation': 'Measured route differs from declared routing intent.', 'fault': {'device': 'r1', 'family': 'route_missing', 'target': '10.0.2.0/24'}}]\nRepair: {'actions': [{'device': 'r1', 'op': 'route_replace', 'target': '10.0.2.0/24', 'value': '10.0.12.2'}], 'evidence_ids': ['main-bb5d99be44b9'], 'expected_effects': ['restore_intended_state:r1:10.0.2.0/24'], 'preconditions': ['fault_present:route_missing:r1:10.0.2.0/24'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+    "version": "verified-v1"
+  },
+  {
+    "acceptance": [
+      "training_only",
+      "exact_fault_set",
+      "evidence_links",
+      "twin_fidelity",
+      "recovery",
+      "regression_checks"
+    ],
+    "content_hash": "ed3b5f21dcdb24baa5857f14b12d1e05eb4c55350a9f828a74dfd6cc14197531",
+    "id": "incident:train-filter",
+    "incident_group": "local-group-train-filter",
+    "kind": "verified_training_incident",
+    "retrieved_utc": "2026-11-12T22:01:27.868085+00:00",
+    "source_hash": "23b9042a55d434912bce34504a12b5662dd98addd5bca42e1517528160799037",
+    "source_id": "f35d00531eddb7961b28eba5",
+    "source_url": "/Users/muhammadumairahmad/Desktop/Masala/Codes/WEB/Sem 5/Projects/CNET PROJ/autonomous-network-agent/results/runs/training/f35d00531eddb7961b28eba5.json",
+    "text": "Verified training incident. Please check connectivity between pc1 and pc2 and identify any actual fault.\n[{'evidence_ids': ['main-f426e928b5b4'], 'explanation': 'Measured unconditional forwarding drop.', 'fault': {'device': 'r2', 'family': 'firewall_drop', 'target': 'FORWARD'}}]\nRepair: {'actions': [{'device': 'r2', 'op': 'firewall_clear', 'target': 'filter', 'value': ''}], 'evidence_ids': ['main-f426e928b5b4'], 'expected_effects': ['no_unrelated_state_regression'], 'preconditions': ['fault_present:firewall_drop:r2:FORWARD'], 'rollback': 'restore_captured_state', 'verification': ['filter_matches_intent']}",
+    "version": "verified-v1"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "packages": {
+    "PyYAML": "6.0.3",
+    "annotated-types": "0.8.0",
+    "autonomous-network-research": "0.1.0",
+    "certifi": "2026.10.23",
+    "charset-normalizer": "3.5.2",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.68.0",
+    "idna": "3.20",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "13.0.0",
+    "pip": "26.3",
+    "pydantic": "2.14.3",
+    "pydantic_core": "2.50.4",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "4.0.0",
+    "requests": "2.34.2",
+    "scipy": "1.18.1",
+    "typing-inspection": "0.4.5",
+    "typing_extensions": "4.16.0",
+    "tzdata": "2026.6",
+    "urllib3": "2.8.0"
+  },
+  "platform": "Darwin-25.1.0-arm64-arm-64bit",
+  "python": "3.12.16 (main, Oct 25 2026, 18:24:37) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "requirements_hash": "2d60456971a4890941f58d12f7ede2d12231028831891e9411a1e028c6fe2062"
+}

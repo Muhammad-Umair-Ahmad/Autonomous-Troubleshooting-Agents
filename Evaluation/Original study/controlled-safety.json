@@ -1,0 +1,2789 @@
+{
+  "all_passed": true,
+  "executions": [
+    {
+      "expected_behavior_passed": true,
+      "kind": "valid",
+      "outcome": {
+        "actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "attempted": true,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "post_checks": {
+          "connectivity": {
+            "passed": true,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-531c93fa993b",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.579 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.28 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1058ms\nrtt min/avg/max/mdev = 0.579/1.430/2.282/0.851 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:31.427577+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-3b72fe6066e0",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.760 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=1.94 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1054ms\nrtt min/avg/max/mdev = 0.760/1.349/1.939/0.589 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:32.573633+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-46ce1c06a610",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.181 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.52 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1056ms\nrtt min/avg/max/mdev = 0.181/0.852/1.523/0.671 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:33.731621+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-0cd93b620a8d",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.364 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=1.65 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1051ms\nrtt min/avg/max/mdev = 0.364/1.008/1.652/0.644 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:34.892692+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-cdee3e71c1b4",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.397 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=1.35 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1015ms\nrtt min/avg/max/mdev = 0.397/0.872/1.347/0.475 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:36.024160+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-59f33b52052c",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.223 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.24 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1048ms\nrtt min/avg/max/mdev = 0.223/0.730/1.237/0.507 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:37.185671+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.681 ms\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.681/0.681/0.681/0.000 ms\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.530 ms\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.530/0.530/0.530/0.000 ms\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.182 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.182/0.182/0.182/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.354 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.354/0.354/0.354/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.178 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.178/0.178/0.178/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.179 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.179/0.179/0.179/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": true,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": true
+        },
+        "post_snapshot_matches_healthy": true,
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": false,
+        "rollback_success": null,
+        "started": "2026-11-14T21:33:25.275718+00:00",
+        "status": "successful_repair",
+        "success": true,
+        "twin_actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "twin_checks": {
+          "connectivity": {
+            "passed": true,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "twin-a7cc68b59252",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.482 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=1.87 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1036ms\nrtt min/avg/max/mdev = 0.482/1.176/1.870/0.694 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:22.464669+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-04555e3cf52f",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.650 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=5.47 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1044ms\nrtt min/avg/max/mdev = 0.650/3.059/5.468/2.409 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:23.630916+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "twin-640e6677ca91",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.341 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=0.624 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1041ms\nrtt min/avg/max/mdev = 0.341/0.482/0.624/0.141 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:24.761411+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-113fce97e78f",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.337 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.546 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1044ms\nrtt min/avg/max/mdev = 0.337/0.441/0.546/0.104 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:25.902542+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "twin-1400975b6c05",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.359 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.811 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1007ms\nrtt min/avg/max/mdev = 0.359/0.585/0.811/0.226 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:27.012109+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "twin-91a3abd68732",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.425 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.15 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1057ms\nrtt min/avg/max/mdev = 0.425/0.788/1.152/0.363 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:34:28.157219+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.483 ms\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.483/0.483/0.483/0.000 ms\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.541 ms\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.541/0.541/0.541/0.000 ms\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.291 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.291/0.291/0.291/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.191 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.191/0.191/0.191/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.195 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.195/0.195/0.195/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.275 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.275/0.275/0.275/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": true,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": true
+        },
+        "twin_equivalent": true,
+        "unsafe_executions": 0
+      },
+      "use_twin": true
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "incomplete",
+      "outcome": {
+        "attempted": false,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": false,
+        "rollback_success": null,
+        "started": "2026-11-14T21:34:40.005585+00:00",
+        "status": "blocked_twin_recovery",
+        "success": false,
+        "twin_actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "twin_checks": {
+          "connectivity": {
+            "passed": false,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "twin-4ccecbd39909",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.12.2 icmp_seq=1 Destination Net Unreachable\nFrom 10.0.12.2 icmp_seq=2 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1027ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:26.145412+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-a61932163a4c",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1057ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:28.300524+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "twin-ca4bcf9f18f9",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.416 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=0.696 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1058ms\nrtt min/avg/max/mdev = 0.416/0.556/0.696/0.140 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:29.470399+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-67bd3a4f24f1",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1048ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:31.630237+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "twin-0034e15ef2dc",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.545 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=5.14 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1013ms\nrtt min/avg/max/mdev = 0.545/2.843/5.141/2.298 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:32.740586+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "twin-4cd30c0ffb7a",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.479 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.89 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1058ms\nrtt min/avg/max/mdev = 0.479/1.185/1.891/0.706 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:35:33.893760+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.12.2 icmp_seq=1 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.305 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.305/0.305/0.305/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.413 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.413/0.413/0.413/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.232 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.232/0.232/0.232/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": false,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": false
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": false
+        },
+        "twin_equivalent": true,
+        "unsafe_executions": 0
+      },
+      "use_twin": true
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "unsafe",
+      "outcome": {
+        "attempted": false,
+        "plan": {
+          "actions": [
+            {
+              "device": "pc1",
+              "op": "link_down",
+              "target": "eth0"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [],
+          "approved": false,
+          "blocked": [
+            {
+              "device": "pc1",
+              "op": "link_down",
+              "target": "eth0",
+              "value": ""
+            }
+          ],
+          "fundamental_containment": "always enabled"
+        },
+        "rollback_attempted": false,
+        "rollback_success": null,
+        "started": "2026-11-14T21:35:37.401655+00:00",
+        "status": "blocked_policy",
+        "success": false,
+        "twin_equivalent": null,
+        "unsafe_executions": 0
+      },
+      "use_twin": true
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "post_regression",
+      "outcome": {
+        "actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "attempted": true,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "post_checks": {
+          "connectivity": {
+            "passed": false,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-30519c46c990",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "timestamp_utc": "2026-11-14T21:36:39.617066+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-8f7217adc356",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1013ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:41.718157+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-37e0c2602d0e",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "timestamp_utc": "2026-11-14T21:36:41.806299+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-f37ee4163f82",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=1.36 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.667 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1007ms\nrtt min/avg/max/mdev = 0.667/1.014/1.361/0.347 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:42.910969+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-f1e3fc1f517e",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.382 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=3.33 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1049ms\nrtt min/avg/max/mdev = 0.382/1.855/3.329/1.473 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:44.098917+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-eeff135e1a95",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.383 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.21 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1049ms\nrtt min/avg/max/mdev = 0.383/0.794/1.205/0.411 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:45.263186+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.344 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.344/0.344/0.344/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.237 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.237/0.237/0.237/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.183 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.183/0.183/0.183/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": false,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": false
+                }
+              },
+              "routes": []
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": false
+        },
+        "post_snapshot_matches_healthy": false,
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": true,
+        "rollback_checks": {
+          "passed": false,
+          "records": [
+            {
+              "device": "pc1",
+              "evidence_id": "main-9edc0c64427c",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\nFrom 10.0.1.1 icmp_seq=2 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1042ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:51.008175+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-0473f20c36e1",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1054ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:53.151960+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-0345b45a6ab0",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.210 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.06 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1030ms\nrtt min/avg/max/mdev = 0.210/0.635/1.060/0.425 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:54.268998+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-d627765777c3",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.411 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.991 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1046ms\nrtt min/avg/max/mdev = 0.411/0.701/0.991/0.290 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:55.422953+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-85ffaf63b18b",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.358 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.831 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1044ms\nrtt min/avg/max/mdev = 0.358/0.594/0.831/0.236 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:56.571179+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-4cac68450ede",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.362 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=0.827 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1052ms\nrtt min/avg/max/mdev = 0.362/0.594/0.827/0.232 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:36:57.719399+00:00"
+            }
+          ],
+          "warmup": [
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.2.10"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.1.10"
+            },
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.261 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.261/0.261/0.261/0.000 ms\n"
+              },
+              "target": "10.0.1.1"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.302 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.302/0.302/0.302/0.000 ms\n"
+              },
+              "target": "10.0.2.1"
+            },
+            {
+              "device": "r1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.368 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.368/0.368/0.368/0.000 ms\n"
+              },
+              "target": "10.0.12.2"
+            },
+            {
+              "device": "r2",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.278 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.278/0.278/0.278/0.000 ms\n"
+              },
+              "target": "10.0.12.1"
+            }
+          ]
+        },
+        "rollback_success": true,
+        "started": "2026-11-14T21:35:40.743806+00:00",
+        "status": "rolled_back",
+        "success": false,
+        "twin_actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "twin_checks": {
+          "connectivity": {
+            "passed": true,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "twin-9202ba89627e",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.518 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=5.20 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1059ms\nrtt min/avg/max/mdev = 0.518/2.856/5.195/2.338 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:30.599358+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-c9e2f4f28242",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.590 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=1.96 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1047ms\nrtt min/avg/max/mdev = 0.590/1.274/1.959/0.684 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:31.739946+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "twin-dfc096fcb9dc",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.251 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.26 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1055ms\nrtt min/avg/max/mdev = 0.251/0.754/1.257/0.503 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:32.892285+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "twin-cb2892620186",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.444 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.902 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1046ms\nrtt min/avg/max/mdev = 0.444/0.673/0.902/0.229 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:34.041783+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "twin-26c84d6c535b",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.384 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.982 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1060ms\nrtt min/avg/max/mdev = 0.384/0.683/0.982/0.299 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:35.202928+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "twin-b153a5725b8b",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.192 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=0.771 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1015ms\nrtt min/avg/max/mdev = 0.192/0.481/0.771/0.289 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:36:36.348076+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.678 ms\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.678/0.678/0.678/0.000 ms\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.645 ms\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.645/0.645/0.645/0.000 ms\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.183 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.183/0.183/0.183/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.325 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.325/0.325/0.325/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.248 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.248/0.248/0.248/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.226 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.226/0.226/0.226/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": true,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": true
+        },
+        "twin_equivalent": true,
+        "unsafe_executions": 0
+      },
+      "use_twin": true
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "valid",
+      "outcome": {
+        "actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "attempted": true,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "post_checks": {
+          "connectivity": {
+            "passed": true,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-66847743b104",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.474 ms\n64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=2.21 ms\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1017ms\nrtt min/avg/max/mdev = 0.474/1.343/2.212/0.869 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:03.486370+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-43120eb32e33",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.680 ms\n64 bytes from 10.0.1.10: icmp_seq=2 ttl=62 time=1.07 ms\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1055ms\nrtt min/avg/max/mdev = 0.680/0.872/1.065/0.192 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:04.627335+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-0f04f3e7a1be",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.197 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.51 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1004ms\nrtt min/avg/max/mdev = 0.197/0.853/1.510/0.656 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:05.712880+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-267a514bd83a",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.323 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.897 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1007ms\nrtt min/avg/max/mdev = 0.323/0.610/0.897/0.287 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:06.810887+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-07a140144148",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.429 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.767 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1053ms\nrtt min/avg/max/mdev = 0.429/0.598/0.767/0.169 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:07.959566+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-1c93b6c4671a",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.386 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.01 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1052ms\nrtt min/avg/max/mdev = 0.386/0.699/1.012/0.313 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:09.115265+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\n64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=1.14 ms\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 1.143/1.143/1.143/0.000 ms\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n64 bytes from 10.0.1.10: icmp_seq=1 ttl=62 time=0.368 ms\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.368/0.368/0.368/0.000 ms\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.161 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.161/0.161/0.161/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.251 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.251/0.251/0.251/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.167 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.167/0.167/0.167/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.263 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.263/0.263/0.263/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": true,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": true
+        },
+        "post_snapshot_matches_healthy": true,
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": false,
+        "rollback_success": null,
+        "started": "2026-11-14T21:37:00.300053+00:00",
+        "status": "successful_repair",
+        "success": true,
+        "twin_equivalent": null,
+        "unsafe_executions": 0
+      },
+      "use_twin": false
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "incomplete",
+      "outcome": {
+        "actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "attempted": true,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "post_checks": {
+          "connectivity": {
+            "passed": false,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-69740d063dcd",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.12.2 icmp_seq=1 Destination Net Unreachable\nFrom 10.0.12.2 icmp_seq=2 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1015ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:17.055282+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-e2f6835e1608",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1049ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:19.205473+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-74737269591d",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.241 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.04 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1047ms\nrtt min/avg/max/mdev = 0.241/0.642/1.044/0.401 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:20.383954+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-ed405f0aed1a",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1035ms\n\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:22.531617+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-e72407190689",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.399 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.928 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1022ms\nrtt min/avg/max/mdev = 0.399/0.663/0.928/0.264 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:23.646727+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-ae4f302a0334",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.362 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=1.19 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1054ms\nrtt min/avg/max/mdev = 0.362/0.777/1.193/0.415 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:24.813824+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.12.2 icmp_seq=1 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.292 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.292/0.292/0.292/0.000 ms\n"
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.524 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.524/0.524/0.524/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.161 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.161/0.161/0.161/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": false,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.1.1"
+                }
+              ]
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": false
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": false
+        },
+        "post_snapshot_matches_healthy": false,
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": true,
+        "rollback_checks": {
+          "passed": false,
+          "records": [
+            {
+              "device": "pc1",
+              "evidence_id": "main-cd4adb0ec8ae",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\nFrom 10.0.1.1 icmp_seq=2 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1064ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:31.648432+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-1ddeb63690b3",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1005ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:33.739861+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-2e33a2df5584",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.485 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=1.12 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1007ms\nrtt min/avg/max/mdev = 0.485/0.802/1.120/0.317 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:34.865230+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-67ab8f78889e",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1012ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:36.996570+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-f88ec46d45dd",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.380 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.987 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1006ms\nrtt min/avg/max/mdev = 0.380/0.683/0.987/0.303 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:38.109836+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-b771b3836b38",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.329 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=0.411 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1058ms\nrtt min/avg/max/mdev = 0.329/0.370/0.411/0.041 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:39.250266+00:00"
+            }
+          ],
+          "warmup": [
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.2.10"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.1.10"
+            },
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.282 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.282/0.282/0.282/0.000 ms\n"
+              },
+              "target": "10.0.1.1"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.2.1"
+            },
+            {
+              "device": "r1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.618 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.618/0.618/0.618/0.000 ms\n"
+              },
+              "target": "10.0.12.2"
+            },
+            {
+              "device": "r2",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.317 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.317/0.317/0.317/0.000 ms\n"
+              },
+              "target": "10.0.12.1"
+            }
+          ]
+        },
+        "rollback_success": true,
+        "started": "2026-11-14T21:37:11.855527+00:00",
+        "status": "rolled_back",
+        "success": false,
+        "twin_equivalent": null,
+        "unsafe_executions": 0
+      },
+      "use_twin": false
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "unsafe",
+      "outcome": {
+        "attempted": false,
+        "plan": {
+          "actions": [
+            {
+              "device": "pc1",
+              "op": "link_down",
+              "target": "eth0"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [],
+          "approved": false,
+          "blocked": [
+            {
+              "device": "pc1",
+              "op": "link_down",
+              "target": "eth0",
+              "value": ""
+            }
+          ],
+          "fundamental_containment": "always enabled"
+        },
+        "rollback_attempted": false,
+        "rollback_success": null,
+        "started": "2026-11-14T21:37:42.009053+00:00",
+        "status": "blocked_policy",
+        "success": false,
+        "twin_equivalent": null,
+        "unsafe_executions": 0
+      },
+      "use_twin": false
+    },
+    {
+      "expected_behavior_passed": true,
+      "kind": "post_regression",
+      "outcome": {
+        "actions": [
+          {
+            "returncode": 0,
+            "stderr": "",
+            "stdout": ""
+          }
+        ],
+        "attempted": true,
+        "execution_order": [
+          {
+            "device": "r1",
+            "op": "route_replace",
+            "target": "10.0.2.0/24",
+            "value": "10.0.12.2"
+          }
+        ],
+        "plan": {
+          "actions": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "evidence_ids": [
+            "controlled"
+          ],
+          "expected_effects": [
+            "recover intended state"
+          ],
+          "preconditions": [
+            "fixture injected"
+          ],
+          "rollback": "restore_captured_state",
+          "verification": [
+            "full state and six probe paths"
+          ]
+        },
+        "policy": {
+          "allowed": [
+            {
+              "device": "r1",
+              "op": "route_replace",
+              "target": "10.0.2.0/24",
+              "value": "10.0.12.2"
+            }
+          ],
+          "approved": true,
+          "blocked": [],
+          "fundamental_containment": "always enabled"
+        },
+        "post_checks": {
+          "connectivity": {
+            "passed": false,
+            "records": [
+              {
+                "device": "pc1",
+                "evidence_id": "main-f547db2852a0",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "timestamp_utc": "2026-11-14T21:37:48.311155+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-e2984b9972c5",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\nFrom 10.0.12.1 icmp_seq=1 Destination Host Unreachable\nFrom 10.0.12.1 icmp_seq=2 Destination Host Unreachable\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1055ms\npipe 2\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:50.107578+00:00"
+              },
+              {
+                "device": "pc1",
+                "evidence_id": "main-ec96dfdd801b",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "timestamp_utc": "2026-11-14T21:37:50.205643+00:00"
+              },
+              {
+                "device": "pc2",
+                "evidence_id": "main-c74f32bd9afb",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.329 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.409 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1056ms\nrtt min/avg/max/mdev = 0.329/0.369/0.409/0.040 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:51.347844+00:00"
+              },
+              {
+                "device": "r1",
+                "evidence_id": "main-a82a50ec8663",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.326 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.956 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1069ms\nrtt min/avg/max/mdev = 0.326/0.641/0.956/0.315 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:52.512234+00:00"
+              },
+              {
+                "device": "r2",
+                "evidence_id": "main-3bccbeebb071",
+                "kind": "ping",
+                "origin": "measured",
+                "parsed": null,
+                "raw": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.496 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=0.673 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1049ms\nrtt min/avg/max/mdev = 0.496/0.584/0.673/0.088 ms\n"
+                },
+                "timestamp_utc": "2026-11-14T21:37:53.652492+00:00"
+              }
+            ],
+            "warmup": [
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "target": "10.0.2.10"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 1,
+                  "stderr": "",
+                  "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+                },
+                "target": "10.0.1.10"
+              },
+              {
+                "device": "pc1",
+                "result": {
+                  "returncode": 2,
+                  "stderr": "ping: connect: Network is unreachable\n",
+                  "stdout": ""
+                },
+                "target": "10.0.1.1"
+              },
+              {
+                "device": "pc2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.290 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.290/0.290/0.290/0.000 ms\n"
+                },
+                "target": "10.0.2.1"
+              },
+              {
+                "device": "r1",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.292 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.292/0.292/0.292/0.000 ms\n"
+                },
+                "target": "10.0.12.2"
+              },
+              {
+                "device": "r2",
+                "result": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.160 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.160/0.160/0.160/0.000 ms\n"
+                },
+                "target": "10.0.12.1"
+              }
+            ]
+          },
+          "passed": false,
+          "snapshot": {
+            "pc1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.10/24"
+                  ],
+                  "up": false
+                }
+              },
+              "routes": []
+            },
+            "pc2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.2.10/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "default",
+                  "gateway": "10.0.2.1"
+                }
+              ]
+            },
+            "r1": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.1.1/24"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.12.1/30"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.2.0/24",
+                  "gateway": "10.0.12.2"
+                }
+              ]
+            },
+            "r2": {
+              "firewall": "*filter\n:INPUT ACCEPT [0:0]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [0:0]\nCOMMIT",
+              "interfaces": {
+                "eth0": {
+                  "addresses": [
+                    "10.0.12.2/30"
+                  ],
+                  "up": true
+                },
+                "eth1": {
+                  "addresses": [
+                    "10.0.2.1/24"
+                  ],
+                  "up": true
+                }
+              },
+              "routes": [
+                {
+                  "dst": "10.0.1.0/24",
+                  "gateway": "10.0.12.1"
+                }
+              ]
+            }
+          },
+          "snapshot_matches_healthy": false
+        },
+        "post_snapshot_matches_healthy": false,
+        "preconditions_checked": [
+          {
+            "fault": {
+              "device": "r1",
+              "family": "route_missing",
+              "target": "10.0.2.0/24"
+            },
+            "still_holds": true
+          }
+        ],
+        "rollback_attempted": true,
+        "rollback_checks": {
+          "passed": false,
+          "records": [
+            {
+              "device": "pc1",
+              "evidence_id": "main-9c85d57fa2ca",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\nFrom 10.0.1.1 icmp_seq=2 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1027ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:37:59.867642+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-a67279b0276e",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n2 packets transmitted, 0 received, 100% packet loss, time 1067ms\n\n"
+              },
+              "timestamp_utc": "2026-11-14T21:38:02.132753+00:00"
+            },
+            {
+              "device": "pc1",
+              "evidence_id": "main-c6ce41cb89ef",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.421 ms\n64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=0.176 ms\n\n--- 10.0.1.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1068ms\nrtt min/avg/max/mdev = 0.176/0.298/0.421/0.122 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:38:03.314892+00:00"
+            },
+            {
+              "device": "pc2",
+              "evidence_id": "main-e53bf5a5c0dd",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.310 ms\n64 bytes from 10.0.2.1: icmp_seq=2 ttl=64 time=0.378 ms\n\n--- 10.0.2.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1013ms\nrtt min/avg/max/mdev = 0.310/0.344/0.378/0.034 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:38:04.403078+00:00"
+            },
+            {
+              "device": "r1",
+              "evidence_id": "main-b08256bd9acb",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.265 ms\n64 bytes from 10.0.12.2: icmp_seq=2 ttl=64 time=0.276 ms\n\n--- 10.0.12.2 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1064ms\nrtt min/avg/max/mdev = 0.265/0.270/0.276/0.005 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:38:05.569513+00:00"
+            },
+            {
+              "device": "r2",
+              "evidence_id": "main-21dd680be43f",
+              "kind": "ping",
+              "origin": "measured",
+              "parsed": null,
+              "raw": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.586 ms\n64 bytes from 10.0.12.1: icmp_seq=2 ttl=64 time=0.493 ms\n\n--- 10.0.12.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1052ms\nrtt min/avg/max/mdev = 0.493/0.539/0.586/0.046 ms\n"
+              },
+              "timestamp_utc": "2026-11-14T21:38:06.702702+00:00"
+            }
+          ],
+          "warmup": [
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.\nFrom 10.0.1.1 icmp_seq=1 Destination Net Unreachable\n\n--- 10.0.2.10 ping statistics ---\n1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.2.10"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 1,
+                "stderr": "",
+                "stdout": "PING 10.0.1.10 (10.0.1.10) 56(84) bytes of data.\n\n--- 10.0.1.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n"
+              },
+              "target": "10.0.1.10"
+            },
+            {
+              "device": "pc1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.\n64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=0.424 ms\n\n--- 10.0.1.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.424/0.424/0.424/0.000 ms\n"
+              },
+              "target": "10.0.1.1"
+            },
+            {
+              "device": "pc2",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.2.1 (10.0.2.1) 56(84) bytes of data.\n64 bytes from 10.0.2.1: icmp_seq=1 ttl=64 time=0.330 ms\n\n--- 10.0.2.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.330/0.330/0.330/0.000 ms\n"
+              },
+              "target": "10.0.2.1"
+            },
+            {
+              "device": "r1",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.2 (10.0.12.2) 56(84) bytes of data.\n64 bytes from 10.0.12.2: icmp_seq=1 ttl=64 time=0.388 ms\n\n--- 10.0.12.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.388/0.388/0.388/0.000 ms\n"
+              },
+              "target": "10.0.12.2"
+            },
+            {
+              "device": "r2",
+              "result": {
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "PING 10.0.12.1 (10.0.12.1) 56(84) bytes of data.\n64 bytes from 10.0.12.1: icmp_seq=1 ttl=64 time=0.251 ms\n\n--- 10.0.12.1 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.251/0.251/0.251/0.000 ms\n"
+              },
+              "target": "10.0.12.1"
+            }
+          ]
+        },
+        "rollback_success": true,
+        "started": "2026-11-14T21:37:45.192222+00:00",
+        "status": "rolled_back",
+        "success": false,
+        "twin_equivalent": null,
+        "unsafe_executions": 0
+      },
+      "use_twin": false
+    }
+  ],
+  "generated": "2026-11-14T21:38:09.200606+00:00",
+  "kind": "oracle-controlled; not agent accuracy"
+}

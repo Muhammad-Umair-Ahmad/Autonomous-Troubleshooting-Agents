@@ -1,0 +1,673 @@
+{
+  "dev-address--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "03dbabc58f946a149203169190ef597891308374624f7ffe7705645a11472fb8"
+    ],
+    "faults": [
+      {
+        "device": "pc1",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "dev-double--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "60b5bea58da2005fff7585b4004baf923e572c799410ad9fadb2449cede71023",
+      "f96c942f791e15576bb1301d98df220c65bc95ee49b7ed4f88e66300d5d06aaf"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth0"
+      },
+      {
+        "device": "pc1",
+        "family": "route_missing",
+        "target": "default"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "dev-route--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2dbbe0609ee082e306dcb204abb4996096a8a145063b6bd82381bba6860351ba"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "route_wrong",
+        "target": "10.0.2.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-address--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-address--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-address--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-address--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-address--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-double--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-double--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-double--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-double--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-double--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-filter--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2c74efcab3a28bceeb41ab16931122bc7cf021cf5c60734d1dc5d460aaa27ec7"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-filter--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2c74efcab3a28bceeb41ab16931122bc7cf021cf5c60734d1dc5d460aaa27ec7"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-filter--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2c74efcab3a28bceeb41ab16931122bc7cf021cf5c60734d1dc5d460aaa27ec7"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-filter--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2c74efcab3a28bceeb41ab16931122bc7cf021cf5c60734d1dc5d460aaa27ec7"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-filter--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "2c74efcab3a28bceeb41ab16931122bc7cf021cf5c60734d1dc5d460aaa27ec7"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-healthy--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [],
+    "faults": [],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-healthy--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [],
+    "faults": [],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-healthy--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [],
+    "faults": [],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-healthy--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [],
+    "faults": [],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-healthy--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [],
+    "faults": [],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-link--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-link--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-link--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-link--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-link--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-route--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-route--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-route--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-route--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-route--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "test-triple--false-premise": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8",
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      },
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-triple--incorrect-cause": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8",
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      },
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-triple--incorrect-device": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8",
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      },
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-triple--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8",
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      },
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "test-triple--vague": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "340ea91ab5915b1e74d7a804f8ccd5b82a0def2957bb66892a5514ea2fd06c74",
+      "8534b0f040d0a5086dcc9af216629e1e06565383fc282fe407227850245f9db8",
+      "12831016762ec5362f809c04d1248e41e6a2be1f7b11216097e73bd202feb5c2"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "link_down",
+        "target": "eth1"
+      },
+      {
+        "device": "r2",
+        "family": "route_missing",
+        "target": "10.0.1.0/24"
+      },
+      {
+        "device": "pc2",
+        "family": "address_missing",
+        "target": "eth0"
+      }
+    ],
+    "masked": true,
+    "validation_status": "validated"
+  },
+  "train-filter--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "e21468065ff5aafd5382d1f2907066b83ab7098e47bc8ba0e47f5026a631f8fc"
+    ],
+    "faults": [
+      {
+        "device": "r2",
+        "family": "firewall_drop",
+        "target": "FORWARD"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "train-link--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "a470cc6759001fde89463874286151dee5607de7cdddf22801aead2f3d338ebe"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "link_down",
+        "target": "eth0"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  },
+  "train-route--standard": {
+    "exclusion_reason": null,
+    "fault_templates": [
+      "d23d863094ccc677143226adee3de55e91fbad75b8b8af599b45e72b142d7671"
+    ],
+    "faults": [
+      {
+        "device": "r1",
+        "family": "route_missing",
+        "target": "10.0.2.0/24"
+      }
+    ],
+    "masked": false,
+    "validation_status": "validated"
+  }
+}

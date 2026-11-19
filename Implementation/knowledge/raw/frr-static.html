@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="readthedocs-addons-api-version" content="1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STATIC &mdash; FRR latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/overrides.css?v=e16452cc" />
+
+  
+    <link rel="shortcut icon" href="_static/frr-logo-icon.png"/>
+    <link rel="canonical" href="https://docs.frrouting.org/en/stable-10.2/static.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/overrides.js?v=d8959b4f"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/js/versions.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="VNC and VNC-GW" href="vnc.html" />
+    <link rel="prev" title="SHARP" href="sharp.html" /> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="frrouting" /><meta name="readthedocs-version-slug" content="stable-10.2" /><meta name="readthedocs-resolver-filename" content="/static.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FRR
+              <img src="_static/frr-icon.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch"></div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="protocols.html">Protocols</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="zebra.html">Zebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bfd.html">BFD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bgp.html">BGP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="babeld.html">Babel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fabricd.html">OpenFabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldpd.html">LDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigrpd.html">EIGRP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evpn.html">EVPN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isisd.html">ISIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nhrpd.html">NHRP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ospfd.html">OSPFv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ospf6d.html">OSPFv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pathd.html">PATH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pim.html">PIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pimv6.html">PIMv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbr.html">PBR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripd.html">RIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripngd.html">RIPng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharp.html">SHARP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">STATIC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#starting-static">Starting STATIC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static-route-commands">Static Route Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-nexthop-static-route">Multiple nexthop static route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sr-te-route-commands">SR-TE Route Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#srv6-route-commands">SRv6 Route Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vnc.html">VNC and VNC-GW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vrrp.html">VRRP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bmp.html">BMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watchfrr.html">WATCHFRR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgmtd.html">MGMTd (Management Daemon)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Reporting Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packet-dumps.html">Packet Binary Dump Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frr-reload.html">The frr-reload.py script</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FRR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="protocols.html">Protocols</a></li>
+      <li class="breadcrumb-item active">STATIC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/static.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="static">
+<span id="id1"></span><h1>STATIC<a class="headerlink" href="#static" title="Link to this heading"></a></h1>
+<p><abbr>STATIC</abbr> is a daemon that handles the installation and deletion
+of static routes.</p>
+<section id="starting-static">
+<span id="id2"></span><h2>Starting STATIC<a class="headerlink" href="#starting-static" title="Link to this heading"></a></h2>
+<p><abbr>STATIC</abbr> supports all the common FRR daemon start options which are
+documented elsewhere.</p>
+<p>Configuration for the daemon should be saved in the FRR integrated configuration
+file located in /etc/frr/frr.conf, see <a class="reference internal" href="basic.html#config-file"><span class="std std-ref">Integrated Config File</span></a> for more
+information on system configuration.</p>
+<p>Prior versions of FRR supported reading and writing per-daemon config files;
+however, with the introduction of the centralized management daemon <code class="docutils literal notranslate"><span class="pre">mgmtd</span></code>
+this could no longer be supported.</p>
+<p>In order to allow for an orderly transition from per-daemon config files to the
+integrated config file, FRR daemons will continue to try and <strong>read</strong> their
+specific per-daemon configuration file as before. Additionally the config can
+still be loaded directly using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> or <code class="docutils literal notranslate"><span class="pre">--config-file</span></code> CLI options;
+however, these files will <strong>not</strong> be updated when the configuration is written
+(e.g., with the <code class="docutils literal notranslate"><span class="pre">write</span> <span class="pre">mem</span></code> command).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Per-daemon files will <strong>no longer</strong> be updated when the user issues a <code class="docutils literal notranslate"><span class="pre">write</span>
+<span class="pre">memory</span></code> command. Therefore these per-daemon config files should only be used
+as a mechanism for transitioning to the integrated config, and then removed.</p>
+</div>
+</section>
+<section id="static-route-commands">
+<span id="id3"></span><h2>Static Route Commands<a class="headerlink" href="#static-route-commands" title="Link to this heading"></a></h2>
+<p>Static routing is a very fundamental feature of routing technology. It defines
+a static prefix and gateway, with several possible forms.</p>
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ip-route-NETWORK-GATEWAY-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ip</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">GATEWAY</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ip-route-NETWORK-GATEWAY-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ip-route-NETWORK-IFNAME-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ip</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">IFNAME</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ip-route-NETWORK-IFNAME-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ip-route-NETWORK-GATEWAY-IFNAME-DISTANCE-onlink-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ip</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">GATEWAY</span> <span class="pre">IFNAME</span> <span class="pre">[DISTANCE]</span> <span class="pre">[onlink]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ip-route-NETWORK-GATEWAY-IFNAME-DISTANCE-onlink-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ip-route-NETWORK-Null0-blackhole-reject-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ip</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">(Null0|blackhole|reject)</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ip-route-NETWORK-Null0-blackhole-reject-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ipv6-route-NETWORK-from-SRCPREFIX-GATEWAY-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ipv6</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">[from</span> <span class="pre">SRCPREFIX]</span> <span class="pre">GATEWAY</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ipv6-route-NETWORK-from-SRCPREFIX-GATEWAY-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ipv6-route-NETWORK-from-SRCPREFIX-IFNAME-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ipv6</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">[from</span> <span class="pre">SRCPREFIX]</span> <span class="pre">IFNAME</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ipv6-route-NETWORK-from-SRCPREFIX-IFNAME-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ipv6-route-NETWORK-from-SRCPREFIX-GATEWAY-IFNAME-DISTANCE-onlink-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ipv6</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">[from</span> <span class="pre">SRCPREFIX]</span> <span class="pre">GATEWAY</span> <span class="pre">IFNAME</span> <span class="pre">[DISTANCE]</span> <span class="pre">[onlink]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ipv6-route-NETWORK-from-SRCPREFIX-GATEWAY-IFNAME-DISTANCE-onlink-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="std clicmd">
+<dt class="sig sig-object std" id="clicmd-ipv6-route-NETWORK-from-SRCPREFIX-Null0-blackhole-reject-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME">
+<span class="sig-name descname"><span class="pre">ipv6</span> <span class="pre">route</span> <span class="pre">NETWORK</span> <span class="pre">[from</span> <span class="pre">SRCPREFIX]</span> <span class="pre">(Null0|blackhole|reject)</span> <span class="pre">[DISTANCE]</span> <span class="pre">[table</span> <span class="pre">TABLENO]</span> <span class="pre">[nexthop-vrf</span> <span class="pre">VRFNAME]</span> <span class="pre">[vrf</span> <span class="pre">VRFNAME]</span></span><a class="headerlink" href="#clicmd-ipv6-route-NETWORK-from-SRCPREFIX-Null0-blackhole-reject-DISTANCE-table-TABLENO-nexthop-vrf-VRFNAME-vrf-VRFNAME" title="Link to this definition"></a></dt>
+<dd><p>NETWORK is destination prefix with a valid v4 or v6 network based upon
+initial form of the command.</p>
+<p>GATEWAY is the IP address to use as next-hop for the prefix. Currently, it must match
+the v4 or v6 route type specified at the start of the command.</p>
+<p>IFNAME is the name of the interface to use as next-hop. If only IFNAME is specified
+(without GATEWAY), a connected route will be created.</p>
+<p>When both IFNAME and GATEWAY are specified together, it binds the route to the specified
+interface. In this case, it is also possible to specify <code class="docutils literal notranslate"><span class="pre">onlink</span></code> to force the kernel
+to consider the next-hop as “on link” on the given interface.</p>
+<p>Alternatively, the gateway can be specified as <code class="docutils literal notranslate"><span class="pre">Null0</span></code> or <code class="docutils literal notranslate"><span class="pre">blackhole</span></code> to create a blackhole
+route that drops all traffic. It can also be specified as <code class="docutils literal notranslate"><span class="pre">reject</span></code> to create an unreachable
+route that rejects traffic with ICMP “Destination Unreachable” messages.</p>
+<p>TABLENO is an optional parameter for namespaces that allows you to create the
+route in a specified table associated with the vrf namespace. <code class="docutils literal notranslate"><span class="pre">table</span></code> will
+be rejected if you are not using namespace based vrfs.</p>
+<p><code class="docutils literal notranslate"><span class="pre">vrf</span></code> VRFNAME allows you to create the route in a specified vrf.</p>
+<p><code class="docutils literal notranslate"><span class="pre">nexthop-vrf</span></code> VRFNAME allows you to create a leaked route with a nexthop in the
+specified VRFNAME. <code class="docutils literal notranslate"><span class="pre">nexthop-vrf</span></code> cannot be currently used with namespace based vrfs.</p>
+<p>The IPv6 variant allows the installation of a static source-specific route
+with the SRCPREFIX sub command.  These routes are currently supported
+on Linux operating systems only, and perform AND matching on packet’s
+destination and source addresses in the kernel’s forwarding path. Note
+that destination longest-prefix match is “more important” than source
+LPM, e.g.  <code class="docutils literal notranslate"><span class="pre">2001:db8:1::/64</span> <span class="pre">from</span> <span class="pre">2001:db8::/48</span></code> will win over
+<code class="docutils literal notranslate"><span class="pre">2001:db8::/48</span> <span class="pre">from</span> <span class="pre">2001:db8:1::/64</span></code> if both match.</p>
+</dd></dl>
+
+</section>
+<section id="multiple-nexthop-static-route">
+<span id="multiple-route-command"></span><h2>Multiple nexthop static route<a class="headerlink" href="#multiple-nexthop-static-route" title="Link to this heading"></a></h2>
+<p>To create multiple nexthops to the same NETWORK (also known as a multipath route), just reenter the same
+network statement with different nexthop information.</p>
+<div class="highlight-frr notranslate"><div class="highlight"><pre><span></span><span class="nf">ip</span> route <span class="m">10.0.0.1/32</span> <span class="m">10.0.0.2</span>
+<span class="nf">ip</span> route <span class="m">10.0.0.1/32</span> <span class="m">10.0.0.3</span>
+<span class="nf">ip</span> route <span class="m">10.0.0.1/32</span> eth0
+</pre></div>
+</div>
+<p>If there is no route to 10.0.0.2 and 10.0.0.3, and interface eth0
+is reachable, then the last route is installed into the kernel.</p>
+<p>If zebra has been compiled with multipath support, and both 10.0.0.2 and
+10.0.0.3 are reachable, zebra will install a multipath route via both
+nexthops, if the platform supports this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">router</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">ip</span> <span class="n">route</span>
+<span class="n">S</span><span class="o">&gt;</span>  <span class="mf">10.0.0.1</span><span class="o">/</span><span class="mi">32</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">]</span> <span class="n">via</span> <span class="mf">10.0.0.2</span> <span class="n">inactive</span>
+    <span class="n">via</span> <span class="mf">10.0.0.3</span> <span class="n">inactive</span>
+  <span class="o">*</span>       <span class="ow">is</span> <span class="n">directly</span> <span class="n">connected</span><span class="p">,</span> <span class="n">eth0</span>
+</pre></div>
+</div>
+<div class="highlight-frr notranslate"><div class="highlight"><pre><span></span><span class="nf">ip</span> route <span class="m">10.0.0.0/8</span> <span class="m">10.0.0.2</span>
+<span class="nf">ip</span> route <span class="m">10.0.0.0/8</span> <span class="m">10.0.0.3</span>
+<span class="nf">ip</span> route <span class="m">10.0.0.0/8</span> null0 <span class="m">255</span>
+</pre></div>
+</div>
+<p>This will install a multipath route via the specified next-hops if they are
+reachable, as well as a high-distance blackhole route, which can be useful to
+prevent traffic destined for a prefix to match less-specific routes (e.g.
+default) should the specified gateways not be reachable. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">router</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">ip</span> <span class="n">route</span> <span class="mf">10.0.0.0</span><span class="o">/</span><span class="mi">8</span>
+<span class="n">Routing</span> <span class="n">entry</span> <span class="k">for</span> <span class="mf">10.0.0.0</span><span class="o">/</span><span class="mi">8</span>
+  <span class="n">Known</span> <span class="n">via</span> <span class="s2">"static"</span><span class="p">,</span> <span class="n">distance</span> <span class="mi">1</span><span class="p">,</span> <span class="n">metric</span> <span class="mi">0</span>
+    <span class="mf">10.0.0.2</span> <span class="n">inactive</span>
+    <span class="mf">10.0.0.3</span> <span class="n">inactive</span>
+
+<span class="n">Routing</span> <span class="n">entry</span> <span class="k">for</span> <span class="mf">10.0.0.0</span><span class="o">/</span><span class="mi">8</span>
+  <span class="n">Known</span> <span class="n">via</span> <span class="s2">"static"</span><span class="p">,</span> <span class="n">distance</span> <span class="mi">255</span><span class="p">,</span> <span class="n">metric</span> <span class="mi">0</span>
+    <span class="n">directly</span> <span class="n">connected</span><span class="p">,</span> <span class="n">Null0</span>
+</pre></div>
+</div>
+<p>Also, if the user wants to configure a static route for a specific VRF, then
+a specific VRF configuration mode is available. After entering into that mode
+with <a class="reference internal" href="zebra.html#clicmd-vrf-VRF"><code class="xref std std-clicmd docutils literal notranslate"><span class="pre">vrf</span> <span class="pre">VRF</span></code></a> the user can enter the same route command as before,
+but this time, the route command will apply to the VRF.</p>
+<div class="highlight-frr notranslate"><div class="highlight"><pre><span></span># case with VRF
+<span class="nf">configure</span>
+<span class="nf">vrf</span> r1-cust1
+ <span class="nf">ip</span> route <span class="m">10.0.0.0/24</span> <span class="m">10.0.0.2</span>
+<span class="nf">exit-vrf</span>
+</pre></div>
+</div>
+</section>
+<section id="sr-te-route-commands">
+<h2>SR-TE Route Commands<a class="headerlink" href="#sr-te-route-commands" title="Link to this heading"></a></h2>
+<p>It is possible to specify a route using a SR-TE policy configured in Zebra.</p>
+<p>e.g. to use the SR-TE policy with endpoint 6.6.6.6 and color 123 to reach the
+network 9.9.9.9/24:</p>
+<div class="highlight-frr notranslate"><div class="highlight"><pre><span></span><span class="nf">ip</span> route <span class="m">9.9.9.9/24</span> <span class="m">6.6.6.6</span> color <span class="m">123</span>
+</pre></div>
+</div>
+</section>
+<section id="srv6-route-commands">
+<h2>SRv6 Route Commands<a class="headerlink" href="#srv6-route-commands" title="Link to this heading"></a></h2>
+<p>It is possible to specify a static route for ipv6 prefixes using an SRv6
+<cite>segments</cite> instruction. The <cite>/</cite> separator can be used to specify
+multiple segments instructions.</p>
+<div class="highlight-frr notranslate"><div class="highlight"><pre><span></span><span class="nf">ipv6</span> route X:X::X:X &lt;X:X::X:X|nexthop&gt; segments U:U::U:U/Y:Y::Y:Y/Z:Z::Z:Z
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">router</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c1"># ipv6 route 2005::1/64 ens3 segments 2001:db8:aaaa::7/2002::4/2002::3/2002::2</span>
+
+<span class="n">router</span><span class="c1"># show ipv6 route</span>
+<span class="p">[</span><span class="o">..</span><span class="p">]</span>
+<span class="n">S</span><span class="o">&gt;*</span> <span class="mi">2005</span><span class="p">::</span><span class="o">/</span><span class="mi">64</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="n">directly</span> <span class="n">connected</span><span class="p">,</span> <span class="n">ens3</span><span class="p">,</span> <span class="n">seg6</span> <span class="mi">2001</span><span class="p">:</span><span class="n">db8</span><span class="p">:</span><span class="n">aaaa</span><span class="p">::</span><span class="mi">7</span><span class="p">,</span><span class="mi">2002</span><span class="p">::</span><span class="mi">4</span><span class="p">,</span><span class="mi">2002</span><span class="p">::</span><span class="mi">3</span><span class="p">,</span><span class="mi">2002</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">06</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sharp.html" class="btn btn-neutral float-left" title="SHARP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vnc.html" class="btn btn-neutral float-right" title="VNC and VNC-GW" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017, FRR.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

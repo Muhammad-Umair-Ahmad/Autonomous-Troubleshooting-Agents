@@ -1,0 +1,13 @@
+{
+  "action": "obsolete generators and historical logs moved outside project; final outputs retained",
+  "external_backup": "/Users/muhammadumairahmad/Documents/Codex/2026-11-14/f/work/cnet-cleanup-backup",
+  "retained": [
+    "runtime source",
+    "experiment runner",
+    "tests",
+    "data and knowledge",
+    "original raw study records",
+    "upstream tools required by adapters"
+  ],
+  "removed_generator": "former neta.analysis report-writing implementation; statistical helpers retained"
+}

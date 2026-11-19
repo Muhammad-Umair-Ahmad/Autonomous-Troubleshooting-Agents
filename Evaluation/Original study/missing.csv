@@ -1,0 +1,3 @@
+cell,case,model,method
+0a00469951176fee9a177309,test-triple--incorrect-cause,llama3.2:1b,single_agent
+64d35a2dea867193eaf3877c,test-triple--standard,llama3.2:1b,single_agent

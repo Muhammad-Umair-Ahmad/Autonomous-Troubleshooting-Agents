@@ -1,0 +1,6 @@
+provider: ollama
+base_url: http://127.0.0.1:11434
+model: qwen2.5:1.5b
+temperature: 0
+context_length: 4096
+max_output_tokens: 256

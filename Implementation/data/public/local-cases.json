@@ -1,0 +1,2383 @@
+{
+  "cases": [
+    {
+      "case_id": "train-link--standard",
+      "incident_group": "local-group-train-link",
+      "incident_id": "train-link",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "train",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "train-route--standard",
+      "incident_group": "local-group-train-route",
+      "incident_id": "train-route",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "train",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "train-filter--standard",
+      "incident_group": "local-group-train-filter",
+      "incident_id": "train-filter",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "train",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "dev-address--standard",
+      "incident_group": "local-group-dev-address",
+      "incident_id": "dev-address",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "validation",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "dev-route--standard",
+      "incident_group": "local-group-dev-route",
+      "incident_id": "dev-route",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "validation",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "dev-double--standard",
+      "incident_group": "local-group-dev-double",
+      "incident_id": "dev-double",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "validation",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-healthy--standard",
+      "incident_group": "local-group-test-healthy",
+      "incident_id": "test-healthy",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-healthy--vague",
+      "incident_group": "local-group-test-healthy",
+      "incident_id": "test-healthy",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-healthy--incorrect-cause",
+      "incident_group": "local-group-test-healthy",
+      "incident_id": "test-healthy",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-healthy--incorrect-device",
+      "incident_group": "local-group-test-healthy",
+      "incident_id": "test-healthy",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-healthy--false-premise",
+      "incident_group": "local-group-test-healthy",
+      "incident_id": "test-healthy",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-link--standard",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-link",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-link--vague",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-link",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-link--incorrect-cause",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-link",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-link--incorrect-device",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-link",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-link--false-premise",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-link",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-route--standard",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-route",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-route--vague",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-route",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-route--incorrect-cause",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-route",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-route--incorrect-device",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-route",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-route--false-premise",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-route",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-address--standard",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-address",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-address--vague",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-address",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-address--incorrect-cause",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-address",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-address--incorrect-device",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-address",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-address--false-premise",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-address",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-double--standard",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-double",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-double--vague",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-double",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-double--incorrect-cause",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-double",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-double--incorrect-device",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-double",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-double--false-premise",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-double",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-triple--standard",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-triple",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-triple--vague",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-triple",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-triple--incorrect-cause",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-triple",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-triple--incorrect-device",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-triple",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-triple--false-premise",
+      "incident_group": "local-group-test-address",
+      "incident_id": "test-triple",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-filter--standard",
+      "incident_group": "local-group-test-filter",
+      "incident_id": "test-filter",
+      "normalized_ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Please check connectivity between pc1 and pc2 and identify any actual fault.",
+      "ticket_style": "standard",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-filter--vague",
+      "incident_group": "local-group-test-filter",
+      "incident_id": "test-filter",
+      "normalized_ticket": "The network seems broken. Please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The network seems broken. Please investigate.",
+      "ticket_style": "vague",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-filter--incorrect-cause",
+      "incident_group": "local-group-test-filter",
+      "incident_id": "test-filter",
+      "normalized_ticket": "The DNS service is definitely broken; fix name resolution.",
+      "source": "local",
+      "split": "test",
+      "ticket": "The DNS service is definitely broken; fix name resolution.",
+      "ticket_style": "incorrect-cause",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-filter--incorrect-device",
+      "incident_group": "local-group-test-filter",
+      "incident_id": "test-filter",
+      "normalized_ticket": "pc1 is definitely the faulty device; please investigate.",
+      "source": "local",
+      "split": "test",
+      "ticket": "pc1 is definitely the faulty device; please investigate.",
+      "ticket_style": "incorrect-device",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    },
+    {
+      "case_id": "test-filter--false-premise",
+      "incident_group": "local-group-test-filter",
+      "incident_id": "test-filter",
+      "normalized_ticket": "Both routers have failed and every interface is down.",
+      "source": "local",
+      "split": "test",
+      "ticket": "Both routers have failed and every interface is down.",
+      "ticket_style": "false-premise",
+      "topology": {
+        "id": "four_device_chain_v1",
+        "interfaces": {
+          "pc1": {
+            "eth0": "10.0.1.10/24"
+          },
+          "pc2": {
+            "eth0": "10.0.2.10/24"
+          },
+          "r1": {
+            "eth0": "10.0.1.1/24",
+            "eth1": "10.0.12.1/30"
+          },
+          "r2": {
+            "eth0": "10.0.12.2/30",
+            "eth1": "10.0.2.1/24"
+          }
+        },
+        "links": [
+          [
+            "pc1:eth0",
+            "r1:eth0"
+          ],
+          [
+            "r1:eth1",
+            "r2:eth0"
+          ],
+          [
+            "r2:eth1",
+            "pc2:eth0"
+          ]
+        ],
+        "routes": {
+          "pc1": {
+            "default": "10.0.1.1"
+          },
+          "pc2": {
+            "default": "10.0.2.1"
+          },
+          "r1": {
+            "10.0.2.0/24": "10.0.12.2"
+          },
+          "r2": {
+            "10.0.1.0/24": "10.0.12.1"
+          }
+        },
+        "scope": "IPv4 static routing and packet filtering; no DNS/OSPF/BGP services"
+      }
+    }
+  ],
+  "schema_version": 1
+}

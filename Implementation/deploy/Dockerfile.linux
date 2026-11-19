@@ -1,0 +1,8 @@
+FROM docker:28.5.2-dind@sha256:2a232a42256f70d78e3cc5d2b5d6b3276710a0de0596c145f627ecfae90282ac AS engine
+FROM ubuntu:24.04@sha256:2198e4c65076e9cb0b3d695219df667c0e3b0072da64ca3c2648aca17dcecaf5
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv python3-pip git curl ca-certificates sudo iproute2 iptables kmod util-linux procps libseccomp2 xz-utils && rm -rf /var/lib/apt/lists/*
+COPY --from=engine /usr/local/bin/ /usr/local/bin/
+ENV DOCKER_TLS_CERTDIR=""
+WORKDIR /research
+CMD ["dockerd", "--host=unix:///var/run/docker.sock", "--storage-driver=overlay2", "--iptables=true"]

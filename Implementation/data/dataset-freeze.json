@@ -1,0 +1,15 @@
+{
+  "counts": {
+    "fault_families": 5,
+    "fault_templates": 11,
+    "incident_groups": 9,
+    "incidents": 13,
+    "tickets": 41,
+    "topology_structures": 1
+  },
+  "created": "2026-11-12T20:34:36.993648+00:00",
+  "group_policy": "connected components of constituent fault identities and ticket rewrites",
+  "private_sha256": "b747bf5916f8ba9020e34480721d53b114956242a00519a1dee8b3d52ec06d1c",
+  "public_sha256": "41f71d415ef73ff6a5116dc1b0e7cac3df8e99e3a63c09af18e0981093225790",
+  "test_frozen": true
+}

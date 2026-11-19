@@ -1,0 +1,9 @@
+{
+  "supervisor_pid": 35727,
+  "log": "results/submission/runner.log",
+  "models": [
+    "qwen2.5:1.5b",
+    "qwen2.5-coder:3b",
+    "llama3.2:1b"
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "created": "2026-11-15T07:19:59.282749+00:00",
+  "jobs": [
+    {
+      "case": "test-healthy--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-link--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-route--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-address--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-double--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-triple--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-filter--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5:1.5b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-healthy--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-link--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-route--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-address--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-double--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-triple--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-filter--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "qwen2.5-coder:3b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-healthy--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-link--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-route--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-address--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-double--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-triple--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    },
+    {
+      "case": "test-filter--standard",
+      "config": {
+        "implementation_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24",
+        "knowledge": "curated-v1",
+        "max_output": 1024,
+        "method": "full",
+        "model": "llama3.2:1b",
+        "repair": true,
+        "repeat": 0,
+        "revision": "repair-v3",
+        "robustness": "clean",
+        "sandbox_image": "neta-linux:research",
+        "seconds": 240,
+        "seed": 1000,
+        "temperature": 0,
+        "tokens": 24000,
+        "tools": 48,
+        "worker_hash": "b30fad09520925e1d5d8fb9a4296ff9fe0b203945faa28a2621b7902ff82ca6d"
+      }
+    }
+  ],
+  "scope": "Exploratory follow-up after inspecting original results; one repetition, full system only; not an independent confirmatory benchmark.",
+  "source_hash": "cad5d3c7f004c19b33e87307f022781fbb082cae6d53f2b7e4fa5739120b4d24"
+}
