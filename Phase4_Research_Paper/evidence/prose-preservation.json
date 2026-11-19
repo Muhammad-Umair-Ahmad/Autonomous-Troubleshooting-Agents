@@ -1,0 +1,17 @@
+{
+  "skill": "humanizer",
+  "sections_reviewed": 10,
+  "abstract_reviewed": true,
+  "unreviewed_sections": [],
+  "prose_blocks_rewritten": 61,
+  "latex_command_sequence_preserved": true,
+  "equations_and_inline_math_preserved": true,
+  "tables_figures_and_pseudocode_preserved": true,
+  "numeric_sequence_preserved": true,
+  "citations_references_and_labels_preserved": true,
+  "explicit_metadata_additions": [
+    "corresponding-author email",
+    "repository URL"
+  ],
+  "source_sha256": "2abf455278cb55f37507bb87db28dd1754d48699cb78ed4e81eeabb7a1a04766"
+}
