@@ -1,0 +1,138 @@
+[
+    {
+        "Id": "sha256:8a2e70ac8f51bb283b8549fd686f65f9a1ef4487fe2c81849cb74d301e61970b",
+        "RepoTags": [
+            "kathara/base:latest"
+        ],
+        "RepoDigests": [
+            "kathara/base@sha256:8a2e70ac8f51bb283b8549fd686f65f9a1ef4487fe2c81849cb74d301e61970b"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-03-22T20:00:15.533284167Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Volumes": {
+                "/hosthome": {},
+                "/shared": {}
+            },
+            "WorkingDir": "/",
+            "Labels": {
+                "org.opencontainers.image.authors": "Kathara Team <contact@kathara.org>"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 219286593,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:e77c437119a9e4c9330cb893367137b1736769508a986596814dc306ae2a42fe",
+                "sha256:b8ad86edb341a519a40a4f6ab0646662a6b2a56c894b3d5b938ed3c18b334d0f",
+                "sha256:cf1fed054e8587c2949ea9b1f7202c306d015bea16b7b32d1271c8a3562b7347",
+                "sha256:f3a7aa344645dafdb6e1b4bab38ab36c41164c59dbae986edb3eb9f2c759175b",
+                "sha256:5c977a2e3c7690efeccb2951ae43385f406f7fc9bd74178c3edf4ccceba7ec0b",
+                "sha256:4e221c3f2ebf87595d4ef34008f03768254ea2fe256451c6b3f5c03e383975e0",
+                "sha256:510fa56dbfe916fc9bc2f40f9fdac68d807123e3ed4b931535da4a7803bf2307",
+                "sha256:027838f08bf17e92f5b329a79a5f4602b45b7d303df7a21a933d6b4d5f18734c",
+                "sha256:4e81a4a41a66b9bd7157e70723063834d6b8ec1726a97000de53175829507e02",
+                "sha256:5e4c3de39bb1187205331f22dd2b636810113f4b588fea3d3e03afbd2d249f95",
+                "sha256:b32b193ff8cbf926e5ed8b5bd840d50c97fcc68171a95c4e2db3a289fbf3a502",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:fa50a3aeb01c01e306e4bd8d27308ac9c725afe2da9dc44921a756f97640be57",
+                "sha256:aa83ca367b8abc4336e883d1627f3b973f6577184866f12027e59b53e6c819f2",
+                "sha256:8d1b4a49662e2667abb0d2b5cc99db3b790e0577d37e9a658404d713c93d9b25"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T20:01:00.344824836Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:8a2e70ac8f51bb283b8549fd686f65f9a1ef4487fe2c81849cb74d301e61970b",
+            "size": 1609
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/kathara/base"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:3b7a3f630d8ecd9efddd4586ba2f0a41e2c462f13bc81dee8e3c6ebac183f57c",
+        "RepoTags": [
+            "kathara/frr:latest"
+        ],
+        "RepoDigests": [
+            "kathara/frr@sha256:3b7a3f630d8ecd9efddd4586ba2f0a41e2c462f13bc81dee8e3c6ebac183f57c"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-03-23T01:40:32.989522457Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Volumes": {
+                "/hosthome": {},
+                "/shared": {}
+            },
+            "WorkingDir": "/",
+            "Labels": {
+                "org.opencontainers.image.authors": "Kathara Team <contact@kathara.org>"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 210094121,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:e77c437119a9e4c9330cb893367137b1736769508a986596814dc306ae2a42fe",
+                "sha256:b8ad86edb341a519a40a4f6ab0646662a6b2a56c894b3d5b938ed3c18b334d0f",
+                "sha256:cf1fed054e8587c2949ea9b1f7202c306d015bea16b7b32d1271c8a3562b7347",
+                "sha256:f3a7aa344645dafdb6e1b4bab38ab36c41164c59dbae986edb3eb9f2c759175b",
+                "sha256:5c977a2e3c7690efeccb2951ae43385f406f7fc9bd74178c3edf4ccceba7ec0b",
+                "sha256:4e221c3f2ebf87595d4ef34008f03768254ea2fe256451c6b3f5c03e383975e0",
+                "sha256:510fa56dbfe916fc9bc2f40f9fdac68d807123e3ed4b931535da4a7803bf2307",
+                "sha256:027838f08bf17e92f5b329a79a5f4602b45b7d303df7a21a933d6b4d5f18734c",
+                "sha256:4e81a4a41a66b9bd7157e70723063834d6b8ec1726a97000de53175829507e02",
+                "sha256:5e4c3de39bb1187205331f22dd2b636810113f4b588fea3d3e03afbd2d249f95",
+                "sha256:ac9505c849bf27f235e2fa7211e2b009e09c83b28abb92e923a9981f988d8d73",
+                "sha256:fc880ed0f6ddade0ea4ddb9e2675087b63f4d4538ad7472de60e2a91b8d0604a",
+                "sha256:667a7550b2f4cd948fc5d6780ab6d5383c46e0c9721a13a5119fa475a5915579",
+                "sha256:844b9f3a22f6cca1e17ebcd0188a94016ba2b2fde57c86b20c249756182995e6",
+                "sha256:3838d6d5c147d000a867137d2a32083f9989ea70046d715e6612f054a7661d47"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T20:01:13.247189592Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:3b7a3f630d8ecd9efddd4586ba2f0a41e2c462f13bc81dee8e3c6ebac183f57c",
+            "size": 1609
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/kathara/frr"
+                }
+            ]
+        }
+    }
+]

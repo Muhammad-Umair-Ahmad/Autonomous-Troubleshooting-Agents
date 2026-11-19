@@ -6,7 +6,7 @@
 
 **A research implementation for multi-fault network diagnosis and verified repair using local language models.**
 
-[Read the paper](Phase4_Research_Paper_24i-2545.pdf) · [Explore the source](Implementation/src/neta) · [Setup and evidence](docs/REPRODUCIBILITY.md)
+[Download submission ZIP](Phase4_24i-2545.zip) · [Read the paper](Phase4_Research_Paper_24i-2545.pdf) · [Explore the source](Implementation/src/neta) · [Setup and evidence](docs/REPRODUCIBILITY.md)
 
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![Local inference](https://img.shields.io/badge/Inference-Local-148D80)

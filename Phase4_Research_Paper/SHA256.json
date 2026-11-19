@@ -1,5 +1,5 @@
 {
-  "README.md": "4df9834959fabd1ee0172dd22eb20de17e37a786cd97c11a1286afa6a10f3128",
+  "README.md": "754aba34a2398668ba38fe86493fffd9e75ea5277f5ddf8bfffd175f75cc8d3d",
   "evidence/followup.csv": "7b7151af14d90e1a50af66710d4050347ad81d7731a11d6416d35c6fce445d1c",
   "evidence/paired-comparisons.csv": "c4c5225bdee790f42fcd849844c125110dc37c935f1835b60afc2715f67fc237",
   "evidence/paper-audit.json": "7d59497071dd10e70a0aa43848059e959f5bed22a12172b9ef2cc069e33618d8",
@@ -14,9 +14,9 @@
   "source/figures/performance.pdf": "0dde1f898b18230b0104e8f543f98983a63623d5b9d02ab527327965f8bf0a1e",
   "source/figures/performance.tex": "9f509f71e1cfbc041097950324210ba8fdfc1ae9e6373b15387dc993c8d399a9",
   "source/paper.bbl": "a351261be097792610462f28cdb561656c5e63223dcbc48bd7bd3553121278c0",
-  "source/paper.tex": "e54bbb9741560b1b00b07b0a78a186eacc89895a54dd2182492f4ee89434395e",
+  "source/paper.tex": "9e967ae98f3dfc76c12c920ad9a67f17980cd7e6c79bf72755e0387dab20bf34",
   "source/references.bib": "33d120e24b9700d077ae5915b43f78aba0b4568a139412399dba30633cb3a366",
   "source/sn-jnl.cls": "afdd709e43a76c1452c8696429d428b1c35a9339de050c7ca8a9b6f32c180556",
   "source/sn-mathphys-num.bst": "fbe2ad5ada72b1080791fc2ecf64455d68d815c3c1e3f9b77bdb50658548d734",
-  "../Phase4_Research_Paper_24i-2545.pdf": "45a86e0e490350344b33ce79d44930cf99bfbb8f7c8f4c3111ddb6879234f0e2"
+  "../Phase4_Research_Paper_24i-2545.pdf": "c5e3f34a13d061ab1ce31bcf8e96c22b74ba51e65e7c4d75d55bd57269b3a8f0"
 }

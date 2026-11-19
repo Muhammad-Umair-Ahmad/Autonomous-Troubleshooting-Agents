@@ -19,4 +19,5 @@ pdflatex paper.tex
 ```
 
 Muhammad Umair Ahmad · 24i-2545 · Section AI-C<br>
+Department of Artificial Intelligence, FAST NUCES, Islamabad<br>
 [i242545@isb.nu.edu.pk](mailto:i242545@isb.nu.edu.pk)

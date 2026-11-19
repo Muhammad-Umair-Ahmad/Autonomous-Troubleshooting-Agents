@@ -4,11 +4,13 @@ The [repository](https://github.com/Muhammad-Umair-Ahmad/Autonomous-Troubleshoot
 
 ## Run the final agent
 
-Live execution requires Python 3.12+, Docker, Kathará, Ollama, the pinned images, and prepared prerequisite records, including `Implementation/results/prerequisites/images.json`. Environment preparation and image identities are described in the Phase 3 operating guide. Model binaries and installed runtimes are not included.
+Live execution requires Python 3.12+, Docker, Kathará, Ollama, the pinned images, and prepared prerequisite records, including `Implementation/results/prerequisites/images.json`. Environment preparation and image identities are described in the Phase 3 operating guide. Model binaries and installed runtimes are not included. `configs/images.lock.json` preserves the original ARM64 image identities. Docker images must also be installed on the execution host; copying the manifest does not install them.
 
-From `Implementation/`:
+From `Implementation/`, restore the saved image manifest before running the agent:
 
 ```sh
+mkdir -p results/prerequisites
+cp configs/images.lock.json results/prerequisites/images.json
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-lock.txt
 .venv/bin/python -m pip install -e . --no-deps
@@ -40,6 +42,7 @@ Paths below are relative to the repository root.
 | Public cases and evaluator labels | `Implementation/data/public/local-cases.json`, `Implementation/data/private/local-truth.json` |
 | Environment and dependency versions | `Implementation/configs/environment.lock.json`, `Implementation/requirements-lock.txt` |
 | Upstream source identities | `Implementation/configs/sources.lock.json` |
+| Original Kathará image identities | `Implementation/configs/images.lock.json` |
 | Original protocol and model identities | `Implementation/configs/experiments.submission.json` |
 | Revised protocol | `Evaluation/Revised study/protocol.json` |
 
