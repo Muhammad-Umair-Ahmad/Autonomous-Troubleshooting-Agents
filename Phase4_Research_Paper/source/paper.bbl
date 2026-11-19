@@ -52,8 +52,7 @@
 \oauthor{\bsnm{Dekic}, \binits{K.}},
 \oauthor{\bsnm{Sivanathan}, \binits{A.}},
 \oauthor{\bsnm{Seneviratne}, \binits{S.}}:
-{SADE}: Symptom-Aware Diagnostic Escalation for {LLM}-Based Network
-  Troubleshooting.
+{SADE}: Symptom-Aware Diagnostic Escalation for {LLM}-Based Network Troubleshooting.
 arXiv:2605.04530v1
 (2026).
 \url{https://arxiv.org/abs/2605.04530}
@@ -69,8 +68,7 @@ arXiv:2605.04530v1
 \oauthor{\bsnm{Patel}, \binits{K.}},
 \oauthor{\bsnm{Dakic}, \binits{K.}},
 \oauthor{\bsnm{Seneviratne}, \binits{S.}}:
-{FaulT-Bench}: Towards Benchmarking Network Troubleshooting {LLM} Agents under
-  Unreliable User Tickets.
+{FaulT-Bench}: Towards Benchmarking Network Troubleshooting {LLM} Agents under Unreliable User Tickets.
 arXiv:2608.27021v1
 (2026).
 \url{https://arxiv.org/abs/2608.27021}
@@ -86,8 +84,7 @@ arXiv:2608.27021v1
 \bauthor{\bsnm{Zhang}, \binits{Y.-Q.}},
 \bauthor{\bsnm{Sifakis}, \binits{J.}},
 \bauthor{\bsnm{Ouyang}, \binits{Y.}}:
-\batitle{From automated to autonomous: Hierarchical agent-native network
-  architecture ({HANA})}.
+\batitle{From automated to autonomous: Hierarchical agent-native network architecture ({HANA})}.
 \bjtitle{IEEE Networking Letters}
 (\byear{2026})
 \doiurl{10.1109/LNET.2026.3693226} .
@@ -120,10 +117,8 @@ arXiv:2512.16381v1
 \bauthor{\bsnm{Centofanti}, \binits{C.}},
 \bauthor{\bsnm{Sacco}, \binits{A.}},
 \bauthor{\bsnm{Jiang}, \binits{D.}}:
-\bctitle{Towards a playground to democratize experimentation and benchmarking
-  of {AI} agents for network troubleshooting}.
-In: \bbtitle{Proceedings of the 1st Workshop on Next-Generation Network
-  Observability},
+\bctitle{Towards a playground to democratize experimentation and benchmarking of {AI} agents for network troubleshooting}.
+In: \bbtitle{Proceedings of the 1st Workshop on Next-Generation Network Observability},
 pp. \bfpage{1}--\blpage{3}.
 \bpublisher{ACM},
 \blocation{New York, NY, USA}
@@ -141,8 +136,7 @@ pp. \bfpage{1}--\blpage{3}.
 \oauthor{\bsnm{Wang}, \binits{X.}},
 \oauthor{\bsnm{Li}, \binits{Z.}},
 \oauthor{\bsnm{Zhao}, \binits{M.}}:
-Adapting Network Information into Semantics for Generalizable and Plug-and-Play
-  Multi-Scenario Network Diagnosis.
+Adapting Network Information into Semantics for Generalizable and Plug-and-Play Multi-Scenario Network Diagnosis.
 arXiv:2501.16842v2
 (2025).
 \url{https://arxiv.org/abs/2501.16842}
@@ -158,8 +152,7 @@ arXiv:2501.16842v2
 \bauthor{\bsnm{Raafat}, \binits{S.M.}},
 \bauthor{\bsnm{Jasim}, \binits{F.H.}},
 \bauthor{\bsnm{Humaidi}, \binits{A.J.}}:
-\batitle{Hybrid {LLM}-assisted fault diagnosis framework for {5G/6G} networks
-  using real-world logs}.
+\batitle{Hybrid {LLM}-assisted fault diagnosis framework for {5G/6G} networks using real-world logs}.
 \bjtitle{Computers}
 \bvolume{14}(\bissue{12}),
 \bfpage{551}

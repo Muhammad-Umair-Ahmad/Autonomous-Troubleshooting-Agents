@@ -3,7 +3,6 @@
   "evidence/followup.csv": "7b7151af14d90e1a50af66710d4050347ad81d7731a11d6416d35c6fce445d1c",
   "evidence/paired-comparisons.csv": "c4c5225bdee790f42fcd849844c125110dc37c935f1835b60afc2715f67fc237",
   "evidence/paper-audit.json": "7d59497071dd10e70a0aa43848059e959f5bed22a12172b9ef2cc069e33618d8",
-  "evidence/prose-preservation.json": "e301b15fca0d50ed37caf1bf79e038826c71c4459beebd8f7d771033e1ce95e6",
   "evidence/robustness-by-condition.csv": "3e28629f4fd20a7ac1155a65829d36c71d75bcacb5205f76f1e20cb08aaa96db",
   "evidence/summary.csv": "c1fe956d1fc38032955a1819c793f4db20e38859483d38b10de90f4d6b2ba740",
   "source/figures/ablation.pdf": "5d73ce91b642b4e419029d8ca737d51f7eb5758bdceaac127aaf1265a581eb85",
@@ -14,10 +13,10 @@
   "source/figures/case-trace.tex": "7a707d203b2f03f4f49f9077327109b4cc4ad611e4ab420c38f39d4d0568f0d8",
   "source/figures/performance.pdf": "0dde1f898b18230b0104e8f543f98983a63623d5b9d02ab527327965f8bf0a1e",
   "source/figures/performance.tex": "9f509f71e1cfbc041097950324210ba8fdfc1ae9e6373b15387dc993c8d399a9",
-  "source/paper.bbl": "205ba236a57a567fd535164e7f799b2dc13ca0bf1f78c89b48416f6c0f565de1",
-  "source/paper.tex": "2abf455278cb55f37507bb87db28dd1754d48699cb78ed4e81eeabb7a1a04766",
+  "source/paper.bbl": "a351261be097792610462f28cdb561656c5e63223dcbc48bd7bd3553121278c0",
+  "source/paper.tex": "e54bbb9741560b1b00b07b0a78a186eacc89895a54dd2182492f4ee89434395e",
   "source/references.bib": "33d120e24b9700d077ae5915b43f78aba0b4568a139412399dba30633cb3a366",
   "source/sn-jnl.cls": "afdd709e43a76c1452c8696429d428b1c35a9339de050c7ca8a9b6f32c180556",
   "source/sn-mathphys-num.bst": "fbe2ad5ada72b1080791fc2ecf64455d68d815c3c1e3f9b77bdb50658548d734",
-  "../Phase4_Research_Paper_24i-2545.pdf": "71a24dc7db5f10a55bf736d1ce5adb228b5bb207191d085debaa95183c141224"
+  "../Phase4_Research_Paper_24i-2545.pdf": "45a86e0e490350344b33ce79d44930cf99bfbb8f7c8f4c3111ddb6879234f0e2"
 }
